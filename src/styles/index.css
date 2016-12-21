@@ -1,0 +1,85 @@
+body {
+  color:white;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background:url("https://www.walldevil.com/wallpapers/a60/minimalistic-wallpapers-clouds-wallpaper-minimalist-desktop.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: bottom;
+
+  font-family: Cabin;
+}
+
+nav {
+  padding-bottom:50px;
+}
+
+.well-black {
+  background:rgba(255,255,255,0.6);
+  /*box-shadow: 5px 5px 2px white;*/
+  /*border: 3px solid #333;
+  border-right: 10px solid #333;*/
+  /*border-bottom: 6px solid #333;*/
+  color: #333;
+  padding:20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.well-black.meal:hover {
+  /*background:gray;*/
+  border-right: 10px solid gold;
+}
+
+.btn-secondary {
+  background: white;
+  color: #333;
+  font-weight:bold;
+  margin:5px;
+  border: 1px solid gray;
+  /*border-right: 10px solid #333;*/
+}
+
+.btn-secondary:hover {
+  animation-name: buttons;
+  animation-duration: 600ms;
+  background-color: rgb(56,91,159);
+  color:white;
+}
+
+.navbar {
+  background: #333;
+  border: none;
+}
+
+a, a:visited {
+  border: none;
+  padding-right:5px;
+  padding-left: 5px;
+  color: white;
+  text-decoration:none;
+  font-size:18px;
+}
+
+a:hover {
+  text-decoration: none;
+
+}
+
+.macros-input {
+  width: 50px;
+  text-align:center;
+  margin-right:7px;
+  margin-left:3px;
+}
+
+svg {
+  width:50%;
+  margin: 0 auto;
+}
+
+@keyframes buttons {
+    from {background-color: white; }
+    to { background-color: rgb(56,91,159); color:white;}
+}
