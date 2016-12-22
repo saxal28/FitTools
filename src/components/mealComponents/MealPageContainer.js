@@ -42,7 +42,7 @@ class MealPageContainer extends Component {
 
           <div className="col-sm-6">
             <MealAdjusterComponent info={this.props.calories.calories} TDEE={this.props.TDEE}/>
-            <MealChart />
+            <MealChart mealValue1="10" mealValue2="01" mealValue3={10} mealValue4={10} mealValue5={10}/>
           </div>
 
         </div>
@@ -57,7 +57,7 @@ class MealPageContainer extends Component {
 function mapStateToProps(state) {
   return {
     calories: state.calories,
-    TDEE: state.TDEE
+    TDEE: state.TDEE,
   }
 }
 

@@ -13,7 +13,8 @@ class TestPage extends Component {
 
          <br />
 
-         <h4>Calories Set At the Beginning: { this.props.TDEE ? this.props.TDEE : "Not Available Yet" }</h4>
+         <h4>Calories Set At the Beginning: { this.props.TDEE ? this.props.TDEE : "Not Available Yet" }</h4> <br />
+         <h4>Calories Array as followed: { this.props.caloriesArr ? this.props.caloriesArr : "Not Available Yet"}</h4>
 
        </div>
      </div>

@@ -3,5 +3,5 @@ export default function(state = null, action) {
     case "SET_CALORIES":
       return action.calories
   }
-  return state
+  return state;
 }
