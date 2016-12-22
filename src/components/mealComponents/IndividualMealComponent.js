@@ -9,7 +9,7 @@ export default class IndividualMealComponent extends Component {
           Calories <input type="text" className="macros-input" value={this.props.cal}></input>
           Carbs <input type="text" className="macros-input" value={this.props.carb}></input>
           Fat <input type="text" className="macros-input" value={this.props.fat}></input>
-          Protein <input type="text" className="macros-input" value={this.props.pro}></input> 
+          Protein <input type="text" className="macros-input" value={this.props.pro}></input>
         </span>
       </div>
     )

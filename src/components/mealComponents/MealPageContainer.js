@@ -5,13 +5,21 @@
 import React, { Component } from 'react';
 //redux
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
+// import { bindActionCreators } from "redux";
 // child components
 import Navbar from "../common/Navbar";
 import MealAdjusterComponent from "./MealAdjusterComponent";
 import IndividualMealComponent from "./IndividualMealComponent";
+import SummaryMealComponent from "./SummaryMealComponent";
 
 class MealPageContainer extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      test: "123"
+    }
+  }
   render() {
 
     return (
@@ -23,11 +31,8 @@ class MealPageContainer extends Component {
         <div className="row">
           <h1>Calories {this.props.calories.calories}</h1>
           <div className="col-sm-6">
-            <IndividualMealComponent cal={300} carb={12} fat={2} pro={28}/>
-            <IndividualMealComponent cal={300} carb={12} fat={2} pro={28}/>
-            <IndividualMealComponent cal={300} carb={12} fat={2} pro={28}/>
-            <IndividualMealComponent cal={300} carb={12} fat={2} pro={28}/>
-            <IndividualMealComponent cal={300} carb={12} fat={2} pro={28}/>
+            <IndividualMealComponent />
+            <SummaryMealComponent />
           </div>
 
           <div className="col-sm-6">
