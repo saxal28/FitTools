@@ -1,5 +1,5 @@
 import React from 'react';
-import MealChart from "./MealChart";
+// import MealChart from "./MealChart";
 
 export default class MealAdjusterComponent extends React.Component {
   render() {

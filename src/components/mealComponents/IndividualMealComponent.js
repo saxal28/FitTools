@@ -27,6 +27,9 @@ class IndividualMealComponent extends Component {
         const fatInputs = document.body.querySelectorAll(".fat");
         const proInputs = document.body.querySelectorAll(".pro");
 
+        if (calorieInputs[0].value.length >= 0) {
+          console.log("calorie input value: " + calorieInputs[0].value)
+
         let caloriesArr = [];
         let carbArr = [];
         let fatArr = [];
@@ -55,6 +58,16 @@ class IndividualMealComponent extends Component {
           totalCal: totalCalories
         });
 
+      }
+
+  }
+
+  handleChange() {
+    var obj = this;
+    setTimeout(function() {
+      obj.getAllMacros();
+      obj.props.setCaloriesArray(obj.state.allCals);
+    }, 1000)
   }
 
   render() {
@@ -65,29 +78,26 @@ class IndividualMealComponent extends Component {
           Calories <input
             type="text"
             className="macros-input cal"
-            value={this.props.cal}
-            onChange={this.getAllMacros.bind(this)}>
+            onChange={this.handleChange.bind(this)}>
           </input>
+          { this.state.allCals ? this.state.allCals[this.props.index - 1] : "" }
           Carbs <input
             type="text"
             className="macros-input carb"
-            value={this.props.carb}
-            onChange={this.getAllMacros.bind(this)}>
+            value={this.props.carb}>
           </input>
           Fat <input
             type="text"
             className="macros-input fat"
-            value={this.props.fat}
-            onChange={this.getAllMacros.bind(this)}>
+            value={this.props.fat}>
           </input>
           Protein <input
             type="text"
             className="macros-input pro"
-            value={this.props.pro}
-            onChange={this.getAllMacros.bind(this)}>
+            value={this.props.pro}>
           </input>
         </span>
-        <button onClick={() => this.props.setCaloriesArray(this.state.caloriesArr)}>Test</button>
+         {this.props.index === "5" ? <button onClick={() => this.handleChange.bind(this)}>Test</button> : ""}
       </div>
     )
   }

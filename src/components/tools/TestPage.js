@@ -15,6 +15,7 @@ class TestPage extends Component {
 
          <h4>Calories Set At the Beginning: { this.props.TDEE ? this.props.TDEE : "Not Available Yet" }</h4> <br />
          <h4>Calories Array as followed: { this.props.caloriesArr ? this.props.caloriesArr : "Not Available Yet"}</h4>
+         {console.log(this.props.caloriesArr)}
 
        </div>
      </div>
@@ -24,7 +25,8 @@ class TestPage extends Component {
 
 function mapStateToProps(state) {
   return {
-    TDEE: state.TDEE
+    TDEE: state.TDEE,
+    caloriesArr: state.caloriesArr
   }
 }
 
