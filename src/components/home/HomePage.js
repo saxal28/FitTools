@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from 'react-router';
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import setCalories from "../../actions/setCalories";
 
 class HomePage extends Component {
   constructor(props) {
@@ -71,7 +73,11 @@ class HomePage extends Component {
             </div>
 
             <div className="row input-home-row">
-              <Link to="/tools" className="btn home-button" onClick={this.setDetailsOnClick.bind(this)}>To Tools</Link>
+              <Link
+                to="/tools"
+                className="btn home-button"
+                onClick={() => this.props.setCalories(this.state.TDEE)}
+              >To Tools!</Link>
             </div>
 
           </div>
@@ -86,8 +92,13 @@ class HomePage extends Component {
 //upgrade to container component
 function mapStateToProps(state) {
   return {
-    calories: state.calories
+    calories: state.calories,
+    TDEE: state.TDEE
   }
 }
 
-export default connect(mapStateToProps)(HomePage);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({setCalories: setCalories}, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
