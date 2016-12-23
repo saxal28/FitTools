@@ -36,6 +36,16 @@ class HomePage extends Component {
     this.props.setWeight(this.state.WEIGHT);
   }
 
+  toggleIcon(i) {
+    const icon = document.body.querySelectorAll(".fa");
+    console.log(icon)
+    // if(icon.style.color === "green") {
+    //   icon.style.color ="white";
+    // } else {
+    //   icon.style.color="green";
+    // }
+  }
+
   render() {
     return (
       <div className="container">
@@ -57,6 +67,7 @@ class HomePage extends Component {
                 className="input-home"
                 placeholder={this.props.TDEE ? this.props.TDEE : "TDEE" }
                 onChange={this.setTDEE.bind(this)} />
+              {this.props.TDEE ? <i className="fa fa-check-circle-o" onClick={this.toggleIcon(0)} aria-hidden="true"></i>: ""}
             </div>
           </div>
 
@@ -70,6 +81,7 @@ class HomePage extends Component {
                 className="input-home"
                 placeholder={this.props.WEIGHT ? this.props.WEIGHT : "LBS" }
                 onChange={this.setWeight.bind(this)} />
+                {this.props.WEIGHT ? <i className="fa fa-check-circle-o"  aria-hidden="true"></i>: ""}
             </div>
           </div>
 
@@ -82,6 +94,7 @@ class HomePage extends Component {
                 className="input-home"
                 placeholder={this.props.AGE ? this.props.AGE : "AGE" }
                 onChange={this.setAge.bind(this)}/>
+              {this.props.AGE ? <i className="fa fa-check-circle-o" aria-hidden="true"></i>: ""}
             </div>
 
             <div className="row input-home-row">

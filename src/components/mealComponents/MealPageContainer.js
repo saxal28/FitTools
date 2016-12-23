@@ -5,12 +5,12 @@
 import React, { Component } from 'react';
 //redux
 import { connect } from "react-redux";
-// import { bindActionCreators } from "redux";
+
 // child components
 import Navbar from "../common/Navbar";
 import MealAdjusterComponent from "./MealAdjusterComponent";
 import IndividualMealComponent from "./IndividualMealComponent";
-import SummaryMealComponent from "./SummaryMealComponent";
+// import SummaryMealComponent from "./SummaryMealComponent";
 import MealChart from "./MealChart";
 
 class MealPageContainer extends Component {
@@ -20,7 +20,6 @@ class MealPageContainer extends Component {
     this.state = {
       numberOfMeals: [1,2,3,4,5,6]
     }
-    const obj = this;
   }
 
   addMealChartAttributes() {
@@ -38,7 +37,7 @@ class MealPageContainer extends Component {
         <div className="row">
 
           <div className="col-sm-6">
-            {this.state.numberOfMeals.map((x, index) => <IndividualMealComponent index= {x} key={index} /> )}
+            {this.state.numberOfMeals.map((x, index) => <IndividualMealComponent index={x} key={index} /> )}
           </div>
 
           <div className="col-sm-6">

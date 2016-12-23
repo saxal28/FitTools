@@ -168,6 +168,11 @@ svg {
   margin: 0 auto;
 }
 
+.fa-check-circle-o {
+  font-size:2em;
+  margin-left:9px;
+}
+
 input[type=checkbox] {
   color:orange;
   margin:5px;
