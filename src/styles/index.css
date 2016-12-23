@@ -164,8 +164,14 @@ a:hover {
 
 /*the pie chart*/
 svg {
-  width:50%;
+  width:100%;
   margin: 0 auto;
+}
+
+input[type=checkbox] {
+  color:orange;
+  margin:5px;
+  width: 30px;
 }
 
 @keyframes buttons {

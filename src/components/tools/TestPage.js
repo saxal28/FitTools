@@ -13,9 +13,13 @@ class TestPage extends Component {
 
          <br />
 
-         <h4>Calories Set At the Beginning: { this.props.TDEE ? this.props.TDEE : "Not Available Yet" }</h4> <br />
-         <h4>Calories Array as followed: { this.props.caloriesArr ? this.props.caloriesArr : "Not Available Yet"}</h4>
-         {console.log(this.props.caloriesArr)}
+         <h4>Calories Set At the Beginning: { this.props.TDEE ? this.props.TDEE : "Not Available Yet" }</h4>
+         <h4>Weight Set at the Beginning: {this.props.WEIGHT}</h4>
+         <h4>Age set at the beginning: {this.props.AGE}</h4>
+          <br />
+            <h4>Calories Array as followed: { this.props.caloriesArr.map((x) => x+" " ) }</h4>
+            <h4>Carbs Array as followed: { this.props.carbArr.map((x) => x+" " ) }</h4>
+
 
        </div>
      </div>
@@ -26,7 +30,10 @@ class TestPage extends Component {
 function mapStateToProps(state) {
   return {
     TDEE: state.TDEE,
-    caloriesArr: state.caloriesArr
+    WEIGHT:state.WEIGHT,
+    AGE:state.AGE,
+    caloriesArr: state.caloriesArr,
+    carbArr: state.carbArr
   }
 }
 

@@ -4,32 +4,34 @@ import PieChart from 'react-simple-pie-chart';
 // value adds up to 30, i think
 export default class MealChart extends Component {
   render() {
-    let series = [];
-    console.log(this.props.mealValue1)
-    // this.props.caloriesArr ? (series = this.props.caloriesArr) : (series = [10, 10, 10, 10, 10])
     return (
       <div className="text-center">
+        <h2>{this.props.title}</h2>
         <PieChart
             slices={[
               {
-                color: 'rgba(255,0,0,0.5)',
+                color: 'rgba(255,255,255,0.5)',
                 value: this.props.mealValue1,
               },
               {
-                color: 'rgba(0,0,255,0.5)',
+                color: 'rgba(137,169,220,0.5)',
                 value: this.props.mealValue2,
               },
               {
-                color: 'rgba(0,255,0,0.5)',
+                color: 'rgba(134,168,180,0.5)',
                 value: this.props.mealValue3,
               },
               {
-                color: 'rgba(25,54,255,0.5)',
+                color: 'rgba(43,80,177,0.5)',
                 value: this.props.mealValue4,
               },
               {
-                color: 'rgba(0,255,255,0.5)',
+                color: 'rgba(19,53,143,0.5)',
                 value: this.props.mealValue5,
+              },
+              {
+                color: 'rgba(19,10,10,0.5)',
+                value: this.props.mealValue6,
               },
             ]}
           />

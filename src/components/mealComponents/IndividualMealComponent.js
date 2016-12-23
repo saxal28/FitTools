@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import setCaloriesArray from "../../actions/setCaloriesArr";
+import setCaloriesArray from "../../actions/setMacrosMealArray/setCaloriesArr";
+import setFatArray from "../../actions/setMacrosMealArray/setFatArr";
+import setCarbArray from "../../actions/setMacrosMealArray/setCarbArr";
+import setProArray from "../../actions/setMacrosMealArray/setProArr";
+
 
 class IndividualMealComponent extends Component {
   constructor(props) {
@@ -12,6 +16,7 @@ class IndividualMealComponent extends Component {
       allCarb: [],
       allFat: [],
       allPro: [],
+
       totalCal: 0,
       totalFat: 0,
       totalCarb: 0,
@@ -27,15 +32,15 @@ class IndividualMealComponent extends Component {
         const fatInputs = document.body.querySelectorAll(".fat");
         const proInputs = document.body.querySelectorAll(".pro");
 
-        if (calorieInputs[0].value.length >= 0) {
-          console.log("calorie input value: " + calorieInputs[0].value)
-
         let caloriesArr = [];
         let carbArr = [];
         let fatArr = [];
         let proArr = [];
 
         let totalCalories = 0;
+        let totalCarb = 0;
+        let totalPro = 0;
+        let totalFat = 0;
 
     //loops through calorieInputs and extracts value
     //saves to caloriesArr
@@ -45,7 +50,11 @@ class IndividualMealComponent extends Component {
           carbArr.push(carbInputs[i].value);
           fatArr.push(fatInputs[i].value);
           proArr.push(proInputs[i].value);
+
           totalCalories += Number(calorieInputs[i].value);
+          totalCarb += Number(carbInputs[i].value);
+          totalFat += Number(fatInputs[i].value);
+          totalPro += Number(proInputs[i].value);
 
         }
 
@@ -55,10 +64,12 @@ class IndividualMealComponent extends Component {
           allCarb: carbArr,
           allFat: fatArr,
           allPro: proArr,
-          totalCal: totalCalories
+          totalCal: totalCalories,
+          totalCarb,
+          totalFat,
+          totalPro
         });
 
-      }
 
   }
 
@@ -67,7 +78,11 @@ class IndividualMealComponent extends Component {
     setTimeout(function() {
       obj.getAllMacros();
       obj.props.setCaloriesArray(obj.state.allCals);
-    }, 1000)
+      obj.props.setCarbArray(obj.state.allCarb);
+      obj.props.setFatArray(obj.state.allFat);
+      obj.props.setProArray(obj.state.allPro);
+
+    }, 5)
   }
 
   render() {
@@ -75,29 +90,37 @@ class IndividualMealComponent extends Component {
       <div className="well-black meal text-center">
         <span className="pull-left"><strong className="meal-title">Mea1 {this.props.index}</strong></span>
         <span>
+
           Calories <input
             type="text"
             className="macros-input cal"
+            placeholder={this.props.caloriesArr[this.props.index - 1]}
             onChange={this.handleChange.bind(this)}>
           </input>
-          { this.state.allCals ? this.state.allCals[this.props.index - 1] : "" }
+
           Carbs <input
             type="text"
             className="macros-input carb"
-            value={this.props.carb}>
+            onChange={this.handleChange.bind(this)}
+            placeholder={this.props.carbArr[this.props.index - 1]}>
+
           </input>
+
           Fat <input
             type="text"
             className="macros-input fat"
-            value={this.props.fat}>
+            onChange={this.handleChange.bind(this)}
+            placeholder={this.props.fatArr[this.props.index - 1]}>
           </input>
+
           Protein <input
             type="text"
             className="macros-input pro"
-            value={this.props.pro}>
+            onChange={this.handleChange.bind(this)}
+            placeholder={this.props.proArr[this.props.index - 1]}>
           </input>
+
         </span>
-         {this.props.index === "5" ? <button onClick={() => this.handleChange.bind(this)}>Test</button> : ""}
       </div>
     )
   }
@@ -105,12 +128,20 @@ class IndividualMealComponent extends Component {
 
 function mapStateToProps(state) {
   return {
-    caloriesArr: state.caloriesArr
+    caloriesArr:    state.caloriesArr,
+    fatArr:         state.fatArr,
+    proArr:         state.proArr,
+    carbArr:        state.carbArr
   }
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({setCaloriesArray}, dispatch)
+  return bindActionCreators({
+    setCaloriesArray,
+    setCarbArray,
+    setFatArray,
+    setProArray
+  }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(IndividualMealComponent);

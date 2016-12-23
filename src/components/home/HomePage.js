@@ -3,6 +3,8 @@ import { Link } from 'react-router';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import setCalories from "../../actions/setCalories";
+import setWeight from "../../actions/setWeight";
+import setAge from "../../actions/setAge";
 
 class HomePage extends Component {
   constructor(props) {
@@ -28,10 +30,10 @@ class HomePage extends Component {
     this.setState({ AGE: e.target.value});
   }
 
-  setDetailsOnClick() {
-    console.log("TDEE =>" + this.state.TDEE);
-    console.log("Weight =>" + this.state.WEIGHT);
-    console.log("Age =>" + this.state.AGE);
+  setStatsOnClick() {
+    this.props.setCalories(this.state.TDEE);
+    this.props.setAge(this.state.AGE);
+    this.props.setWeight(this.state.WEIGHT);
   }
 
   render() {
@@ -42,7 +44,6 @@ class HomePage extends Component {
           <div className="home-title">
             <h1>Welcome To Fit-Tools</h1>
             <h3>Enter Your Details to Get Started</h3>
-            { this.state.TDEE.length === 4 ? console.log("TDEE is set at: " + this.state.TDEE) : console.log("")}
           </div>
 
 
@@ -51,7 +52,11 @@ class HomePage extends Component {
               <span className="input-row-label">TDEE</span>
             </div>
             <div className="col-xs-7 text-left">
-              <input type="text"  className="input-home" placeholder="TDEE" onChange={this.setTDEE.bind(this)} />
+              <input
+                type="text"
+                className="input-home"
+                placeholder={this.props.TDEE ? this.props.TDEE : "TDEE" }
+                onChange={this.setTDEE.bind(this)} />
             </div>
           </div>
 
@@ -60,7 +65,11 @@ class HomePage extends Component {
               <span className="input-row-label">WEIGHT</span>
             </div>
             <div className="col-xs-7 text-left">
-              <input type="text"  className="input-home" placeholder="LBS" onChange={this.setWeight.bind(this)} />
+              <input
+                type="text"
+                className="input-home"
+                placeholder={this.props.WEIGHT ? this.props.WEIGHT : "LBS" }
+                onChange={this.setWeight.bind(this)} />
             </div>
           </div>
 
@@ -69,14 +78,17 @@ class HomePage extends Component {
               <span className="input-row-label">AGE</span>
             </div>
             <div className="col-xs-7 text-left">
-              <input type="text"  className="input-home" placeholder="AGE" onChange={this.setAge.bind(this)}/>
+              <input type="text"
+                className="input-home"
+                placeholder={this.props.AGE ? this.props.AGE : "AGE" }
+                onChange={this.setAge.bind(this)}/>
             </div>
 
             <div className="row input-home-row">
               <Link
                 to="/tools"
                 className="btn home-button"
-                onClick={() => this.props.setCalories(this.state.TDEE)}
+                onClick={() => this.setStatsOnClick()}
               >To Tools!</Link>
             </div>
 
@@ -93,12 +105,18 @@ class HomePage extends Component {
 function mapStateToProps(state) {
   return {
     calories: state.calories,
-    TDEE: state.TDEE
+    TDEE: state.TDEE,
+    WEIGHT: state.WEIGHT,
+    AGE: state.AGE
   }
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({setCalories: setCalories}, dispatch)
+  return bindActionCreators({
+    setCalories,
+    setAge,
+    setWeight
+  }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
