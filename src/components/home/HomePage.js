@@ -78,15 +78,18 @@ class HomePage extends Component {
     var obj = this;
     return (
       <div className="container">
-        <div className="alert alert-danger text-center">
+        {this.isValid() ? "" :
+          <div className="alert alert-danger text-center">
            <strong>Site Currently Under Development!</strong>
              Explore and Play Around with the App! More Features to Come! Here's a <a href="https://goo.gl/1B4gij" target="_blank"><strong>LINK</strong></a> to my github repo if you want to check out the code <i className="fa fa-smile-o" aria-hidden="true"></i>
         </div>
+
+      }
         <div className="well-form text-center">
 
           <div className="home-title">
-            <h1>{this.isValid() ? "You Have Already Set Your Details!":"Welcome To Fit-Tools"}</h1>
-            <h3>{this.isValid() ? "You Can Reset Your Details Here": "Enter Your Details to Get Started"}</h3>
+            <h1>{this.isValid() ? "Here Are Your Details!":"Welcome To Fit-Tools"}</h1>
+            <h3>{this.isValid() ? "You Will Be Able To Reset You Details Here In App....(button)": "Enter Your Details to Get Started"}</h3>
           </div>
 
 
@@ -104,9 +107,9 @@ class HomePage extends Component {
                 onChange={this.setTDEE.bind(this)}
                  />
 
-              {this.props.TDEE ?
+               {this.state.TDEE || this.props.TDEE ?
                 <i className="fa fa-check-circle-o" aria-hidden="true"></i> :
-                  <i className="fa fa-question-circle-o" aria-hidden="true"></i>
+                  <i className="fa fa-times-circle-o" aria-hidden="true"></i>
               }
             </div>
           </div>
@@ -123,7 +126,10 @@ class HomePage extends Component {
                 ref="weight"
                 placeholder={this.props.WEIGHT ? this.props.WEIGHT : "" }
                 onChange={this.setWeight.bind(this)} />
-              {this.props.WEIGHT ? <i className="fa fa-check-circle-o"  aria-hidden="true"></i> : ""}
+              {this.state.WEIGHT || this.props.WEIGHT ?
+                <i className="fa fa-check-circle-o"  aria-hidden="true"></i> :
+                  <i className="fa fa-times-circle-o" aria-hidden="true"></i>
+              }
             </div>
           </div>
 
@@ -139,7 +145,7 @@ class HomePage extends Component {
                 placeholder={this.props.AGE ? this.props.AGE : "" }
                 onChange={this.setAge.bind(this)}/>
 
-              {this.props.AGE ? <i className="fa fa-check-circle-o" aria-hidden="true"></i>: ""}
+              {this.state.AGE || this.props.AGE ? <i className="fa fa-check-circle-o" aria-hidden="true"></i>:   <i className="fa fa-times-circle-o" aria-hidden="true"></i>}
             </div>
 
 

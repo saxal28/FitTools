@@ -11,15 +11,26 @@ import carbArr from "./setMacrosMealArray/setCarbArrayReducer";
 import fatArr from "./setMacrosMealArray/setFatArrayReducer";
 import proArr from "./setMacrosMealArray/setProArrayReducer";
 
+import totalCal from "./setMacrosTotals/setTotalCalReducer";
+import totalCarb  from "./setMacrosTotals/setTotalCarbReducer"
+import totalFat from "./setMacrosTotals/setTotalFatReducer"
+import totalPro  from "./setMacrosTotals/setTotalProReducer"
+
 const rootReducer = combineReducers({
   calories,
   TDEE,
   WEIGHT,
   AGE,
+
   caloriesArr,
   carbArr,
   fatArr,
-  proArr
+  proArr,
+
+  totalCal,
+  totalCarb,
+  totalFat,
+  totalPro
 });
 
 export default rootReducer;

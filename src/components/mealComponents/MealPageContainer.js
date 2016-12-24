@@ -38,7 +38,7 @@ class MealPageContainer extends Component {
 
           <div className="col-sm-6">
             {this.state.numberOfMeals.map((x, index) => <IndividualMealComponent index={x} key={index} /> )}
-            <MealAdjusterComponent info={this.props.calories.calories} TDEE={this.props.TDEE} />
+            <MealAdjusterComponent info={this.props.calories.calories} TDEE={this.props.TDEE} totalCal={this.props.totalCal}/>
           </div>
 
           <div className="col-sm-6">
@@ -114,7 +114,12 @@ function mapStateToProps(state) {
     caloriesArr: state.caloriesArr,
     carbArr:state.carbArr,
     fatArr: state.fatArr,
-    proArr: state.proArr
+    proArr: state.proArr,
+
+    totalCal: state.totalCal,
+    totalCarb: state.totalCarb,
+    totalFat: state.totalFat,
+    totalPro: state.totalPro
 
   }
 }

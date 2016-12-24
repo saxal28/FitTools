@@ -182,10 +182,15 @@ svg {
 .fa {
   font-size:2em;
   margin-left:9px;
+  color:white;
+}
+
+.fa-times-circle-o {
+  color:red
 }
 
 .fa-check-circle-o {
-  color:green;
+  color:green
 }
 
 input[type=checkbox] {
@@ -199,7 +204,8 @@ input[type=checkbox] {
     to { background-color: rgb(56,91,159); color:white;}
 }
 
+
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: green;
+  color: black;
   opacity:1;
 }

@@ -1,10 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+
 import setCaloriesArray from "../../actions/setMacrosMealArray/setCaloriesArr";
 import setFatArray from "../../actions/setMacrosMealArray/setFatArr";
 import setCarbArray from "../../actions/setMacrosMealArray/setCarbArr";
 import setProArray from "../../actions/setMacrosMealArray/setProArr";
+
+import setCalTotal from "../../actions/setMacrosTotals/setCalTotal";
+import setCarbTotal from "../../actions/setMacrosTotals/setCarbTotal";
+import setFatTotal from "../../actions/setMacrosTotals/setFatTotal";
+import setProTotal from "../../actions/setMacrosTotals/setProTotal";
+
 
 
 class IndividualMealComponent extends Component {
@@ -12,7 +19,7 @@ class IndividualMealComponent extends Component {
     super(props)
 
     this.state = {
-      allCals: [],
+      allCal: [],
       allCarb: [],
       allFat: [],
       allPro: [],
@@ -37,7 +44,7 @@ class IndividualMealComponent extends Component {
         let fatArr = [];
         let proArr = [];
 
-        let totalCalories = 0;
+        let totalCal = 0;
         let totalCarb = 0;
         let totalPro = 0;
         let totalFat = 0;
@@ -51,20 +58,20 @@ class IndividualMealComponent extends Component {
           fatArr.push(fatInputs[i].value);
           proArr.push(proInputs[i].value);
 
-          totalCalories += Number(calorieInputs[i].value);
+          totalCal += Number(calorieInputs[i].value);
           totalCarb += Number(carbInputs[i].value);
           totalFat += Number(fatInputs[i].value);
           totalPro += Number(proInputs[i].value);
 
         }
 
-    //push caloriesArr and totalCalories to state;
+    //push caloriesArr and totalCal to state;
         this.setState({
-          allCals: caloriesArr,
+          allCal: caloriesArr,
           allCarb: carbArr,
           allFat: fatArr,
           allPro: proArr,
-          totalCal: totalCalories,
+          totalCal: totalCal,
           totalCarb,
           totalFat,
           totalPro
@@ -77,10 +84,16 @@ class IndividualMealComponent extends Component {
     var obj = this;
     setTimeout(function() {
       obj.getAllMacros();
-      obj.props.setCaloriesArray(obj.state.allCals);
+      obj.props.setCaloriesArray(obj.state.allCal);
       obj.props.setCarbArray(obj.state.allCarb);
       obj.props.setFatArray(obj.state.allFat);
       obj.props.setProArray(obj.state.allPro);
+
+      obj.props.setCalTotal(obj.state.totalCal);
+      obj.props.setCarbTotal(obj.state.totalCarb);
+      obj.props.setFatTotal(obj.state.totalFat);
+      obj.props.setProTotal(obj.state.totalPro);
+
 
     }, 5)
   }
@@ -140,7 +153,13 @@ function mapDispatchToProps(dispatch) {
     setCaloriesArray,
     setCarbArray,
     setFatArray,
-    setProArray
+    setProArray,
+
+    setCalTotal,
+    setCarbTotal,
+    setFatTotal,
+    setProTotal
+    
   }, dispatch)
 }
 

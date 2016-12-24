@@ -18,7 +18,14 @@ class TestPage extends Component {
          <h4>Age set at the beginning: {this.props.AGE}</h4>
           <br />
             <h4>Calories Array as followed: { this.props.caloriesArr.map((x) => x+" " ) }</h4>
-            <h4>Carbs Array as followed: { this.props.carbArr.map((x) => x+" " ) }</h4>
+            <h4>Carbs Array as followed: { this.props.carbArr.map((x) => x+" " ) }</h4><br />
+
+          <h4>Total Cal is: {this.props.totalCal}</h4>
+          <h4>Total Carb is: {this.props.totalCarb}</h4>
+          <h4>Total Fat is: {this.props.totalFat}</h4>
+          <h4>Total Pro is: {this.props.totalPro}</h4>
+
+
 
 
        </div>
@@ -32,8 +39,14 @@ function mapStateToProps(state) {
     TDEE: state.TDEE,
     WEIGHT:state.WEIGHT,
     AGE:state.AGE,
+    
     caloriesArr: state.caloriesArr,
-    carbArr: state.carbArr
+    carbArr: state.carbArr,
+
+    totalCal: state.totalCal,
+    totalCarb: state.totalCarb,
+    totalFat: state.totalFat,
+    totalPro: state.totalPro
   }
 }
 
