@@ -30,7 +30,7 @@ class TdeeCalculator extends Component {
               </div>
               <div className="col-sm-6">
                 <h1>Your TDEE is...</h1>
-                <h2>TDEE</h2>
+                <h1 className="type-green">{this.props.TDEE}</h1>
 
                 <Link to="/tools" className="btn home-button">To Tools!</Link>
               </div>

@@ -193,6 +193,14 @@ svg {
   color:green
 }
 
+.type-red {
+  color:red;
+}
+
+.type-green {
+  color:green;
+}
+
 input[type=checkbox] {
   color:orange;
   margin:5px;

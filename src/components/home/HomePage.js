@@ -75,7 +75,7 @@ class HomePage extends Component {
   }
 
   render() {
-    var obj = this;
+
     return (
       <div className="container">
         {this.isValid() ? "" :
@@ -88,7 +88,7 @@ class HomePage extends Component {
         <div className="well-form text-center">
 
           <div className="home-title">
-            <h1>{this.isValid() ? "Here Are Your Details!":"Welcome To Fit-Tools"}</h1>
+            <h1>{this.isValid() ? "Here Are Your Details!":"Welcome To FitTools"}</h1>
             <h3>{this.isValid() ? "You Will Be Able To Reset You Details Here In App....(button)": "Enter Your Details to Get Started"}</h3>
           </div>
 
