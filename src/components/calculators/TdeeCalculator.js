@@ -17,15 +17,14 @@ class TdeeCalculator extends Component {
 
             <div className="row">
               <div className="col-sm-6 text-center">
-                <InputRow label="Age: " placeholder={this.props.AGE}/>
-                <InputRow label="Height: "/>
-                <InputRow label="Weight: " placeholder={this.props.WEIGHT}/>
+                <InputRow label="Age: " placeholder={this.props.AGE} id="AGE" />
+                <InputRow label="Height: " placeholder={this.props.HEIGHT} id="HEIGHT"/>
+                <InputRow label="Weight: " placeholder={this.props.WEIGHT} id="WEIGHT"/>
                 <SelectRow
                   label="Activity Level: "
-                  option1="none"
-                  option2="casual"
-                  option3="moderate"
-                  option4="extreme"
+                  option1="none" value1={0.30}
+                  option2="moderate" value2={0.50}
+                  option3="heavy" value3={1}
                 />
               </div>
               <div className="col-sm-6">
@@ -47,7 +46,8 @@ function mapStateToProps(state) {
   return {
     TDEE: state.TDEE,
     WEIGHT: state.WEIGHT,
-    AGE: state.AGE
+    AGE: state.AGE,
+    HEIGHT: state.HEIGHT
   }
 }
 

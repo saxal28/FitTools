@@ -3,8 +3,10 @@ import ReactDOM from "react-dom";
 import { Link } from 'react-router';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+
 import setCalories from "../../actions/setCalories";
 import setWeight from "../../actions/setWeight";
+import setHeight from "../../actions/setHeight";
 import setAge from "../../actions/setAge";
 
 class HomePage extends Component {
@@ -14,7 +16,8 @@ class HomePage extends Component {
     this.state = {
       TDEE: "",
       WEIGHT: "",
-      AGE: ""
+      AGE: "",
+      HEIGHT: ""
     }
     // bind functions
   }
@@ -31,14 +34,19 @@ class HomePage extends Component {
     this.setState({ AGE: e.target.value});
   }
 
+  setHeight(e) {
+    this.setState({ HEIGHT: e.target.value })
+  }
+
   setStatsOnClick() {
     this.props.setCalories(this.state.TDEE);
     this.props.setAge(this.state.AGE);
     this.props.setWeight(this.state.WEIGHT);
+    this.props.setHeight(this.state.HEIGHT);
   }
 
   isValid() {
-    if (this.props.TDEE && this.props.WEIGHT && this.props.AGE) {
+    if (this.props.TDEE && this.props.WEIGHT && this.props.AGE && this.props.HEIGHT) {
       return true
     } else {
       return false
@@ -64,7 +72,7 @@ class HomePage extends Component {
     //trying to change value but it isnt rerendering....
     if(this.isValid()) {
     const that = this
-      const references=["tdee", "weight","age"]
+      const references=["tdee", "weight","height","age"]
       references.forEach(function(ref) {
         let element = ReactDOM.findDOMNode(that.refs[ref]);
         element.setAttribute("disabled", "true");
@@ -147,14 +155,30 @@ class HomePage extends Component {
 
               {this.state.AGE || this.props.AGE ? <i className="fa fa-check-circle-o" aria-hidden="true"></i>:   <i className="fa fa-times-circle-o" aria-hidden="true"></i>}
             </div>
+          </div>
+
+          <div className="row">
+            <div className="col-xs-5 text-right">
+              <span className="input-row-label">HEIGHT(in)</span>
+            </div>
+            <div className="col-xs-7 text-left">
+              <input type="text"
+                className="input-home"
+                id="HEIGHT-input"
+                ref="height"
+                placeholder={this.props.HEIGHT ? this.props.HEIGHT : "" }
+                onChange={this.setHeight.bind(this)}/>
+
+              {this.state.HEIGHT || this.props.HEIGHT ? <i className="fa fa-check-circle-o" aria-hidden="true"></i>:   <i className="fa fa-times-circle-o" aria-hidden="true"></i>}
+            </div>
+          </div>
 
 
-            <div className="row input-home-row">
+            <div className="row paded">
                 {this.renderButton()}
                 {console.log(this.isValid())}
             </div>
 
-          </div>
 
 
         </div>
@@ -169,6 +193,7 @@ function mapStateToProps(state) {
     calories: state.calories,
     TDEE: state.TDEE,
     WEIGHT: state.WEIGHT,
+    HEIGHT: state.HEIGHT,
     AGE: state.AGE
   }
 }
@@ -177,7 +202,8 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     setCalories,
     setAge,
-    setWeight
+    setWeight,
+    setHeight
   }, dispatch)
 }
 

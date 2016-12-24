@@ -5,6 +5,7 @@ import  calories  from "./TestReducer";
 import TDEE from "./setMacros/setCaloriesReducer";
 import WEIGHT from "./setMacros/setWeightReducer";
 import AGE from "./setMacros/setAgeReducer";
+import HEIGHT from "./setMacros/setHeightReducer";
 
 import caloriesArr from "./setMacrosMealArray/setCaloriesArrayReducer";
 import carbArr from "./setMacrosMealArray/setCarbArrayReducer";
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
   calories,
   TDEE,
   WEIGHT,
+  HEIGHT,
   AGE,
 
   caloriesArr,
