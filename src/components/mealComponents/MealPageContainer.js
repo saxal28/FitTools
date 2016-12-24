@@ -38,10 +38,10 @@ class MealPageContainer extends Component {
 
           <div className="col-sm-6">
             {this.state.numberOfMeals.map((x, index) => <IndividualMealComponent index={x} key={index} /> )}
+            <MealAdjusterComponent info={this.props.calories.calories} TDEE={this.props.TDEE} />
           </div>
 
           <div className="col-sm-6">
-            <MealAdjusterComponent info={this.props.calories.calories} TDEE={this.props.TDEE} />
 
             <div className="row">
               <div className="col-sm-6">

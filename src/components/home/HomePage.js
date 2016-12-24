@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import { Link } from 'react-router';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -36,27 +37,56 @@ class HomePage extends Component {
     this.props.setWeight(this.state.WEIGHT);
   }
 
-  toggleIcon(i) {
-    const icon = document.body.querySelectorAll(".fa");
-    console.log(icon)
-    // if(icon.style.color === "green") {
-    //   icon.style.color ="white";
-    // } else {
-    //   icon.style.color="green";
-    // }
+  isValid() {
+    if (this.props.TDEE && this.props.WEIGHT && this.props.AGE) {
+      return true
+    } else {
+      return false
+    }
+  }
+
+  renderButton() {
+    if (this.isValid()) {
+      return <Link to="/tools" className="btn home-button">To Tools!</Link>
+
+    } else {
+      return (
+        <Link
+        to="/tools"
+        className="btn home-button"
+        onClick={() => this.setStatsOnClick()}
+      >To Tools!</Link>
+      )
+    }
+  }
+
+  componentDidMount() {
+    //trying to change value but it isnt rerendering....
+    if(this.isValid()) {
+    const that = this
+      const references=["tdee", "weight","age"]
+      references.forEach(function(ref) {
+        let element = ReactDOM.findDOMNode(that.refs[ref]);
+        element.setAttribute("disabled", "true");
+      })
+
+    }
+
   }
 
   render() {
+    var obj = this;
     return (
       <div className="container">
         <div className="alert alert-danger text-center">
-           <strong>Site Currently Under Development!</strong> Explore and Play Around with the App! More Features to Come! Here's a <a href="https://goo.gl/1B4gij" target="_blank"><strong>LINK</strong></a> to my github repo if you want to check out the code <i className="fa fa-smile-o" aria-hidden="true"></i>
+           <strong>Site Currently Under Development!</strong>
+             Explore and Play Around with the App! More Features to Come! Here's a <a href="https://goo.gl/1B4gij" target="_blank"><strong>LINK</strong></a> to my github repo if you want to check out the code <i className="fa fa-smile-o" aria-hidden="true"></i>
         </div>
         <div className="well-form text-center">
 
           <div className="home-title">
-            <h1>Welcome To Fit-Tools</h1>
-            <h3>Enter Your Details to Get Started</h3>
+            <h1>{this.isValid() ? "You Have Already Set Your Details!":"Welcome To Fit-Tools"}</h1>
+            <h3>{this.isValid() ? "You Can Reset Your Details Here": "Enter Your Details to Get Started"}</h3>
           </div>
 
 
@@ -68,9 +98,16 @@ class HomePage extends Component {
               <input
                 type="text"
                 className="input-home"
-                placeholder={this.props.TDEE ? this.props.TDEE : "TDEE" }
-                onChange={this.setTDEE.bind(this)} />
-              {this.props.TDEE ? <i className="fa fa-check-circle-o" onClick={this.toggleIcon(0)} aria-hidden="true"></i>: ""}
+                id="TDEE-input"
+                ref="tdee"
+                placeholder={this.props.TDEE ? this.props.TDEE : "" }
+                onChange={this.setTDEE.bind(this)}
+                 />
+
+              {this.props.TDEE ?
+                <i className="fa fa-check-circle-o" aria-hidden="true"></i> :
+                  <i className="fa fa-question-circle-o" aria-hidden="true"></i>
+              }
             </div>
           </div>
 
@@ -82,9 +119,11 @@ class HomePage extends Component {
               <input
                 type="text"
                 className="input-home"
-                placeholder={this.props.WEIGHT ? this.props.WEIGHT : "LBS" }
+                id="WEIGHT-input"
+                ref="weight"
+                placeholder={this.props.WEIGHT ? this.props.WEIGHT : "" }
                 onChange={this.setWeight.bind(this)} />
-                {this.props.WEIGHT ? <i className="fa fa-check-circle-o"  aria-hidden="true"></i>: ""}
+              {this.props.WEIGHT ? <i className="fa fa-check-circle-o"  aria-hidden="true"></i> : ""}
             </div>
           </div>
 
@@ -95,17 +134,18 @@ class HomePage extends Component {
             <div className="col-xs-7 text-left">
               <input type="text"
                 className="input-home"
-                placeholder={this.props.AGE ? this.props.AGE : "AGE" }
+                id="AGE-input"
+                ref="age"
+                placeholder={this.props.AGE ? this.props.AGE : "" }
                 onChange={this.setAge.bind(this)}/>
+
               {this.props.AGE ? <i className="fa fa-check-circle-o" aria-hidden="true"></i>: ""}
             </div>
 
+
             <div className="row input-home-row">
-              <Link
-                to="/tools"
-                className="btn home-button"
-                onClick={() => this.setStatsOnClick()}
-              >To Tools!</Link>
+                {this.renderButton()}
+                {console.log(this.isValid())}
             </div>
 
           </div>

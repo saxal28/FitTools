@@ -35,7 +35,7 @@ nav {
 .well-form {
   padding: 30px 10%;
   /*background:rgba(255,255,255,0.6);*/
-  width: 60%;
+
   max-width:1000px;
   min-width:330px;
   margin: 8% auto;
@@ -86,6 +86,17 @@ a:hover {
   text-align:center;
   margin-right:7px;
   margin-left:3px;
+}
+
+.input-select {
+  background:white;
+  padding-left:10px;
+  margin: 10px 0px;
+  margin-bottom: 20px;
+  height:50px;
+  width: 150px;
+  font-size:25px;
+  color:black;
 }
 
 .input-home {
@@ -168,9 +179,13 @@ svg {
   margin: 0 auto;
 }
 
-.fa-check-circle-o {
+.fa {
   font-size:2em;
   margin-left:9px;
+}
+
+.fa-check-circle-o {
+  color:green;
 }
 
 input[type=checkbox] {
@@ -182,4 +197,9 @@ input[type=checkbox] {
 @keyframes buttons {
     from {background-color: white; }
     to { background-color: rgb(56,91,159); color:white;}
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: green;
+  opacity:1;
 }
