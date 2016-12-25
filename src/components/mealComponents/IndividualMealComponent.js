@@ -12,7 +12,7 @@ import setCarbTotal from "../../actions/setMacrosTotals/setCarbTotal";
 import setFatTotal from "../../actions/setMacrosTotals/setFatTotal";
 import setProTotal from "../../actions/setMacrosTotals/setProTotal";
 
-
+import { color1, color2 } from "../common/customColors"
 
 class IndividualMealComponent extends Component {
   constructor(props) {
@@ -98,61 +98,83 @@ class IndividualMealComponent extends Component {
     }, 5)
   }
 
+  componentDidMount() {
+    //trying to change value but it isnt rerendering....
+    // if() {
+    // const that = this
+    //   const references=["tdee", "weight","height","age"]
+    //   references.forEach(function(ref) {
+    //     let element = ReactDOM.findDOMNode(that.refs[ref]);
+    //     element.setAttribute("disabled", "true");
+    //   })
+    //
+    // }
+
+  }
+
   render() {
     return (
-      <div className="well-black meal text-center">
+      <div className="well-clear meal text-center">
 
         <div className="row">
-
-          <div className="col-xs-3">
-
-            <input
-              type="text"
-              className="macros-input cal"
-              placeholder={this.props.caloriesArr[this.props.index - 1]}
-              onChange={this.handleChange.bind(this)}>
-            </input>
-
+          <div className="col-xs-2">
+            <h6 className="meal-color-label">{this.props.index}</h6>
           </div>
 
-          <div className="col-xs-3">
+          <div className="col-xs-10">
 
-            <input
-              type="text"
-              className="macros-input carb"
-              onChange={this.handleChange.bind(this)}
-              placeholder={this.props.carbArr[this.props.index - 1]}>
+            <div className="row">
 
-            </input>
+              <div className="col-xs-3">
+
+                <input
+                  type="text"
+                  className="macros-input cal"
+                  placeholder={this.props.caloriesArr[this.props.index - 1]}
+                  onChange={this.handleChange.bind(this)}>
+                </input>
+
+              </div>
+
+              <div className="col-xs-3">
+
+                <input
+                  type="text"
+                  className="macros-input carb"
+                  onChange={this.handleChange.bind(this)}
+                  placeholder={this.props.carbArr[this.props.index - 1]}>
+
+                </input>
+
+              </div>
+
+              <div className="col-xs-3">
+
+                <input
+                  type="text"
+                  className="macros-input fat"
+                  onChange={this.handleChange.bind(this)}
+                  placeholder={this.props.fatArr[this.props.index - 1]}>
+                </input>
+
+              </div>
+
+              <div className="col-xs-3">
+
+                <input
+                  type="text"
+                  className="macros-input pro"
+                  onChange={this.handleChange.bind(this)}
+                  placeholder={this.props.proArr[this.props.index - 1]}>
+                </input>
+
+              </div>
+
+              </div>
+
 
           </div>
-
-          <div className="col-xs-3">
-
-            <input
-              type="text"
-              className="macros-input fat"
-              onChange={this.handleChange.bind(this)}
-              placeholder={this.props.fatArr[this.props.index - 1]}>
-            </input>
-
-          </div>
-
-          <div className="col-xs-3">
-
-            <input
-              type="text"
-              className="macros-input pro"
-              onChange={this.handleChange.bind(this)}
-              placeholder={this.props.proArr[this.props.index - 1]}>
-            </input>
-
-          </div>
-
-          </div>
-
-
-
+        </div>
 
       </div>
     )

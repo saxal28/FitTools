@@ -38,14 +38,13 @@ class MealPageContainer extends Component {
 
           <div className="col-sm-6">
             <LabelRow title="Label"/>
-            {this.state.numberOfMeals.map((x, index) => <IndividualMealComponent index={x} key={index} /> )}
-            <MealAdjusterComponent info={this.props.calories.calories} TDEE={this.props.TDEE} totalCal={this.props.totalCal}/>
+            {this.state.numberOfMeals.map((name, index) => <IndividualMealComponent index={name} key={index} /> )}
           </div>
 
           <div className="col-sm-6">
-
+              <MealAdjusterComponent info={this.props.calories.calories} TDEE={this.props.TDEE} totalCal={this.props.totalCal}/>
             <div className="row">
-              <div className="col-xs-6">
+              <div className="col-sm-3 col-xs-6">
                 <MealChart
                   mealValue1={Number(this.props.caloriesArr[0])}
                   mealValue2={Number(this.props.caloriesArr[1])}
@@ -53,10 +52,10 @@ class MealPageContainer extends Component {
                   mealValue4={Number(this.props.caloriesArr[3])}
                   mealValue5={Number(this.props.caloriesArr[4])}
                   mealValue6={Number(this.props.caloriesArr[5])}
-                  title="Calorie Breakdown"
+                  title="Calories"
                 />
               </div>
-              <div className="col-xs-6">
+              <div className="col-sm-3 col-xs-6">
                 <MealChart
                   mealValue1={Number(this.props.carbArr[0])}
                   mealValue2={Number(this.props.carbArr[1])}
@@ -64,14 +63,11 @@ class MealPageContainer extends Component {
                   mealValue4={Number(this.props.carbArr[3])}
                   mealValue5={Number(this.props.carbArr[4])}
                   mealValue6={Number(this.props.carbArr[5])}
-                  title="Carb Breakdown"
+                  title="Carbs"
                 />
               </div>
 
-            </div>
-
-            <div className="row">
-              <div className="col-xs-6">
+              <div className="col-sm-3 col-xs-6">
                 <MealChart
                   mealValue1={Number(this.props.fatArr[0])}
                   mealValue2={Number(this.props.fatArr[1])}
@@ -79,10 +75,10 @@ class MealPageContainer extends Component {
                   mealValue4={Number(this.props.fatArr[3])}
                   mealValue5={Number(this.props.fatArr[4])}
                   mealValue6={Number(this.props.fatArr[5])}
-                  title="Fat Breakdown"
+                  title="Fats"
                 />
               </div>
-              <div className="col-xs-6">
+              <div className="col-sm-3 col-xs-6">
                 <MealChart
                   mealValue1={Number(this.props.proArr[0])}
                   mealValue2={Number(this.props.proArr[1])}
@@ -90,7 +86,7 @@ class MealPageContainer extends Component {
                   mealValue4={Number(this.props.proArr[3])}
                   mealValue5={Number(this.props.proArr[4])}
                   mealValue6={Number(this.props.proArr[5])}
-                  title='Protein Breakdown'
+                  title='Protein'
                 />
               </div>
 

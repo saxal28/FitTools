@@ -4,9 +4,8 @@ import ReactDOM from "react-dom";
 export default class InputRow extends React.Component {
 
   componentDidMount() {
-    //trying to change value but it isnt rerendering....
+    //GETS INPUTS AND DISABLES THEM IF VALUE EXISTS
     if(this.props.placeholder) {
-        const that = this
         let element = ReactDOM.findDOMNode(this.refs[this.props.id]);
         element.setAttribute("disabled", "true");
   }

@@ -13,11 +13,13 @@ export default class MealAdjusterComponent extends React.Component {
   render() {
     return (
       <div>
-        <div className="well-black text-center">
-          <h4>Calories Allotted: {this.props.TDEE ? this.props.TDEE : 2000}</h4>
-          Calories Spent: {this.isGreaterThanTDEE() ? <h1 className="type-red">{this.props.totalCal}</h1> : <h1 className="type-green">{this.props.totalCal}</h1> }
-          <button className="btn btn-secondary">Add Meal</button>
-          <button className="btn btn-secondary">Remove Meal </button>
+        <div className="well-clear text-right white-border-top-margin">
+          <span className="input-row-label">Calories Allotted: {this.props.TDEE ? this.props.TDEE : 2000}</span><br />
+          <span className="input-row-label">Calories Spent: </span> {this.isGreaterThanTDEE() ? <span className="input-row-label type-red"> {this.props.totalCal}</span> : <span className="input-row-label type-green">{this.props.totalCal}</span> } <br/>
+          <div className="row text-center">
+            <button className="btn custom-button">Add Meal</button>
+            <button className="btn custom-button">Remove Meal </button>
+          </div>
         </div>
       </div>
     )
