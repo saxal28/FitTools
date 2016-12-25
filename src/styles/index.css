@@ -62,7 +62,6 @@ nav {
   color: white;
   padding:5px 20px;
   /*margin-bottom: 20px;*/
-  max-width:500px;
 }
 
 .well-form {
@@ -113,20 +112,26 @@ a:hover {
 }
 
 .white-border-top-margin {
-  margin-top:6%;
-  border:1px solid white;
+  margin-top:20%;
+  border:3px solid white;
+  box-shadow: 3px 3px 3px #333;
+
 }
 
 
 .input-select {
-  background:white;
+
   padding-left:10px;
   margin: 10px 0px;
   margin-bottom: 20px;
   height:50px;
   width: 150px;
   font-size:25px;
-  color:black;
+  background:transparent;
+  color:white;
+  border:2px solid white;
+  border-left:2px solid gray;
+  border-top: 2px solid gray;
 }
 
 .input-home {
@@ -135,8 +140,9 @@ a:hover {
   height:50px;
   width: 150px;
   font-size:25px;
-  color:black;
-  text-align:center
+  color:white;
+  text-align:center;
+  background:transparent;
 }
 
 .input-home-row {
@@ -261,7 +267,7 @@ input[type=checkbox] {
 
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: black;
+  color: white;
   opacity:1;
 }
 
@@ -271,14 +277,17 @@ and (max-device-width : 667px)
 and (orientation : portrait) {
 
   .input-select {
-    background:white;
     padding-left:10px;
     margin: 10px 0px;
     margin-bottom: 20px;
     height:50px;
     width: 100px;
     font-size:25px;
-    color:black;
+    background:transparent;
+    color:white;
+    border:2px solid white;
+    border-left:2px solid gray;
+    border-top: 2px solid gray;
   }
 
   .input-home {
@@ -287,7 +296,7 @@ and (orientation : portrait) {
     height:50px;
     width: 100px;
     font-size:20px;
-    color:black;
+    color:white;
     text-align:center
   }
 
@@ -301,6 +310,12 @@ and (orientation : portrait) {
     width: 44px;
   }
 
+
+  .white-border-top-margin {
+    margin-top:20px;
+    margin-bottom:20px;
+    border:1px solid white;
+  }
 
 
 }
