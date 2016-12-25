@@ -101,39 +101,59 @@ class IndividualMealComponent extends Component {
   render() {
     return (
       <div className="well-black meal text-center">
-        <span className="pull-left"><strong className="meal-title">Mea1 {this.props.index}</strong></span>
-        <span>
 
-          Calories <input
-            type="text"
-            className="macros-input cal"
-            placeholder={this.props.caloriesArr[this.props.index - 1]}
-            onChange={this.handleChange.bind(this)}>
-          </input>
+        <div className="row">
 
-          Carbs <input
-            type="text"
-            className="macros-input carb"
-            onChange={this.handleChange.bind(this)}
-            placeholder={this.props.carbArr[this.props.index - 1]}>
+          <div className="col-xs-3">
 
-          </input>
+            <input
+              type="text"
+              className="macros-input cal"
+              placeholder={this.props.caloriesArr[this.props.index - 1]}
+              onChange={this.handleChange.bind(this)}>
+            </input>
 
-          Fat <input
-            type="text"
-            className="macros-input fat"
-            onChange={this.handleChange.bind(this)}
-            placeholder={this.props.fatArr[this.props.index - 1]}>
-          </input>
+          </div>
 
-          Protein <input
-            type="text"
-            className="macros-input pro"
-            onChange={this.handleChange.bind(this)}
-            placeholder={this.props.proArr[this.props.index - 1]}>
-          </input>
+          <div className="col-xs-3">
 
-        </span>
+            <input
+              type="text"
+              className="macros-input carb"
+              onChange={this.handleChange.bind(this)}
+              placeholder={this.props.carbArr[this.props.index - 1]}>
+
+            </input>
+
+          </div>
+
+          <div className="col-xs-3">
+
+            <input
+              type="text"
+              className="macros-input fat"
+              onChange={this.handleChange.bind(this)}
+              placeholder={this.props.fatArr[this.props.index - 1]}>
+            </input>
+
+          </div>
+
+          <div className="col-xs-3">
+
+            <input
+              type="text"
+              className="macros-input pro"
+              onChange={this.handleChange.bind(this)}
+              placeholder={this.props.proArr[this.props.index - 1]}>
+            </input>
+
+          </div>
+
+          </div>
+
+
+
+
       </div>
     )
   }
@@ -159,8 +179,10 @@ function mapDispatchToProps(dispatch) {
     setCarbTotal,
     setFatTotal,
     setProTotal
-    
+
   }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(IndividualMealComponent);
+
+  // <span className="pull-left"><strong className="meal-title">Mea1 {this.props.index}</strong></span>

@@ -8,9 +8,9 @@ import { connect } from "react-redux";
 
 // child components
 import Navbar from "../common/Navbar";
+import LabelRow from "../common/LabelRow"
 import MealAdjusterComponent from "./MealAdjusterComponent";
 import IndividualMealComponent from "./IndividualMealComponent";
-// import SummaryMealComponent from "./SummaryMealComponent";
 import MealChart from "./MealChart";
 
 class MealPageContainer extends Component {
@@ -37,6 +37,7 @@ class MealPageContainer extends Component {
         <div className="row">
 
           <div className="col-sm-6">
+            <LabelRow title="Label"/>
             {this.state.numberOfMeals.map((x, index) => <IndividualMealComponent index={x} key={index} /> )}
             <MealAdjusterComponent info={this.props.calories.calories} TDEE={this.props.TDEE} totalCal={this.props.totalCal}/>
           </div>

@@ -6,7 +6,7 @@ export default class MealChart extends Component {
   render() {
     return (
       <div className="text-center">
-        <h2>{this.props.title}</h2>
+        <h3>{this.props.title}</h3>
         <PieChart
             slices={[
               {
