@@ -8,10 +8,11 @@ import { connect } from "react-redux";
 
 // child components
 import Navbar from "../common/Navbar";
-import LabelRow from "../common/LabelRow"
+import LabelRow from "../common/LabelRow";
+import MealChart from "../common/MealChart";
+
 import MealAdjusterComponent from "./MealAdjusterComponent";
 import IndividualMealComponent from "./IndividualMealComponent";
-import MealChart from "./MealChart";
 
 class MealPageContainer extends Component {
   constructor(props) {

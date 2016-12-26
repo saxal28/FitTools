@@ -10,6 +10,8 @@ export default function Navbar() {
       {" | "}
       <Link to="/tools/meal-planner" activeClassName="active">Meal Planner</Link>
       {" | "}
+      <Link to="/tools/meal-stats" activeClassName="active">Meal Stats</Link>
+      {" | "}
       <Link to="/tools/test-page" activeClassName="active">Test-Page</Link>
       {" | "}
       <Link to="/tools/tdee-calculator" activeClassName="active">TDEE Calculator</Link>

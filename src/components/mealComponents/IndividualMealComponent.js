@@ -12,7 +12,7 @@ import setCarbTotal from "../../actions/setMacrosTotals/setCarbTotal";
 import setFatTotal from "../../actions/setMacrosTotals/setFatTotal";
 import setProTotal from "../../actions/setMacrosTotals/setProTotal";
 
-import { color1, color2 } from "../common/customColors"
+// import { color1, color2 } from "../common/customColors"
 
 class IndividualMealComponent extends Component {
   constructor(props) {
