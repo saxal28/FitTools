@@ -181,6 +181,15 @@ a:hover {
   margin-botton: 10px;
 }
 
+.smaller {
+  width:75px;
+}
+
+.input-success {
+  border: 2px solid rgb(63,135,27);
+  border-right: 2px solid rgb(114,189,43);
+  border-bottom: 2px solid rgb(114,189,43);
+}
 .input-row-label {
     font-size:25px;
     line-height:65px;

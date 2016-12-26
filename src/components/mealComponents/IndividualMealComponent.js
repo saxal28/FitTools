@@ -21,11 +21,11 @@ class IndividualMealComponent extends Component {
     this.state = {
       allCal: [],
       allCarb: [],
-      allFat: [],
+      fatAll: [],
       allPro: [],
 
       totalCal: 0,
-      totalFat: 0,
+      fatTotal: 0,
       totalCarb: 0,
       totalPro: 0
     }
@@ -47,7 +47,7 @@ class IndividualMealComponent extends Component {
         let totalCal = 0;
         let totalCarb = 0;
         let totalPro = 0;
-        let totalFat = 0;
+        let fatTotal = 0;
 
     //loops through calorieInputs and extracts value
     //saves to caloriesArr
@@ -60,7 +60,7 @@ class IndividualMealComponent extends Component {
 
           totalCal += Number(calorieInputs[i].value);
           totalCarb += Number(carbInputs[i].value);
-          totalFat += Number(fatInputs[i].value);
+          fatTotal += Number(fatInputs[i].value);
           totalPro += Number(proInputs[i].value);
 
         }
@@ -69,11 +69,11 @@ class IndividualMealComponent extends Component {
         this.setState({
           allCal: caloriesArr,
           allCarb: carbArr,
-          allFat: fatArr,
+          fatAll: fatArr,
           allPro: proArr,
           totalCal: totalCal,
           totalCarb,
-          totalFat,
+          fatTotal,
           totalPro
         });
 
@@ -86,12 +86,12 @@ class IndividualMealComponent extends Component {
       obj.getAllMacros();
       obj.props.setCaloriesArray(obj.state.allCal);
       obj.props.setCarbArray(obj.state.allCarb);
-      obj.props.setFatArray(obj.state.allFat);
+      obj.props.setFatArray(obj.state.fatAll);
       obj.props.setProArray(obj.state.allPro);
 
       obj.props.setCalTotal(obj.state.totalCal);
       obj.props.setCarbTotal(obj.state.totalCarb);
-      obj.props.setFatTotal(obj.state.totalFat);
+      obj.props.setFatTotal(obj.state.fatTotal);
       obj.props.setProTotal(obj.state.totalPro);
 
 

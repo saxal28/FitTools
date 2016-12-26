@@ -1,50 +1,78 @@
 import React, { Component } from "react";
 //reusable components
-import Navbar from "../common/Navbar";
-import InputRow from "../common/InputRow";
-
 import { Link } from "react-router";
 import { connect } from "react-redux";
+import { bindActionCreators } from 'redux';
+
+import setCalories from "../../actions/setCalories";
+import setWeight from "../../actions/setWeight";
+import setHeight from "../../actions/setHeight";
+import setAge from "../../actions/setAge";
 
 class TdeeCalculator extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      gender: "male", //did you just assume my gender?,
-      age: 0,
-      height: 0,
-      weight: 0,
-      activityLevel: 0.3,
-      localTDEE: null
+      GENDER: "male", //did you just assume my GENDER?,
+      AGE: null,
+      HEIGHT: null,
+      WEIGHT: null,
+      ACTIVITY_LEVEL: 1.2,
+      TDEE: null
     }
   }
 
-  updateStats(gender, activityLevel) {
-    this.calculateTDEE();
+  updateGender(e) {
+    this.setState({ GENDER : e.target.value })
+  }
 
-    this.setState({
-      gender,
-      activityLevel
-    })
+  updateActivityLevel(e) {
+    this.setState({ ACTIVITY_LEVEL : e.target.value })
+  }
 
+  updateAge(e) {
+    this.setState({ AGE: e.target.value })
+  }
+
+  updateHeight(e) {
+    this.setState({ HEIGHT : e.target.value })
+  }
+
+  updateWeight(e) {
+    this.setState({ WEIGHT: e.target.value })
   }
 
   calculateTDEE() {
-    const WEIGHT =  this.props.WEIGHT ? this.props.WEIGHT : this.state.weight;
-    const AGE =  23;
-    const HEIGHT = 60;
-    const ACTIVITY_LEVEL = this.state.activityLevel;
-    var localTDEE = 0;
-    if (this.state.gender === "male") {
-      localTDEE = (66 + 13.7 * WEIGHT + 5 * HEIGHT - 6.8 * AGE) * ACTIVITY_LEVEL;
-    } else if (this.state.gender === "female") {
-      localTDEE = (655 + 9.6 * WEIGHT + 1.8 * HEIGHT - 4.7 * AGE) * ACTIVITY_LEVEL;
-    }
+    const that = this;
+    var TDEE = 0;
+    setTimeout(function() {
+      const WEIGHT =  that.state.WEIGHT * 0.45359237;
+      const AGE =  that.state.AGE;
+      const HEIGHT = that.state.HEIGHT * 2.54;
+      const ACTIVITY_LEVEL = that.state.ACTIVITY_LEVEL;
+      if (that.state.GENDER === "male") {
+        // let BEE = 66 + 13.7 * WEIGHT + 5 * HEIGHT - 6.8 * AGE;
+        let BEE = 66 + (13.7  * WEIGHT) + (5 * HEIGHT) - (6.8 * AGE);
+        TDEE = BEE * ACTIVITY_LEVEL;
+      } else if (that.state.GENDER === "female") {
+        let BEE = (655) + (9.6 * WEIGHT) + (1.8 * HEIGHT) - (4.7 * AGE);
+        TDEE = BEE * ACTIVITY_LEVEL;
+      }
+      console.log(TDEE)
 
-    console.log(localTDEE, this.state.gender);
-    this.setState({localTDEE})
+      that.setState({TDEE: Math.floor(TDEE)})
+      that.setStats();
 
+    }, 5)
+
+  }
+
+  setStats() {
+    this.props.setCalories(this.state.TDEE);
+    this.props.setHeight(this.state.HEIGHT);
+    this.props.setWeight(this.state.WEIGHT);
+    this.props.setAge(this.state.AGE);
   }
 
   componentDidMount() {
@@ -54,25 +82,65 @@ class TdeeCalculator extends Component {
   render() {
     return (
       <div>
-        <Navbar />
         <div className="container">
           <div className="well-form text-center">
 
             <div className="row">
               <div className="col-sm-6 text-center">
-                <InputRow label="Age: " placeholder={this.props.AGE} id="AGE"/>
-                <InputRow label="Height: " placeholder={this.props.HEIGHT} id="HEIGHT"/>
-                <InputRow label="Weight: " placeholder={this.props.WEIGHT} id="WEIGHT"/>
+                <div className="row">
+                  <div className="col-xs-6 text-right">
+                    <span className="input-row-label">Weight</span>
+                  </div>
+                  <div className="col-xs-6 text-left">
+                    <input
+                      ref={this.props.id}
+                      type="text"
+                      className="input-home"
+                      onChange={this.updateWeight.bind(this)}
+                      placeholder={this.props.placeholder ? this.props.placeholder : ""}
+                       />
+
+                  </div>
+                </div>
 
                 <div className="row">
                   <div className="col-xs-6 text-right">
-                    <span className="input-row-label">Gender: </span>
+                    <span className="input-row-label">Height</span>
+                  </div>
+                  <div className="col-xs-6 text-left">
+                    <input
+                      ref={this.props.id}
+                      type="text"
+                      className="input-home input-success"
+                      onChange={this.updateHeight.bind(this)}
+                      placeholder={this.props.placeholder ? this.props.placeholder : ""}
+                       />
+                  </div>
+                </div>
+
+                <div className="row">
+                  <div className="col-xs-6 text-right">
+                    <span className="input-row-label">Age</span>
+                  </div>
+                  <div className="col-xs-6 text-left">
+                    <input
+                      ref={this.props.id}
+                      type="text"
+                      className="input-home"
+                      onChange={this.updateAge.bind(this)}
+                      placeholder={this.props.placeholder ? this.props.placeholder : ""}
+                       />
+                  </div>
+                </div>
+
+                <div className="row">
+                  <div className="col-xs-6 text-right">
+                    <span className="input-row-label">Gender</span>
                   </div>
                   <div className="col-xs-6 text-left">
                     <select
                       className="input-select"
-                      onChange={() => this.updateStats(document.body.querySelectorAll("select")[0].value, document.body.querySelectorAll("select")[1].value )}
-                      defaultValue="male"
+                      onChange={this.updateGender.bind(this)}
                       >
                       <option value="male">Male</option>
                       <option value="female">Female</option>
@@ -82,14 +150,18 @@ class TdeeCalculator extends Component {
 
                 <div className="row">
                   <div className="col-xs-6 text-right">
-                    <span className="input-row-label">Activity Level: </span>
+                    <span className="input-row-label">Activity Level</span>
                   </div>
                   <div
                     className="col-xs-6 text-left">
-                    <select className="input-select" defaultValue="0.3" onChange={() => this.updateStats(document.body.querySelectorAll("select")[0].value, document.body.querySelectorAll("select")[1].value)}>
-                      <option value={0.30}>None</option>
-                      <option value={0.50}>Moderate</option>
-                      <option value={1}>Heavy</option>
+                    <select
+                      className="input-select"
+                      onChange={this.updateActivityLevel.bind(this)}
+                      defaultValue="0.3">
+                      <option value={1.2}>None</option>
+                      <option value={1.375}>Light</option>
+                      <option value={1.55}>Moderate</option>
+                      <option value={1.725}>Heavy</option>
                     </select>
                   </div>
                 </div>
@@ -97,9 +169,12 @@ class TdeeCalculator extends Component {
               </div>
               <div className="col-sm-6">
                 <h1>Your TDEE is...</h1>
-                <h1 className="type-green">{this.props.TDEE ? this.props.TDEE : this.state.localTDEE}</h1>
-
-                <Link to="/tools" className="btn home-button">To Tools!</Link>
+                <h1 className="type-green">{this.state.TDEE}</h1>
+                <button
+                  className="btn custom-button"
+                  onClick={this.calculateTDEE.bind(this)}
+                  >Calculate</button>
+                <Link to="/tools" className="btn custom-button">To Tools!</Link>
               </div>
             </div>
 
@@ -119,4 +194,13 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(TdeeCalculator);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    setCalories,
+    setAge,
+    setWeight,
+    setHeight
+  }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(TdeeCalculator);

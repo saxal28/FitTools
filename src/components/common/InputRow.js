@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 
 export default class InputRow extends React.Component {
 
+
   componentDidMount() {
     //GETS INPUTS AND DISABLES THEM IF VALUE EXISTS
     if(this.props.placeholder) {

@@ -176,7 +176,7 @@ class HomePage extends Component {
 
             <div className="row paded">
                 {this.renderButton()}
-                {console.log(this.isValid())}
+                {this.state.TDEE || this.props.TDEE ? "" : <Link to="/tools/tdee-calculator" className="btn custom-button">What is TDEE ?</Link> }
             </div>
 
 
