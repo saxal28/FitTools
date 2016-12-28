@@ -2,6 +2,20 @@ import React, { Component } from "react";
 import MealChart from "../common/MealChart";
 import { connect } from "react-redux";
 
+import Divider from 'material-ui/Divider';
+import Paper from 'material-ui/Paper';
+import TextField from 'material-ui/TextField';
+import SelectField from "material-ui/SelectField";
+import MenuItem from 'material-ui/MenuItem';
+
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+
+const style = {
+  marginLeft: "8px"
+}
+
 class MealStatsContainer extends Component {
   constructor(props) {
     super(props)
@@ -134,8 +148,32 @@ class MealStatsContainer extends Component {
 
           </div>
 
+          <div className="row">
+            <div className="col-sm-6">
+
+              <MuiThemeProvider  muiTheme={getMuiTheme(darkBaseTheme)}>
+              <Paper zDepth={2}>
+                <span className="input-row-label">Hello</span><TextField hintText="First name"  underlineShow={false}  floatingLabelText="Calories" style={style} />
+                <Divider />
+                <TextField underlineShow={false} style={style} placeholder={this.props.caloriesArr[this.state.index]} />
+                <Divider />
+                <TextField hintText="Last name" underlineShow={false} floatingLabelText="Fat" style={style} />
+                <Divider />
+                <TextField hintText="Email address"  underlineShow={false} floatingLabelText="Protein" style={style} />
+                <Divider />
+              </Paper>
+              </MuiThemeProvider>
+
+            </div>
+            <div className="col-sm-6">
+
+            </div>
+          </div>
+
+
         </div>
-        {console.log(typeof this.props.carbArr[1])}
+
+
     </div>
     )
   }

@@ -86,13 +86,7 @@ class HomePage extends Component {
 
     return (
       <div className="container">
-        {this.isValid() ? "" :
-          <div className="alert alert-danger text-center">
-           <strong>Site Currently Under Development!</strong>
-             Explore and Play Around with the App! More Features to Come! Here's a <a href="https://goo.gl/1B4gij" target="_blank"><strong>LINK</strong></a> to my github repo if you want to check out the code <i className="fa fa-smile-o" aria-hidden="true"></i>
-        </div>
 
-      }
         <div className="well-form text-center">
 
           <div className="home-title">
@@ -178,6 +172,14 @@ class HomePage extends Component {
                 {this.renderButton()}
                 {this.state.TDEE || this.props.TDEE ? "" : <Link to="/tools/tdee-calculator" className="btn custom-button">What is TDEE ?</Link> }
             </div>
+
+            {this.isValid() ? "" :
+              <div className="alert alert-danger text-center">
+               <strong>Site Currently Under Development!</strong>
+                 Explore and Play Around with the App! More Features to Come! Heres a <a href="https://goo.gl/1B4gij" target="_blank"><strong>LINK</strong></a> to my github repo if you want to check out the code <i className="fa fa-smile-o" aria-hidden="true"></i>
+              </div>
+
+          }
 
 
 

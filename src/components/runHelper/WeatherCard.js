@@ -1,6 +1,5 @@
 import React from "react";
-import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
+import {Card, CardHeader, CardText} from 'material-ui/Card';
 
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -8,42 +7,50 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 const WeatherCard = (props) => (
   <MuiThemeProvider  muiTheme={getMuiTheme(darkBaseTheme)}>
-  <Card>
-    <CardHeader
-      subtitle="Run Helper"
-      actAsExpander={true}
-      showExpandableButton={true}
-    >
-      <div className="weather-box">
-        <h3>Weather</h3>
-        <h2>{props.temp}</h2>
-        <p>It is too cold outside to run!</p>
-      </div>
+      <Card>
+        <CardHeader
+          subtitle="Run Helper"
+          actAsExpander={true}
+          showExpandableButton={true}
+        >
+          <div className="weather-box">
+            <h3>Weather</h3>
+            <h2 className="weather-text type-green">{props.temp}</h2>
+            <p>It is too cold outside to run!</p>
+          </div>
 
-    </CardHeader>
-    <CardActions>
-      <FlatButton label="Action1" />
-      <FlatButton label="Action2" />
-    </CardActions>
-    <CardText expandable={true}>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-      Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-      Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+        </CardHeader>
+        <CardText expandable={true}>
+          <h3>This is going to be a google map of the area</h3>
+          <p>Maybe highlight running/cycling paths</p>
+          <img src="http://www.madmanblog.com/wp-content/uploads/2012/08/Rome-Google-Map.jpg" className="img-responsive" role="presentation" />
 
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi. Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque. Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi. Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque. Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+          <h3>This is going to be a recommended clothing guide based on weather conditions</h3>
 
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi. Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque. Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+          <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi. Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque. Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi. Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque. Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi. Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque. Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi. Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque. Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi. Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque. Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi. Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque. Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+          </p>
 
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi. Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque. Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+          <div className="row">
+            <div className="col-sm-4">
+              <img src="http://www.madmanblog.com/wp-content/uploads/2012/08/Rome-Google-Map.jpg" className="img-responsive" role="presentation"/>
+            </div>
+            <div className="col-sm-4">
+              <img src="http://www.madmanblog.com/wp-content/uploads/2012/08/Rome-Google-Map.jpg" className="img-responsive" role="presentation"/>
+            </div>
+            <div className="col-sm-4">
+              <img src="http://www.madmanblog.com/wp-content/uploads/2012/08/Rome-Google-Map.jpg" className="img-responsive" role="presentation"/>
+            </div>
+          </div>
 
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi. Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque. Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+        </CardText>
+      </Card>
 
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi. Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque. Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
-
-    </CardText>
-  </Card>
   </MuiThemeProvider>
 );
 

@@ -263,6 +263,12 @@ a:hover {
   text-align: center;
   margin: 0 auto;
 }
+
+.weather-text {
+  font-size:4em;
+  font-weight:bold;
+  padding:10px;
+}
 /*the pie chart*/
 svg {
   width:100%;
@@ -365,5 +371,7 @@ and (orientation : portrait) {
     box-shadow: 3px 3px 3px #333;
   }
 
-
+  .container {
+    padding:0px;
+  }
 }

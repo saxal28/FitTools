@@ -26,11 +26,13 @@ class TestPage extends Component {
     super(props)
 
     this.state = {
-      value: 1
+      value: 1,
+      text1: ""
     }
   }
 
   handleSelectChange = (event, index, value) => this.setState({value});
+  handleTextChange = (e) => this.setState({text1: e.target.value})
 
   render() {
    return (
@@ -59,7 +61,7 @@ class TestPage extends Component {
           <RaisedButton
             label="Test Button"
             onTouchTap={() => alert(this.props.TDEE)}
-            />
+            /> <br />
 
             <SelectField
               floatingLabelText="Frequency"
@@ -72,14 +74,16 @@ class TestPage extends Component {
               <MenuItem value={4} primaryText="Weekends" />
               <MenuItem value={5} primaryText="Weekly" />
             </SelectField>
+            <br />
+
+            <br />
+            <h1>{this.state.text1}</h1>
 
             <Paper zDepth={3}>
+              <TextField hintText="First name" style={style} underlineShow={false} fullWidth={true} onChange={this.handleTextChange.bind(this)}/>
               <TextField hintText="First name" style={style} underlineShow={false} fullWidth={true}/>
               <TextField hintText="First name" style={style} underlineShow={false} fullWidth={true}/>
               <TextField hintText="First name" style={style} underlineShow={false} fullWidth={true}/>
-              <TextField hintText="First name" style={style} underlineShow={false} fullWidth={true}/>
-
-
               <Divider />
               <TextField hintText="Middle name" style={style} underlineShow={false} />
               <Divider />
