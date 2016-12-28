@@ -29,7 +29,7 @@ export default class DrawerNavbar extends React.Component {
   render() {
     return (
       <MuiThemeProvider  muiTheme={getMuiTheme(darkBaseTheme)}>
-        <div>
+        <div className="text-center">
           <div className="text-left">
             <FlatButton
               label=""

@@ -374,4 +374,11 @@ and (orientation : portrait) {
   .container {
     padding:0px;
   }
+
+  .home-title h1 {
+    font-size: 2.07em;
+  }
+  /*h3 {
+    font-size: 1.5em;
+  }*/
 }
