@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import Navbar from "../common/Navbar";
-
 import MealChart from "../common/MealChart";
 import { connect } from "react-redux";
 
@@ -20,7 +18,6 @@ class MealStatsContainer extends Component {
       index: Number(newMeal) - 1
     })
   }
-
 
   renderWarning() {
     return (

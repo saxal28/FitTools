@@ -1,9 +1,6 @@
 import React, { Component } from "react";
-import Navbar from "../common/Navbar";
-import DrawerNavbar from "../common/DrawerNavbar";
-
-import GettingStartedGoogleMap from "../common/GettingStartedGoogleMap";
-import Map from 'react-google-maps'
+import axios from "axios";
+import WeatherCard from "./WeatherCard";
 
 export default class RunHelper extends Component {
   constructor(props) {
@@ -12,7 +9,8 @@ export default class RunHelper extends Component {
     this.state = {
       lat: "",
       lon: "",
-      zipcode: ""
+      zipcode: "",
+      temp: ""
     }
   }
   componentWillMount() {
@@ -30,36 +28,33 @@ export default class RunHelper extends Component {
   componentDidMount() {
     var that=this
     setTimeout(function() {
-      that.renderWeather();
-    }, 500)
+      that.getWeatherData();
+    }, 400)
   }
 
-  renderWeather() {
-    alert("weather rendered")
+  getWeatherData() {
+    const that = this
+    const apiKey = "b699364186b2a6bb52a189466dd68ed0"
+    let url = 'http://api.openweathermap.org/data/2.5/weather?lat='+that.state.lat.toString()+'&lon='+that.state.lon.toString()+"&appid="+apiKey;
+
+    axios.get(url)
+    .then(function(response) {
+    response = response.data.main;
+    console.log(response)
+      let temp = Math.floor(response.temp * 9 / 5 - 459.67);
+      that.setState({
+        temp
+      })
+    })
+    .catch(function(err) {
+      console.log(url)
+    })
   }
 
   render(){
     return (
-      <div>
-
-      <div className="text-center">
-
-      </div>
-
       <div className="container">
-
-
-        <div className="row">
-          <div className="col-xs-6">
-            <h1>lat: {this.state.lat}</h1>
-            <h1>lon: {this.state.lon}</h1>
-          </div>
-          <div className="col-xs-6">
-
-          </div>
-        </div>
-
-      </div>
+        <WeatherCard temp={this.state.temp}/>
       </div>
     )
   }

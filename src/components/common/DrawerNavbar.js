@@ -3,12 +3,12 @@ import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
-import Divider from "material-ui/Divider";
 
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
 
 import { Link } from "react-router"
 
@@ -27,7 +27,7 @@ export default class DrawerNavbar extends React.Component {
       <MuiThemeProvider  muiTheme={getMuiTheme(darkBaseTheme)}>
         <div>
           <div className="text-left">
-            <RaisedButton
+            <FlatButton
               label="X"
               onTouchTap={this.handleToggle}
             />
@@ -40,9 +40,8 @@ export default class DrawerNavbar extends React.Component {
             onRequestChange={(open) => this.setState({open})}
           >
             <MenuItem><Link to="/">My Stats</Link></MenuItem>
-            <Divider />
             <MenuItem><Link to="/tools">Tools</Link></MenuItem>
-            <Divider />
+            <MenuItem><Link to="/tools/test-page">Test Page</Link></MenuItem>
             <MenuItem><Link to="/tools/meal-planner">Meal Planner</Link></MenuItem>
             <MenuItem><Link to="/tools/meal-stats" activeClassName="active">Meal Stats</Link></MenuItem>
             <MenuItem><Link to="/tools/run-helper" activeClassName="active">Run Helper</Link></MenuItem>

@@ -1,17 +1,43 @@
 import React, { Component } from "react";
-import Navbar from "../common/Navbar";
 import { connect } from "react-redux"
-import MyAwesomeReactComponent from "../common/TestMaterialUi";
-import DrawerNavbar from "../common/DrawerNavbar";
+
+import RaisedButton from 'material-ui/RaisedButton';
+import SelectField from "material-ui/SelectField";
+import MenuItem from 'material-ui/MenuItem';
+
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+
+import Divider from 'material-ui/Divider';
+import Paper from 'material-ui/Paper';
+import TextField from 'material-ui/TextField';
+
+const style = {
+  width:"24%",
+  marginLeft : "5px",
+  textAlign: "center",
+  paddingLeft:"10px",
+  fontSize:"20px"
+};
 
 class TestPage extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      value: 1
+    }
+  }
+
+  handleSelectChange = (event, index, value) => this.setState({value});
+
   render() {
    return (
      <div>
-
+       <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
 
        <div className="container text-center">
-            <DrawerNavbar />
          <h1>This is the test page</h1>
          <h4>Lets do some tests for redux here</h4>
 
@@ -30,7 +56,41 @@ class TestPage extends Component {
           <h4>Total Fat is: {this.props.totalFat}</h4>
           <h4>Total Pro is: {this.props.totalPro}</h4>
 
-       </div>
+          <RaisedButton
+            label="Test Button"
+            onTouchTap={() => alert(this.props.TDEE)}
+            />
+
+            <SelectField
+              floatingLabelText="Frequency"
+              value={this.state.value}
+              onChange={this.handleSelectChange}
+            >
+              <MenuItem value={1} primaryText="Never" />
+              <MenuItem value={2} primaryText="Every Night" />
+              <MenuItem value={3} primaryText="Weeknights" />
+              <MenuItem value={4} primaryText="Weekends" />
+              <MenuItem value={5} primaryText="Weekly" />
+            </SelectField>
+
+            <Paper zDepth={3}>
+              <TextField hintText="First name" style={style} underlineShow={false} fullWidth={true}/>
+              <TextField hintText="First name" style={style} underlineShow={false} fullWidth={true}/>
+              <TextField hintText="First name" style={style} underlineShow={false} fullWidth={true}/>
+              <TextField hintText="First name" style={style} underlineShow={false} fullWidth={true}/>
+
+
+              <Divider />
+              <TextField hintText="Middle name" style={style} underlineShow={false} />
+              <Divider />
+              <TextField hintText="Last name" style={style} underlineShow={false} />
+              <Divider />
+              <TextField hintText="Email address" style={style} underlineShow={false} />
+              <Divider />
+            </Paper>
+            <br />
+        </div>
+      </MuiThemeProvider >
      </div>
    )
   }

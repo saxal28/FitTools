@@ -7,10 +7,8 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 
 // child components
-import Navbar from "../common/Navbar";
 import LabelRow from "../common/LabelRow";
 import MealChart from "../common/MealChart";
-
 import MealAdjusterComponent from "./MealAdjusterComponent";
 import IndividualMealComponent from "./IndividualMealComponent";
 
@@ -40,12 +38,12 @@ class MealPageContainer extends Component {
 
         <div className="row">
 
-          <div className="col-sm-6">
+          <div className="col-sm-12">
             <LabelRow title="Label"/>
             {this.state.numberOfMeals.map((name, index) => <IndividualMealComponent index={name} key={index} /> )}
           </div>
 
-          <div className="col-sm-6">
+          <div className="col-sm-12">
               <MealAdjusterComponent info={this.props.calories.calories} TDEE={this.props.TDEE} totalCal={this.props.totalCal}/>
             <div className="row">
               <div className="col-sm-3 col-xs-6">
