@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Navbar from "../common/Navbar";
+
 import MealChart from "../common/MealChart";
 import { connect } from "react-redux";
 
@@ -32,8 +33,10 @@ class MealStatsContainer extends Component {
   render() {
     return (
       <div>
-        <Navbar />
+
         <div className="container text-center">
+
+
 
           <div className="row">
 

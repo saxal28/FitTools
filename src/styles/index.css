@@ -3,7 +3,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background:url("https://www.walldevil.com/wallpapers/a60/minimalistic-wallpapers-clouds-wallpaper-minimalist-desktop.jpg");
+  background:url("http://media02.hongkiat.com/minimalist-wallpapers/Wooden_Noir_Wallpaper_Pack_by_Shod4n.jpg");
+  /*background:url("https://www.walldevil.com/wallpapers/a60/minimalistic-wallpapers-clouds-wallpaper-minimalist-desktop.jpg");*/
   background-size: cover;
   background-attachment: fixed;
   background-position: bottom;
@@ -15,6 +16,9 @@ nav {
   padding-bottom:50px;
 }
 
+.container {
+  padding-left:10%;
+}
 
 
 .meal-color-label {
@@ -127,7 +131,7 @@ a, a:visited {
   padding-left: 5px;
   color: white;
   text-decoration:none;
-  font-size:18px;
+  font-size:15px;
 }
 
 a:active, a.active {
@@ -292,7 +296,9 @@ svg {
   padding:5px
 }
 
-
+.col-xs-2 {
+  width:auto;
+}
 
 input[type=checkbox] {
   color:orange;

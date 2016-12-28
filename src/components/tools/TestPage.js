@@ -1,13 +1,17 @@
 import React, { Component } from "react";
 import Navbar from "../common/Navbar";
 import { connect } from "react-redux"
+import MyAwesomeReactComponent from "../common/TestMaterialUi";
+import DrawerNavbar from "../common/DrawerNavbar";
 
 class TestPage extends Component {
   render() {
    return (
      <div>
-       <Navbar />
-       <div className="container">
+
+
+       <div className="container text-center">
+            <DrawerNavbar />
          <h1>This is the test page</h1>
          <h4>Lets do some tests for redux here</h4>
 
@@ -25,9 +29,6 @@ class TestPage extends Component {
           <h4>Total Carb is: {this.props.totalCarb}</h4>
           <h4>Total Fat is: {this.props.totalFat}</h4>
           <h4>Total Pro is: {this.props.totalPro}</h4>
-
-
-
 
        </div>
      </div>

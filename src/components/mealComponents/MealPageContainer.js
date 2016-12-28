@@ -14,6 +14,7 @@ import MealChart from "../common/MealChart";
 import MealAdjusterComponent from "./MealAdjusterComponent";
 import IndividualMealComponent from "./IndividualMealComponent";
 
+
 class MealPageContainer extends Component {
   constructor(props) {
     super(props)
@@ -32,9 +33,11 @@ class MealPageContainer extends Component {
     return (
       <div>
 
-      <Navbar />
 
-      <div className="container app">
+
+      <div className="container app ">
+
+
         <div className="row">
 
           <div className="col-sm-6">

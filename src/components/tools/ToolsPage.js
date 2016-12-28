@@ -1,11 +1,12 @@
 import React from "react";
-import Navbar from "../common/Navbar";
+// import Navbar from "../common/Navbar";
+
 import { Link } from "react-router";
 
 export default function MenuPage() {
   return (
     <div>
-      <Navbar />
+
       <div className="container">
         <div className="tools-title">
           <h1>To Get Started...</h1>

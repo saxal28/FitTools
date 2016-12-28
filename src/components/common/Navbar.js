@@ -12,6 +12,8 @@ export default function Navbar() {
       {" | "}
       <Link to="/tools/meal-stats" activeClassName="active">Meal Stats</Link>
       {" | "}
+      <Link to="/tools/run-helper" activeClassName="active">Run Helper</Link>
+      {" | "}
       <Link to="/tools/test-page" activeClassName="active">Test-Page</Link>
 
     </nav>
