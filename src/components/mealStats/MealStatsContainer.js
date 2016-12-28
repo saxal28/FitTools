@@ -13,7 +13,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 const style = {
-  marginLeft: "8px"
+  marginLeft: "8px",
+  fontSize:"30px"
 }
 
 class MealStatsContainer extends Component {
@@ -54,11 +55,11 @@ class MealStatsContainer extends Component {
             <div className="col-sm-6 col-xs-12">
               <div className="well-form-auto white-border-top-margin">
                 <div className="row">
-                  <div className="col-xs-6">
+                  <div className="col-xs-5">
                     <span className="input-row-label">Meals</span>
                   </div>
 
-                  <div className="col-xs-6">
+                  <div className="col-xs-7">
                     <select className="input-select" onChange={() => this.updateMeal(document.body.querySelector("select").value)}>
                       <option value="1">Meal 1</option>
                       <option value="2">Meal 2</option>
@@ -72,11 +73,11 @@ class MealStatsContainer extends Component {
                 </div>
 
                 <div className="row">
-                  <div className="col-xs-6">
+                  <div className="col-xs-5">
                     <span className="input-row-label">Calories</span>
                   </div>
 
-                  <div className="col-xs-6">
+                  <div className="col-xs-7">
                     <input
                       type="text"
                       className="input-home"
@@ -86,11 +87,11 @@ class MealStatsContainer extends Component {
                 </div>
 
                 <div className="row">
-                  <div className="col-xs-6">
+                  <div className="col-xs-5">
                     <span className="input-row-label">Carbs</span>
                   </div>
 
-                  <div className="col-xs-6">
+                  <div className="col-xs-7">
                     <input
                       type="text"
                       className="input-home"
@@ -102,11 +103,11 @@ class MealStatsContainer extends Component {
                 </div>
 
                 <div className="row">
-                  <div className="col-xs-6">
+                  <div className="col-xs-5">
                     <span className="input-row-label">Fats</span>
                   </div>
 
-                  <div className="col-xs-6">
+                  <div className="col-xs-7">
                     <input
                       type="text"
                       className="input-home"
@@ -117,11 +118,11 @@ class MealStatsContainer extends Component {
                 </div>
 
                 <div className="row">
-                  <div className="col-xs-6">
+                  <div className="col-xs-5">
                     <span className="input-row-label">Protein</span>
                   </div>
 
-                  <div className="col-xs-6">
+                  <div className="col-xs-7">
                     <input
                       type="text"
                       className="input-home"
@@ -134,7 +135,7 @@ class MealStatsContainer extends Component {
               </div>
             </div>
 
-            <div className="col-xs-6 col-xs-12">
+            <div className="col-sm-6 col-xs-12">
               <div className="well-form-auto">
                 <MealChart
                   mealValue1={Number(this.props.carbArr[this.state.index])}
@@ -148,27 +149,6 @@ class MealStatsContainer extends Component {
 
           </div>
 
-          <div className="row">
-            <div className="col-sm-6">
-
-              <MuiThemeProvider  muiTheme={getMuiTheme(darkBaseTheme)}>
-              <Paper zDepth={2}>
-                <span className="input-row-label">Hello</span><TextField hintText="First name"  underlineShow={false}  floatingLabelText="Calories" style={style} />
-                <Divider />
-                <TextField underlineShow={false} style={style} placeholder={this.props.caloriesArr[this.state.index]} />
-                <Divider />
-                <TextField hintText="Last name" underlineShow={false} floatingLabelText="Fat" style={style} />
-                <Divider />
-                <TextField hintText="Email address"  underlineShow={false} floatingLabelText="Protein" style={style} />
-                <Divider />
-              </Paper>
-              </MuiThemeProvider>
-
-            </div>
-            <div className="col-sm-6">
-
-            </div>
-          </div>
 
 
         </div>

@@ -1,9 +1,9 @@
 body {
-  color:white;
+  color:#333;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background:url("http://media02.hongkiat.com/minimalist-wallpapers/Wooden_Noir_Wallpaper_Pack_by_Shod4n.jpg");
+  /*background:url("http://media02.hongkiat.com/minimalist-wallpapers/Wooden_Noir_Wallpaper_Pack_by_Shod4n.jpg");*/
   /*background:url("https://www.walldevil.com/wallpapers/a60/minimalistic-wallpapers-clouds-wallpaper-minimalist-desktop.jpg");*/
   background-size: cover;
   background-attachment: fixed;
@@ -22,7 +22,7 @@ nav {
 
 
 .meal-color-label {
-  color:white;
+  color:#333;
   font-size:20px;
   font-weight:bold;
   text-shadow: 2px 2px #333;
@@ -49,7 +49,7 @@ nav {
   border-top: 2px solid gray;
   box-shadow: 3px 3px 3px #333;
   background:transparent;
-  color:white;
+  color:#333;
   font-size:17px;
 }
 
@@ -65,7 +65,7 @@ nav {
   border-top: 2px solid gray;
   box-shadow: 3px 3px 3px #333;
   background:transparent;
-  color:white;
+  color:#333;
   font-size:17px;
   line-height: 50px;
 }
@@ -81,7 +81,7 @@ nav {
 }
 
 .well-clear {
-  color: white;
+  color: #333;
   padding:5px 20px;
 }
 
@@ -113,7 +113,7 @@ nav {
   animation-name: buttons;
   animation-duration: 600ms;
   background-color: rgb(56,91,159);
-  color:white;
+  color:#333;
 }
 
 .navbar {
@@ -121,14 +121,14 @@ nav {
   border: none;
 }
 
-a, a:visited {
+/*a, a:visited {
   border: none;
   padding-right:5px;
   padding-left: 5px;
-  color: white;
+  color: #333;
   text-decoration:none;
   font-size:15px;
-}
+}*/
 
 a:active, a.active {
   color:orange;
@@ -136,7 +136,6 @@ a:active, a.active {
 
 a:hover {
   text-decoration: none;
-
 }
 
 .white-border-top-margin {
@@ -159,8 +158,8 @@ a:hover {
   width: 150px;
   font-size:25px;
   background:transparent;
-  color:white;
-  border:2px solid white;
+  color:#333;
+  border:2px solid lightgray;
   border-left:2px solid gray;
   border-top: 2px solid gray;
 }
@@ -171,7 +170,7 @@ a:hover {
   height:50px;
   width: 150px;
   font-size:25px;
-  color:white;
+  color:#333;
   text-align:center;
   background:transparent;
 }
@@ -212,13 +211,12 @@ a:hover {
   margin: 20px 5px;
   height: 50px;
   line-height: 34px;
-  border: 2px solid white;
-  border-right:4px solid black;
-  font-size: 20px;
-}
-
-.home-button:hover {
   color:white;
+  border: 2px solid #333;
+  background:rgb(0, 188, 212);
+  box-shadow: 3px 3px 3px #333;
+  font-size: 20px;
+  font-weight:bold;
 }
 
 .home-title {
@@ -230,6 +228,8 @@ a:hover {
   font-family: "Cabin";
   font-weight: bold;
 }
+
+
 
 .tools-box {
   height: 200px;
@@ -318,7 +318,7 @@ input[type=checkbox] {
 
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: white;
+  color: #333;
   opacity:1;
 }
 
@@ -335,7 +335,7 @@ and (orientation : portrait) {
     width: 100px;
     font-size:25px;
     background:transparent;
-    color:white;
+    color:#333;
     border:2px solid white;
     border-left:2px solid gray;
     border-top: 2px solid gray;
@@ -347,7 +347,7 @@ and (orientation : portrait) {
     height:50px;
     width: 100px;
     font-size:20px;
-    color:white;
+    color:#333;
     text-align:center
   }
 

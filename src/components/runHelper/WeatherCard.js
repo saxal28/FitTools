@@ -1,12 +1,13 @@
 import React from "react";
 import {Card, CardHeader, CardText} from 'material-ui/Card';
+import _ from "lodash"
 
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
+
 
 const WeatherCard = (props) => (
-  <MuiThemeProvider  muiTheme={getMuiTheme(darkBaseTheme)}>
+  <MuiThemeProvider>
       <Card>
         <CardHeader
           subtitle="Run Helper"

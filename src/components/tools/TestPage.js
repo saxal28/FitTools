@@ -5,7 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import SelectField from "material-ui/SelectField";
 import MenuItem from 'material-ui/MenuItem';
 
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+// import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
@@ -18,7 +18,8 @@ const style = {
   marginLeft : "5px",
   textAlign: "center",
   paddingLeft:"10px",
-  fontSize:"20px"
+  fontSize:"20px",
+  background:"transparent"
 };
 
 class TestPage extends Component {
@@ -37,7 +38,7 @@ class TestPage extends Component {
   render() {
    return (
      <div>
-       <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+       <MuiThemeProvider>
 
        <div className="container text-center">
          <h1>This is the test page</h1>
@@ -79,11 +80,8 @@ class TestPage extends Component {
             <br />
             <h1>{this.state.text1}</h1>
 
-            <Paper zDepth={3}>
+            <Paper zDepth={3} style={{background:"transparent"}}>
               <TextField hintText="First name" style={style} underlineShow={false} fullWidth={true} onChange={this.handleTextChange.bind(this)}/>
-              <TextField hintText="First name" style={style} underlineShow={false} fullWidth={true}/>
-              <TextField hintText="First name" style={style} underlineShow={false} fullWidth={true}/>
-              <TextField hintText="First name" style={style} underlineShow={false} fullWidth={true}/>
               <Divider />
               <TextField hintText="Middle name" style={style} underlineShow={false} />
               <Divider />

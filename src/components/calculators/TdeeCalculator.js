@@ -111,7 +111,7 @@ class TdeeCalculator extends Component {
                     <input
                       ref={this.props.id}
                       type="text"
-                      className="input-home input-success"
+                      className="input-home"
                       onChange={this.updateHeight.bind(this)}
                       placeholder={this.props.placeholder ? this.props.placeholder : ""}
                        />
