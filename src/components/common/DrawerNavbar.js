@@ -2,20 +2,14 @@ import React from 'react';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import RaisedButton from 'material-ui/RaisedButton';
-import FlatButton from 'material-ui/FlatButton';
 import AppBar from 'material-ui/AppBar';
 
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import { Link } from "react-router";
 import $ from "jquery";
 injectTapEventPlugin();
 
-const buttonStyles =  {
-  width:"30px",
-  paddingTop:"10px"
-}
 
 export default class DrawerNavbar extends React.Component {
 

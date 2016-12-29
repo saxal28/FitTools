@@ -1,10 +1,7 @@
 import React from "react";
 import {Card, CardHeader, CardText} from 'material-ui/Card';
 import _ from "lodash"
-
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-
 
 const WeatherCard = (props) => (
   <MuiThemeProvider>

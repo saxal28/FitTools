@@ -7,18 +7,9 @@ import { bindActionCreators } from "redux";
 import setCalories from "../../actions/setCalories";
 import setWeight from "../../actions/setWeight";
 import setHeight from "../../actions/setHeight";
-import setAge from "../../actions/setAge"
+import setAge from "../../actions/setAge";
 
-import RaisedButton from 'material-ui/RaisedButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-
-const style = {
-  margin: "20px 5px",
-  height: "50px",
-  lineHeight: "34px",
-  border: "2px solid white",
-  fontSize: "20px"
-}
 
 class HomePage extends Component {
   constructor(props) {

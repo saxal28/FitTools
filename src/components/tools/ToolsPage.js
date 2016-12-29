@@ -1,6 +1,5 @@
 import React from "react";
-import Paper from "material-ui/Paper";
-import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from "material-ui/Card";
+import { Card, CardHeader, CardMedia, CardText } from "material-ui/Card";
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import { Link } from "react-router";
@@ -18,10 +17,10 @@ export default function MenuPage() {
             <div className="row">
 
                 <div className="col-sm-4">
-                  <Link to= "/tools/meal-planner">
+                  <Link to="/tools/meal-planner">
                   <Card>
                     <CardMedia>
-                      <img src="http://www.downgraf.com/wp-content/uploads/2014/09/01-progress.gif"/>
+                      <img src="http://www.downgraf.com/wp-content/uploads/2014/09/01-progress.gif" role="presentation"/>
                     </CardMedia>
                     <CardHeader
                       title="Meal Planner"
@@ -34,10 +33,10 @@ export default function MenuPage() {
                 </div>
 
                 <div className="col-sm-4">
-                  <Link to= "/tools/meal-stats">
+                  <Link to="/tools/meal-stats">
                   <Card>
                     <CardMedia>
-                      <img src="http://www.downgraf.com/wp-content/uploads/2014/09/01-progress.gif"/>
+                      <img src="http://www.downgraf.com/wp-content/uploads/2014/09/01-progress.gif" role="presentation"/>
                     </CardMedia>
                     <CardHeader
                       title="Meal Stats"
@@ -48,10 +47,10 @@ export default function MenuPage() {
                 </div>
 
                 <div className="col-sm-4">
-                  <Link to= "/tools/run-helper">
+                  <Link to="/tools/run-helper">
                   <Card>
                     <CardMedia>
-                      <img src="http://www.downgraf.com/wp-content/uploads/2014/09/01-progress.gif"/>
+                      <img src="http://www.downgraf.com/wp-content/uploads/2014/09/01-progress.gif" role="presentation"/>
                     </CardMedia>
                     <CardHeader
                       title="Run"
@@ -65,10 +64,10 @@ export default function MenuPage() {
                   <div className="row padded">
 
                       <div className="col-sm-4">
-                        <Link to= "">
+                        <Link to="">
                         <Card>
                           <CardMedia>
-                            <img src="http://www.downgraf.com/wp-content/uploads/2014/09/01-progress.gif"/>
+                            <img src="http://www.downgraf.com/wp-content/uploads/2014/09/01-progress.gif" role="presentation"/>
                           </CardMedia>
                           <CardHeader
                             title="Health Breakdown"
