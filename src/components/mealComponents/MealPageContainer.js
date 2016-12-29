@@ -35,7 +35,6 @@ class MealPageContainer extends Component {
 
       <div className="container app ">
 
-
         <div className="row">
 
           <div className="col-sm-12">

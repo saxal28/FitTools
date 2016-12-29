@@ -2,21 +2,6 @@ import React, { Component } from "react";
 import MealChart from "../common/MealChart";
 import { connect } from "react-redux";
 
-import Divider from 'material-ui/Divider';
-import Paper from 'material-ui/Paper';
-import TextField from 'material-ui/TextField';
-import SelectField from "material-ui/SelectField";
-import MenuItem from 'material-ui/MenuItem';
-
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-
-const style = {
-  marginLeft: "8px",
-  fontSize:"30px"
-}
-
 class MealStatsContainer extends Component {
   constructor(props) {
     super(props)

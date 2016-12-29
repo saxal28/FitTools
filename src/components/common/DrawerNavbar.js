@@ -8,7 +8,8 @@ import AppBar from 'material-ui/AppBar';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import { Link } from "react-router"
+import { Link } from "react-router";
+import $ from "jquery";
 injectTapEventPlugin();
 
 const buttonStyles =  {
@@ -25,7 +26,12 @@ export default class DrawerNavbar extends React.Component {
 
   handleToggle = () => this.setState({open: !this.state.open});
 
-
+  componentDidMount() {
+    const width = $(document).width(); // returns width of HTML document
+    if(width < 400) {
+      alert("current width: " + width);
+    }
+  }
 
   render() {
     return (
@@ -38,7 +44,7 @@ export default class DrawerNavbar extends React.Component {
             overlayStyle={{"background":"transparent"}}
             open={this.state.open}
             onRequestChange={(open) => this.setState({open})}
-            swipeAreaWidth="200"
+            swipeAreaWidth={200}
           >
             <Link to="/"><MenuItem>My Stats</MenuItem></Link>
             <Link to="/tools"activeClassName="active"><MenuItem>Tools</MenuItem></Link>

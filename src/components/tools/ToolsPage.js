@@ -60,12 +60,27 @@ export default function MenuPage() {
                   </Card>
                     </Link>
                 </div>
+              </div>
 
+                  <div className="row padded">
 
+                      <div className="col-sm-4">
+                        <Link to= "">
+                        <Card>
+                          <CardMedia>
+                            <img src="http://www.downgraf.com/wp-content/uploads/2014/09/01-progress.gif"/>
+                          </CardMedia>
+                          <CardHeader
+                            title="Health Breakdown"
+                          />
+                        <CardText>
+                          <small>FUTURE FEATURE. It is going to show alot of info like: BMI, charts comparing you against others your age, estimated bodyfat...etc</small>
+                        </CardText>
+                        </Card>
+                          </Link>
+                      </div>
+                    </div>
 
-
-
-            </div>
           </div>
 
         </div>

@@ -66,7 +66,7 @@ class HomePage extends Component {
 
   renderButton() {
     if (this.isValid()) {
-      return <Link to="/tools" className="btn home-button">To Tools!</Link>
+      return <Link to="/tools" className="btn custom-button">To Tools!</Link>
     } else {
       return (
         <Link

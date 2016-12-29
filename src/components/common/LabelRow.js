@@ -6,7 +6,7 @@ export default function LabelRow(props) {
 
     <div className="row">
       <div className="col-xs-2">
-        <h3>Meal</h3>
+        <h3></h3>
       </div>
 
       <div className="col-xs-10">

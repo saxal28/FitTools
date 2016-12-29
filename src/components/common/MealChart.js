@@ -10,7 +10,7 @@ export default class MealChart extends Component {
         <PieChart
             slices={[
               {
-                color: 'rgba(255,255,255,0.5)',
+                color: 'rgba(215,245,250,0.5)',
                 value: this.props.mealValue1,
               },
               {

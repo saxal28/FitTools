@@ -60,7 +60,7 @@ nav {
   margin-right:7px;
   margin-left:3px;
   margin-top:3px;
-  border:2px solid white;
+  border:2px solid lightgray;
   border-left:2px solid gray;
   border-top: 2px solid gray;
   box-shadow: 3px 3px 3px #333;
@@ -138,17 +138,6 @@ a:hover {
   text-decoration: none;
 }
 
-.white-border-top-margin {
-  margin-top:16%;
-  border:1px solid white;
-  border:2px solid white;
-  border-left:2px solid gray;
-  border-top: 2px solid gray;
-  box-shadow: 3px 3px 3px #333;
-
-}
-
-
 .input-select {
 
   padding-left:10px;
@@ -173,6 +162,9 @@ a:hover {
   color:#333;
   text-align:center;
   background:transparent;
+  border:2px solid lightgray;
+  border-left:2px solid gray;
+  border-top: 2px solid gray;
 }
 
 .input-home-row {
@@ -305,6 +297,11 @@ svg {
   width:auto;
 }
 
+ .col-xs-2 > h3 {
+   padding-top:5px;
+   margin-left:60px;
+ }
+
 input[type=checkbox] {
   color:orange;
   margin:5px;
@@ -332,45 +329,42 @@ and (orientation : portrait) {
     margin: 10px 0px;
     margin-bottom: 20px;
     height:50px;
-    width: 100px;
     font-size:25px;
+    width:105px;
     background:transparent;
     color:#333;
-    border:2px solid white;
-    border-left:2px solid gray;
-    border-top: 2px solid gray;
   }
 
   .input-home {
     margin: 10px auto;
     margin-bottom: 20px;
     height:50px;
-    width: 100px;
     font-size:20px;
+    width:105px;
     color:#333;
     text-align:center
   }
 
   .input-row-label {
-      font-size:20px;
+      font-size:16px;
       line-height:75px;
       font-weight: bold;
   }
 
   .meal-color-label {
-    width: 44px;
+    width: 25px;
+    border:none;
+    /*color:white;*/
+    background:white;
+    color:black;
+    text-shadow: 1px 1px #333;
+    box-shadow: none;
+
   }
 
-
-  .white-border-top-margin {
-    margin-top:20px;
-    margin-bottom:20px;
-    border:2px solid white;
-    border-left:2px solid gray;
-    border-top: 2px solid gray;
-    box-shadow: 3px 3px 3px #333;
+  h3 {
+    font-size:12px;
   }
-
   .container {
     padding:0px;
   }
@@ -378,7 +372,18 @@ and (orientation : portrait) {
   .home-title h1 {
     font-size: 2.07em;
   }
-  /*h3 {
-    font-size: 1.5em;
-  }*/
+
+  .row {
+    /*margin-left:0px;*/
+    margin-right:0px;
+  }
+
+  .col-xs-2 {
+    width:40px;
+    margin-left:15px;
+  }
+ .col-xs-2 > h3 {
+   padding-top:5px;
+   margin-left:6px;
+ }
 }

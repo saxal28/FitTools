@@ -15,7 +15,7 @@ export default class MealAdjusterComponent extends React.Component {
       <div>
           <div className="row">
             <div className="col-xs-6 text-right">
-              <span className="input-row-label float-left">Calories Allotted: {this.props.TDEE ? this.props.TDEE : 2000}</span>
+              <span className="input-row-label float-left">Calories Allowed: {this.props.TDEE ? this.props.TDEE : 2000}</span>
             </div>
             <div className="col-xs-6 text-left">
               <span className="input-row-label float-right"> Calories Spent: </span> {this.isGreaterThanTDEE() ? <span className="input-row-label type-red"> {this.props.totalCal}</span> : <span className="input-row-label type-green">{this.props.totalCal}</span> } <br/>
