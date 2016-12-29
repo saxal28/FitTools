@@ -20,13 +20,15 @@ export default function MenuPage() {
                 <div className="col-sm-4">
                   <Link to= "/tools/meal-planner">
                   <Card>
+                    <CardMedia>
+                      <img src="http://www.downgraf.com/wp-content/uploads/2014/09/01-progress.gif"/>
+                    </CardMedia>
                     <CardHeader
                       title="Meal Planner"
-                      subtitle="Plan out or track your meals here. See a breakdown of each meal by macro."
                     />
-                    <CardMedia>
-                      <img src="../../public/images/sea.jpg"/>
-                    </CardMedia>
+                  <CardText>
+                    Plan out or track your meals here. See a breakdown of each meal by macro
+                  </CardText>
                   </Card>
                     </Link>
                 </div>
@@ -34,13 +36,13 @@ export default function MenuPage() {
                 <div className="col-sm-4">
                   <Link to= "/tools/meal-stats">
                   <Card>
+                    <CardMedia>
+                      <img src="http://www.downgraf.com/wp-content/uploads/2014/09/01-progress.gif"/>
+                    </CardMedia>
                     <CardHeader
                       title="Meal Stats"
                       subtitle="See a visual representation of the macros for each meal"
                     />
-                    <CardMedia>
-                      <img src="../../public/images/sea.jpg"/>
-                    </CardMedia>
                   </Card>
                     </Link>
                 </div>
@@ -48,13 +50,13 @@ export default function MenuPage() {
                 <div className="col-sm-4">
                   <Link to= "/tools/run-helper">
                   <Card>
+                    <CardMedia>
+                      <img src="http://www.downgraf.com/wp-content/uploads/2014/09/01-progress.gif"/>
+                    </CardMedia>
                     <CardHeader
                       title="Run"
                       subtitle="Check out the current conditions and other helpful info before your run!"
                     />
-                    <CardMedia>
-                      <img src="../../public/images/sea.jpg"/>
-                    </CardMedia>
                   </Card>
                     </Link>
                 </div>

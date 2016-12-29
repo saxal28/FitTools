@@ -53,7 +53,7 @@ class MealStatsContainer extends Component {
           <div className="row">
 
             <div className="col-sm-6 col-xs-12">
-              <div className="well-form-auto white-border-top-margin">
+              <div className="well-form-auto">
                 <div className="row">
                   <div className="col-xs-5">
                     <span className="input-row-label">Meals</span>

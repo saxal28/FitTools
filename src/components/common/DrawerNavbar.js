@@ -34,10 +34,11 @@ export default class DrawerNavbar extends React.Component {
           <AppBar onLeftIconButtonTouchTap={this.handleToggle.bind(this)} />
           <Drawer
             docked={false}
-            width={150}
+            width={250}
             overlayStyle={{"background":"transparent"}}
             open={this.state.open}
             onRequestChange={(open) => this.setState({open})}
+            swipeAreaWidth="200"
           >
             <Link to="/"><MenuItem>My Stats</MenuItem></Link>
             <Link to="/tools"activeClassName="active"><MenuItem>Tools</MenuItem></Link>
