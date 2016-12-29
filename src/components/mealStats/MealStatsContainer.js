@@ -27,6 +27,10 @@ class MealStatsContainer extends Component {
       )
   }
 
+  handleNextMeal() {
+    this.setState({ index: this.state.index++})
+  }
+
   render() {
     return (
       <div>
@@ -115,6 +119,14 @@ class MealStatsContainer extends Component {
                       disabled
                       /><br />
                   </div>
+                </div>
+
+                <div className="row ">
+                  <button
+                    className="btn custom-button pull-right"
+                    onClick={this.handleNextMeal.bind(this)}
+                    >Next Meal</button>
+                  <button className="btn custom-button pull-left">Previous Meal</button>
                 </div>
 
               </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from "react-dom";
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -15,16 +16,34 @@ export default class DrawerNavbar extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {open: false};
+    this.state = {
+      open: false,
+      notMobile: false
+    };
   }
 
-  handleToggle = () => this.setState({open: !this.state.open});
+  handleToggle () {
+    this.setState({open: !this.state.open});
+  }
+
+  handleMobileDevice() {
+    //this function checks if the screen is mobile size
+    //if mobile size, it hides the drawer menu
+    //else, it keeps the drawer locked
+    const width = $(document).width(); // returns width of HTML document
+    if (width > 400) {
+      this.setState({
+        notMobile : !this.state.notMobile,
+        open : !this.state.open
+      });
+    }
+  }
 
   componentDidMount() {
-    const width = $(document).width(); // returns width of HTML document
-    if(width < 400) {
-      alert("current width: " + width);
-    }
+    const that = this;
+    setTimeout(function() {
+        that.handleMobileDevice();
+    }, 400)
   }
 
   render() {
@@ -32,13 +51,14 @@ export default class DrawerNavbar extends React.Component {
       <MuiThemeProvider>
         <div className="text-center">
           <AppBar onLeftIconButtonTouchTap={this.handleToggle.bind(this)} />
+          {console.log(this.state.mobile)}
           <Drawer
-            docked={false}
             width={250}
+            docked = {this.state.notMobile}
             overlayStyle={{"background":"transparent"}}
             open={this.state.open}
             onRequestChange={(open) => this.setState({open})}
-            swipeAreaWidth={200}
+            ref="navbar"
           >
             <Link to="/"><MenuItem>My Stats</MenuItem></Link>
             <Link to="/tools"activeClassName="active"><MenuItem>Tools</MenuItem></Link>
