@@ -273,12 +273,23 @@ svg {
   color:white;
 }
 
+.fa-plus, .fa-child, .fa-user-md, .fa-graduation-cap {
+  color:red;
+  font-size:35px;
+  margin-right:15px;
+  font-weight:bold;
+}
+
 .fa-times-circle-o {
   color:red
 }
 
 .fa-check-circle-o {
   color:green
+}
+
+.shadow-hover:hover {
+  box-shadow: 2px 2px 2px black;
 }
 
 .type-red {
@@ -306,6 +317,11 @@ input[type=checkbox] {
   color:orange;
   margin:5px;
   width: 30px;
+}
+
+.milk-jug-loader{
+  width:50%;
+  margin: 0 auto;
 }
 
 @keyframes buttons {

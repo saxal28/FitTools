@@ -13,10 +13,20 @@ class MealStatsContainer extends Component {
 
   updateMeal(value) {
     const newMeal = value;
-    console.log(Number(value) - 1)
     this.setState({
       index: Number(newMeal) - 1
     })
+  }
+
+  nextMeal() {
+    if(this.state.index < 5) {
+      const newMeal = this.state.index + 1;
+      this.setState({
+        index: newMeal
+      })
+      const selector = document.querySelector("select");
+      selector.value = this.state.index + 2
+    }
   }
 
   renderWarning() {
@@ -27,20 +37,12 @@ class MealStatsContainer extends Component {
       )
   }
 
-  handleNextMeal() {
-    this.setState({ index: this.state.index++})
-  }
-
   render() {
     return (
       <div>
 
         <div className="container text-center">
-
-
-
           <div className="row">
-
             <div className="col-sm-6 col-xs-12">
               <div className="well-form-auto">
                 <div className="row">
@@ -124,9 +126,9 @@ class MealStatsContainer extends Component {
                 <div className="row ">
                   <button
                     className="btn custom-button pull-right"
-                    onClick={this.handleNextMeal.bind(this)}
-                    >Next Meal</button>
-                  <button className="btn custom-button pull-left">Previous Meal</button>
+                    onClick={() => this.nextMeal()}
+                    >Next Meal
+                  </button>
                 </div>
 
               </div>

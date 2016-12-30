@@ -27,12 +27,13 @@ class IndividualMealComponent extends Component {
       totalCal: 0,
       fatTotal: 0,
       totalCarb: 0,
-      totalPro: 0
+      totalPro: 0,
+
+      saved: true
     }
   }
 
   getAllMacros() {
-
     //extracts all of the values from the inputs
         const calorieInputs = document.body.querySelectorAll(".cal");
         const carbInputs = document.body.querySelectorAll(".carb");
@@ -98,6 +99,10 @@ class IndividualMealComponent extends Component {
     }, 5)
   }
 
+  saveMeal() {
+
+  }
+
   componentDidMount() {
     //trying to change value but it isnt rerendering....
     // if() {
@@ -118,7 +123,10 @@ class IndividualMealComponent extends Component {
 
         <div className="row">
           <div className="col-xs-2">
-            <h6 className="meal-color-label">{this.props.index}</h6>
+            <h6
+              className="meal-color-label"
+              onClick={()=> this.setState({saved: !this.state.saved})}
+              >{this.state.saved ? "✔" : this.props.index}</h6>
           </div>
 
           <div className="col-xs-10">

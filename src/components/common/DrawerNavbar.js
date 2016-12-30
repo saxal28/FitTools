@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from "react-dom";
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -31,7 +30,7 @@ export default class DrawerNavbar extends React.Component {
     //if mobile size, it hides the drawer menu
     //else, it keeps the drawer locked
     const width = $(document).width(); // returns width of HTML document
-    if (width > 400) {
+    if (width > 800) {
       this.setState({
         notMobile : !this.state.notMobile,
         open : !this.state.open
@@ -51,10 +50,9 @@ export default class DrawerNavbar extends React.Component {
       <MuiThemeProvider>
         <div className="text-center">
           <AppBar onLeftIconButtonTouchTap={this.handleToggle.bind(this)} />
-          {console.log(this.state.mobile)}
           <Drawer
-            width={250}
-            docked = {this.state.notMobile}
+            width={150}
+            docked={this.state.notMobile}
             overlayStyle={{"background":"transparent"}}
             open={this.state.open}
             onRequestChange={(open) => this.setState({open})}
@@ -62,6 +60,7 @@ export default class DrawerNavbar extends React.Component {
           >
             <Link to="/"><MenuItem>My Stats</MenuItem></Link>
             <Link to="/tools"activeClassName="active"><MenuItem>Tools</MenuItem></Link>
+            <Link to="/tools/health-status" activeClassName="active"><MenuItem>Health Status</MenuItem></Link>
             <Link to="/tools/test-page"activeClassName="active"><MenuItem>Test Page</MenuItem></Link>
             <Link to="/tools/meal-planner"activeClassName="active"><MenuItem>Meal Planner</MenuItem></Link>
             <Link to="/tools/meal-stats" activeClassName="active"><MenuItem>Meal Stats</MenuItem></Link>

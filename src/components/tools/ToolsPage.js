@@ -14,7 +14,24 @@ export default function MenuPage() {
         </div>
 
           <div className="tools-container">
+            <div className="row padded">
+              <i className="fa fa-plus" aria-hidden="true"></i> <span className="input-row-label type-red">Health</span>
+            </div>
+
             <div className="row">
+                <div className="col-sm-4">
+                  <Link to="/tools/health-status">
+                    <Card>
+                      <CardMedia>
+                        <img src="http://www.downgraf.com/wp-content/uploads/2014/09/01-progress.gif" role="presentation"/>
+                      </CardMedia>
+                      <CardHeader
+                        title="Health Status"
+                        subtitle="See how your stats compare to others your age."
+                      />
+                    </Card>
+                  </Link>
+                </div>
 
                 <div className="col-sm-4">
                   <Link to="/tools/meal-planner">
@@ -24,10 +41,8 @@ export default function MenuPage() {
                     </CardMedia>
                     <CardHeader
                       title="Meal Planner"
+                      subtitle="Plan out or track your meals here. See a breakdown of each meal by macro"
                     />
-                  <CardText>
-                    Plan out or track your meals here. See a breakdown of each meal by macro
-                  </CardText>
                   </Card>
                     </Link>
                 </div>
@@ -46,38 +61,35 @@ export default function MenuPage() {
                     </Link>
                 </div>
 
-                <div className="col-sm-4">
-                  <Link to="/tools/run-helper">
-                  <Card>
-                    <CardMedia>
-                      <img src="http://www.downgraf.com/wp-content/uploads/2014/09/01-progress.gif" role="presentation"/>
-                    </CardMedia>
-                    <CardHeader
-                      title="Run"
-                      subtitle="Check out the current conditions and other helpful info before your run!"
-                    />
-                  </Card>
-                    </Link>
-                </div>
+              </div>
+
+              <div className="row padded">
+                <i className="fa fa-child" aria-hidden="true"></i> <span className="input-row-label type-red">Active</span>
               </div>
 
                   <div className="row padded">
 
                       <div className="col-sm-4">
-                        <Link to="">
+                        <Link to="/tools/run-helper">
                         <Card>
                           <CardMedia>
                             <img src="http://www.downgraf.com/wp-content/uploads/2014/09/01-progress.gif" role="presentation"/>
                           </CardMedia>
                           <CardHeader
-                            title="Health Breakdown"
+                            title="Run Buddy"
+                            subtitle="Check out the current conditions and other helpful info before your run!"
                           />
-                        <CardText>
-                          <small>FUTURE FEATURE. It is going to show alot of info like: BMI, charts comparing you against others your age, estimated bodyfat...etc</small>
-                        </CardText>
                         </Card>
                           </Link>
                       </div>
+                    </div>
+
+                    <div className="row padded">
+                      <i className="fa fa-user-md" aria-hidden="true"></i> <span className="input-row-label type-red">Community</span>
+                    </div>
+
+                    <div className="row padded">
+                      <i className="fa fa-graduation-cap" aria-hidden="true"></i> <span className="input-row-label type-red">Fitness Primers</span>
                     </div>
 
           </div>
