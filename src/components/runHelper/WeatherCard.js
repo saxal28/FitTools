@@ -13,7 +13,7 @@ const WeatherCard = (props) => (
         >
           <div className="weather-box">
             <h3>Weather</h3>
-            <h2 className="weather-text type-green">{props.temp}</h2>
+            <h2 className="weather-text type-green">{props.temp ? props.temp : "WHELP"}</h2>
             <p>It is too cold outside to run!</p>
           </div>
 

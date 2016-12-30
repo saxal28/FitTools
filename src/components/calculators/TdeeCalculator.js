@@ -19,6 +19,7 @@ class TdeeCalculator extends Component {
       HEIGHT: null,
       WEIGHT: null,
       ACTIVITY_LEVEL: 1.2,
+      BMR: null,
       TDEE: null
     }
   }
@@ -53,15 +54,17 @@ class TdeeCalculator extends Component {
       const ACTIVITY_LEVEL = that.state.ACTIVITY_LEVEL;
       if (that.state.GENDER === "male") {
         // let BEE = 66 + 13.7 * WEIGHT + 5 * HEIGHT - 6.8 * AGE;
-        let BEE = 66 + (13.7  * WEIGHT) + (5 * HEIGHT) - (6.8 * AGE);
-        TDEE = BEE * ACTIVITY_LEVEL;
+        let BMR = 66 + (13.7  * WEIGHT) + (5 * HEIGHT) - (6.8 * AGE);
+        TDEE = BMR * ACTIVITY_LEVEL;
       } else if (that.state.GENDER === "female") {
-        let BEE = (655) + (9.6 * WEIGHT) + (1.8 * HEIGHT) - (4.7 * AGE);
-        TDEE = BEE * ACTIVITY_LEVEL;
+        let BMR = (655) + (9.6 * WEIGHT) + (1.8 * HEIGHT) - (4.7 * AGE);
+        TDEE = BMR * ACTIVITY_LEVEL;
       }
       console.log(TDEE)
 
-      that.setState({TDEE: Math.floor(TDEE)})
+      that.setState({
+        TDEE: Math.floor(TDEE)
+      })
       that.setStats();
 
     }, 5)

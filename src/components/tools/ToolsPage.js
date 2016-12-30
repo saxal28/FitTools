@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardHeader, CardMedia, CardText } from "material-ui/Card";
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Paper from "material-ui/Paper"
 
 import { Link } from "react-router";
 
@@ -9,8 +10,10 @@ export default function MenuPage() {
     <MuiThemeProvider>
       <div className="container">
         <div className="tools-title">
-          <h1>To Get Started...</h1>
-          <h3>Select a Tool Below!</h3>
+          <Paper zDepth={1} style={{padding:"20px", marginTop:"30px"}}>
+            <h1>To Get Started...</h1>
+            <h3>Select a Tool Below!</h3>
+          </Paper>
         </div>
 
           <div className="tools-container">
