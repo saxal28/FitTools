@@ -21,19 +21,19 @@ class IndividualMealComponent extends Component {
     this.state = {
       allCal: [],
       allCarb: [],
-      fatAll: [],
+      allFat: [],
       allPro: [],
 
       totalCal: 0,
-      fatTotal: 0,
+      totalFat: 0,
       totalCarb: 0,
       totalPro: 0,
 
-      saved: true
+      saved: false
     }
   }
 
-  getAllMacros() {
+  getMacroTotals() {
     //extracts all of the values from the inputs
         const calorieInputs = document.body.querySelectorAll(".cal");
         const carbInputs = document.body.querySelectorAll(".carb");
@@ -48,7 +48,7 @@ class IndividualMealComponent extends Component {
         let totalCal = 0;
         let totalCarb = 0;
         let totalPro = 0;
-        let fatTotal = 0;
+        let totalFat = 0;
 
     //loops through calorieInputs and extracts value
     //saves to caloriesArr
@@ -59,22 +59,22 @@ class IndividualMealComponent extends Component {
           fatArr.push(fatInputs[i].value);
           proArr.push(proInputs[i].value);
 
-          totalCal += Number(calorieInputs[i].value);
+          totalCal  += Number(calorieInputs[i].value);
           totalCarb += Number(carbInputs[i].value);
-          fatTotal += Number(fatInputs[i].value);
-          totalPro += Number(proInputs[i].value);
+          totalFat  += Number(fatInputs[i].value);
+          totalPro  += Number(proInputs[i].value);
 
         }
 
     //push caloriesArr and totalCal to state;
         this.setState({
-          allCal: caloriesArr,
-          allCarb: carbArr,
-          fatAll: fatArr,
-          allPro: proArr,
-          totalCal: totalCal,
+          allCal:   caloriesArr,
+          allCarb:  carbArr,
+          allFat:   fatArr,
+          allPro:   proArr,
+          totalCal,
           totalCarb,
-          fatTotal,
+          totalFat,
           totalPro
         });
 
@@ -84,37 +84,26 @@ class IndividualMealComponent extends Component {
   handleChange() {
     var obj = this;
     setTimeout(function() {
-      obj.getAllMacros();
+      //setup functions
+      // obj.saveMeal();
+      obj.getMacroTotals();
+      //actions
       obj.props.setCaloriesArray(obj.state.allCal);
       obj.props.setCarbArray(obj.state.allCarb);
-      obj.props.setFatArray(obj.state.fatAll);
+      obj.props.setFatArray(obj.state.allFat);
       obj.props.setProArray(obj.state.allPro);
 
       obj.props.setCalTotal(obj.state.totalCal);
       obj.props.setCarbTotal(obj.state.totalCarb);
-      obj.props.setFatTotal(obj.state.fatTotal);
+      obj.props.setFatTotal(obj.state.totalFat);
       obj.props.setProTotal(obj.state.totalPro);
 
 
     }, 5)
   }
 
-  saveMeal() {
-
-  }
-
   componentDidMount() {
-    //trying to change value but it isnt rerendering....
-    // if() {
-    // const that = this
-    //   const references=["tdee", "weight","height","age"]
-    //   references.forEach(function(ref) {
-    //     let element = ReactDOM.findDOMNode(that.refs[ref]);
-    //     element.setAttribute("disabled", "true");
-    //   })
-    //
-    // }
-
+    
   }
 
   render() {
@@ -125,7 +114,7 @@ class IndividualMealComponent extends Component {
           <div className="col-xs-2">
             <h6
               className="meal-color-label"
-              onClick={()=> this.setState({saved: !this.state.saved})}
+              onClick={()=> this.saveMeal()}
               >{this.state.saved ? "✔" : this.props.index}</h6>
           </div>
 
@@ -138,7 +127,7 @@ class IndividualMealComponent extends Component {
                 <input
                   type="text"
                   className="macros-input cal"
-                  placeholder={this.props.caloriesArr[this.props.index - 1]}
+                  defaultValue={this.props.caloriesArr[this.props.index - 1]}
                   onChange={this.handleChange.bind(this)}>
                 </input>
 
@@ -150,7 +139,7 @@ class IndividualMealComponent extends Component {
                   type="text"
                   className="macros-input carb"
                   onChange={this.handleChange.bind(this)}
-                  placeholder={this.props.carbArr[this.props.index - 1]}>
+                  defaultValue={this.props.carbArr[this.props.index - 1]}>
 
                 </input>
 
@@ -162,7 +151,7 @@ class IndividualMealComponent extends Component {
                   type="text"
                   className="macros-input fat"
                   onChange={this.handleChange.bind(this)}
-                  placeholder={this.props.fatArr[this.props.index - 1]}>
+                  defaultValue={this.props.fatArr[this.props.index - 1]}>
                 </input>
 
               </div>
@@ -173,7 +162,7 @@ class IndividualMealComponent extends Component {
                   type="text"
                   className="macros-input pro"
                   onChange={this.handleChange.bind(this)}
-                  placeholder={this.props.proArr[this.props.index - 1]}>
+                  defaultValue={this.props.proArr[this.props.index - 1]}>
                 </input>
 
               </div>

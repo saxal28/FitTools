@@ -47,6 +47,11 @@ class HealthStatusContainer extends Component {
     }, 10)
   }
   render() {
+    //styles
+    var paperStyles = {
+      padding:"20px",
+      marginTop:"20px"
+    }
     return (
       <MuiThemeProvider>
         <div className="container text-center">
@@ -92,12 +97,6 @@ class HealthStatusContainer extends Component {
       </MuiThemeProvider>
     )
   }
-}
-
-//styles
-var paperStyles = {
-  padding:"20px",
-  marginTop:"20px"
 }
 
 var averages = {
