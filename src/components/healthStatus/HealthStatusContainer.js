@@ -134,7 +134,6 @@ class HealthStatusContainer extends Component {
           {/*HEIGHT section*/}
           <Paper zDepth={2} style={paperStyles}>
             <h2>HEIGHT: {this.props.HEIGHT}</h2>
-            <GoogleMap lon={93} lat={104} />
           </Paper>
           {/*TDEE section*/}
           <Paper zDepth={2} style={paperStyles}>
