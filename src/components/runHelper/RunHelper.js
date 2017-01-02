@@ -35,8 +35,8 @@ export default class RunHelper extends Component {
 
   getWeatherData() {
     const that = this;
-    const lat = this.state.lat ? this.state.lat.toString() : "32";
-    const lon = this.state.lon ? this.state.lon.toString() : "34";
+    const lat = this.state.lat ? this.state.lat.toString() : "38.6270";
+    const lon = this.state.lon ? this.state.lon.toString() : "90.1994";
     const apiKey = "b699364186b2a6bb52a189466dd68ed0"
     let url = 'http://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+lon+"&appid="+apiKey;
 
