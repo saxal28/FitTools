@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardHeader, CardMedia, CardText } from "material-ui/Card";
+import { Card, CardHeader, CardMedia } from "material-ui/Card";
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Paper from "material-ui/Paper"
 

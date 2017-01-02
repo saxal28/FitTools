@@ -10,7 +10,8 @@ export default class RunHelper extends Component {
       lat: "",
       lon: "",
       zipcode: "",
-      temp: ""
+      temp: "",
+      city: ""
     }
   }
   componentWillMount() {
@@ -33,17 +34,22 @@ export default class RunHelper extends Component {
   }
 
   getWeatherData() {
-    const that = this
+    const that = this;
+    const lat = this.state.lat ? this.state.lat.toString() : "32";
+    const lon = this.state.lon ? this.state.lon.toString() : "34";
     const apiKey = "b699364186b2a6bb52a189466dd68ed0"
-    let url = 'http://api.openweathermap.org/data/2.5/weather?lat='+that.state.lat.toString()+'&lon='+that.state.lon.toString()+"&appid="+apiKey;
+    let url = 'http://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+lon+"&appid="+apiKey;
 
     axios.get(url)
     .then(function(response) {
+    let city = response.data.name;
     response = response.data.main;
-    console.log(response)
+    // cityResponse =
+    console.log(city)
       let temp = Math.floor(response.temp * 9 / 5 - 459.67);
       that.setState({
-        temp
+        temp,
+        city
       })
     })
     .catch(function(err) {
@@ -54,7 +60,7 @@ export default class RunHelper extends Component {
   render(){
     return (
       <div className="container">
-        <WeatherCard temp={this.state.temp}/>
+        <WeatherCard temp={this.state.temp} city={this.state.city}/>
       </div>
     )
   }

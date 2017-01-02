@@ -2,7 +2,12 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import Paper from "material-ui/Paper";
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider"
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import LinearProgress from 'material-ui/LinearProgress';
+import GoogleMap from "../common/GoogleMap"
+
+import {Doughnut} from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 
 class HealthStatusContainer extends Component {
   constructor(props) {
@@ -10,7 +15,12 @@ class HealthStatusContainer extends Component {
 
     this.state= {
       BMI: null,
+      BMI_STATUS: "",
       BMR: null,
+      BMR_MALE: null,
+      BMR_FEMALE: null,
+      TDEE_FEMALE: null,
+      TDEE_MALE: null
     }
   }
 
@@ -21,10 +31,28 @@ class HealthStatusContainer extends Component {
     this.setState({BMI})
   }
 
+  BMIstatus(){
+    const BMI = this.state.BMI;
+    if(BMI < 18.5) {
+      this.setState({BMI_STATUS: "Underweight" })
+    } else if (BMI >= 18.5 && BMI < 25) {
+      this.setState({BMI_STATUS: "Healthy" })
+    } else if(BMI >= 25 && BMI < 30) {
+      this.setState({BMI_STATUS: "Overweight"})
+    } else if(BMI >= 30 && BMI < 35) {
+      this.setState({BMI_STATUS: "Obese (grade 1)"})
+    } else if(BMI >= 35 && BMI < 40) {
+      this.setState({BMI_STATUS: "Obese (grade 2)"})
+    } else if(BMI >= 40) {
+      this.setState({ BMI_STATUS: "Morbidily Obese"})
+    }
+  }
+
   calculateBMR() {
     const WEIGHT =  this.props.WEIGHT * 0.45359237;
     const AGE =  this.props.AGE;
     const HEIGHT = this.props.HEIGHT * 2.54;
+
     let TDEE_MALE = "";
     let TDEE_FEMALE = "";
     let BMR_MALE = ""
@@ -37,21 +65,43 @@ class HealthStatusContainer extends Component {
     //female
       BMR_FEMALE = (655) + (9.6 * WEIGHT) + (1.8 * HEIGHT) - (4.7 * AGE);
       TDEE_FEMALE = BMR_FEMALE * ACTIVITY_LEVEL;
+      this.setState({
+        BMR_MALE,
+        BMR_FEMALE,
+        TDEE_MALE,
+        TDEE_FEMALE
+      })
 }
 
   componentDidMount() {
     const that = this;
     setTimeout(function() {
       that.calculateBMI();
-      that.calculateBRM();
+      that.BMIstatus();
+      that.calculateBMR();
     }, 10)
   }
   render() {
     //styles
     var paperStyles = {
       padding:"20px",
-      marginTop:"20px"
+      marginTop:"20px",
+      background:'white'
     }
+
+    var BMIdata = {
+      labels: ['Calories', 'Carb', 'Fat', 'Protein'],
+      datasets: [{
+        label: 'My First dataset',
+        backgroundColor: 'rgba(255,99,132,0.2)',
+        borderColor: 'rgba(255,99,132,1)',
+        borderWidth: 1,
+        hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+        hoverBorderColor: 'rgba(255,99,132,1)',
+        data: [65, 59, 80, 81]
+      }]
+    };
+
     return (
       <MuiThemeProvider>
         <div className="container text-center">
@@ -59,34 +109,32 @@ class HealthStatusContainer extends Component {
           <Paper zDepth={2} style={paperStyles}>
             <div className="row">
                 <h1>This will be the Health Stats Page</h1>
-                <img
-                  src="http://dribbble.s3.amazonaws.com/users/4613/screenshots/911982/jar-loading.gif"
-                  className="img-responsive milk-jug-loader"
-                />
             </div>
           </Paper>
           {/*BMI section*/}
           <Paper zDepth={2} style={paperStyles}>
             <div className="row">
-              <div className="col-xs-7">
-                <img
-                  src="https://s-media-cache-ak0.pinimg.com/originals/aa/51/bd/aa51bd72926e11f7006369f6d211a668.gif"
-                  className="img-responsive"
-                />
-              </div>
-              <div className="col-xs-5">
                 <h2>BMI:  {this.state.BMI}</h2>
-                <p>Congradulations, your BMI of {this.state.BMU} is lower than the average of ___ for your age group</p>
-              </div>
+                <p>{this.state.BMI_STATUS}</p>
+                <Bar data={BMIdata} />
+
             </div>
           </Paper>
           {/*WEIGHT section*/}
           <Paper zDepth={2} style={paperStyles}>
             <h2>WEIGHT: {this.props.WEIGHT}</h2>
+            <LinearProgress
+              mode="determinate"
+              value={Number(this.props.WEIGHT)}
+              min={100}
+              max={400}
+              style={{width:"50%", margin: "30px auto"}}
+               />
           </Paper>
           {/*HEIGHT section*/}
           <Paper zDepth={2} style={paperStyles}>
             <h2>HEIGHT: {this.props.HEIGHT}</h2>
+            <GoogleMap lon={93} lat={104} />
           </Paper>
           {/*TDEE section*/}
           <Paper zDepth={2} style={paperStyles}>
@@ -99,18 +147,20 @@ class HealthStatusContainer extends Component {
   }
 }
 
-var averages = {
-  BMI: {
-    //everything else is underweight
-    ideal:      [18.5, 24.9],
-    overweight: [25, 30]
-    //anything else is overweight
-  },
-  HEIGHT: {
-    men:    69.7,
-    female: 63.8
-  }
-}
+// var averages = {
+//   BMI: {
+//     //everything else is underweight
+//     ideal:      [18.5, 24.9],
+//     overweight: [25, 30]
+//     //anything else is overweight
+//   },
+//   HEIGHT: {
+//     men:    69.7,
+//     female: 63.8
+//   }
+// }
+
+//functions
 
 function mapStateToProps(state) {
   return {
