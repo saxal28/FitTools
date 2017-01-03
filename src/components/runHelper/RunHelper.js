@@ -36,11 +36,11 @@ export default class RunHelper extends Component {
   getWeatherData() {
     const that = this;
     const lat = this.state.lat ? this.state.lat.toString() : "38.6270";
-    const lon = this.state.lon ? this.state.lon.toString() : "90.1994";
-    // const apiKey = "b699364186b2a6bb52a189466dd68ed0"
-    const apiKey = '78786ffa6007977114e13f5d2f14d14c'
-    // let url = 'https://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+lon+"&appid="+apiKey;
-    let url = "https://api.darksky.net/forecast/"+apiKey+"/"+lat+","+lon
+    const lon = this.state.lon ? this.state.lon.toString() : "-90.1994";
+    const apiKey = "b699364186b2a6bb52a189466dd68ed0"
+    // const apiKey = '78786ffa6007977114e13f5d2f14d14c'
+    let url = 'http://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+lon+"&appid="+apiKey;
+    // let url = "https://api.darksky.net/forecast/"+apiKey+"/"+lat+","+lon
 
     axios.get(url)
     .then(function(response) {
