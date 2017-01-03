@@ -5,7 +5,7 @@ import Paper from "material-ui/Paper";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import LinearProgress from 'material-ui/LinearProgress';
 
-import {Doughnut} from 'react-chartjs-2';
+// import {Doughnut} from 'react-chartjs-2';
 import { Bar } from 'react-chartjs-2';
 
 class HealthStatusContainer extends Component {
@@ -89,7 +89,7 @@ class HealthStatusContainer extends Component {
     }
 
     var BMIdata = {
-      labels: ['Calories', 'Carb', 'Fat', 'Protein'],
+      labels: ["You", 'Underweight', 'Healthy', 'Overweight', 'Obese'],
       datasets: [{
         label: 'My First dataset',
         backgroundColor: 'rgba(255,99,132,0.2)',
@@ -97,7 +97,7 @@ class HealthStatusContainer extends Component {
         borderWidth: 1,
         hoverBackgroundColor: 'rgba(255,99,132,0.4)',
         hoverBorderColor: 'rgba(255,99,132,1)',
-        data: [65, 59, 80, 81]
+        data: [this.state.BMI,18.4, 24.5, 30, 45]
       }]
     };
 

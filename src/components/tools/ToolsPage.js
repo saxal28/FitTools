@@ -63,7 +63,22 @@ export default function MenuPage() {
                   </Card>
                     </Link>
                 </div>
+              </div>
 
+              <div className="row padded">
+                <div className="col-sm-4">
+                  <Link to="/tools/meal-stats">
+                  <Card>
+                    <CardMedia>
+                      <img src="http://www.downgraf.com/wp-content/uploads/2014/09/01-progress.gif" role="presentation"/>
+                    </CardMedia>
+                    <CardHeader
+                      title="Macro Planner"
+                      subtitle="Determine your macros based on your goals."
+                    />
+                  </Card>
+                    </Link>
+                </div>
               </div>
 
               <div className="row padded">
