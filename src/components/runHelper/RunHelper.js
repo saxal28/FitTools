@@ -40,9 +40,9 @@ export default class RunHelper extends Component {
 
     const apiKey = "90b8d5cdb71ec358"
     //use this one for production
-    // let url = 'https://api.wunderground.com/api/'+apiKey+'/conditions/q/'+lat+','+lon+'.json';
+    let url = 'https://api.wunderground.com/api/'+apiKey+'/conditions/q/'+lat+','+lon+'.json';
     //use this one for localhose
-    let url = 'http://api.wunderground.com/api/'+apiKey+'/conditions/q/'+lat+','+lon+'.json';
+    // let url = 'http://api.wunderground.com/api/'+apiKey+'/conditions/q/'+lat+','+lon+'.json';
 
     axios.get(url)
     .then(function(response) {
