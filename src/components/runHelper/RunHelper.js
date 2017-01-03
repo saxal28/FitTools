@@ -37,20 +37,20 @@ export default class RunHelper extends Component {
     const that = this;
     const lat = this.state.lat ? this.state.lat.toString() : "38.6270";
     const lon = this.state.lon ? this.state.lon.toString() : "-90.1994";
-    const apiKey = "b699364186b2a6bb52a189466dd68ed0"
-    // const apiKey = '78786ffa6007977114e13f5d2f14d14c'
-    let url = 'http://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+lon+"&appid="+apiKey;
-    // let url = "https://api.darksky.net/forecast/"+apiKey+"/"+lat+","+lon
+
+    const apiKey = "90b8d5cdb71ec358"
+    //use this one for production
+    // let url = 'https://api.wunderground.com/api/'+apiKey+'/conditions/q/'+lat+','+lon+'.json';
+    //use this one for localhose
+    let url = 'http://api.wunderground.com/api/'+apiKey+'/conditions/q/'+lat+','+lon+'.json';
 
     axios.get(url)
     .then(function(response) {
-    let data = response
-    let city = response.data.name;
-    response = response.data.main;
+    let data = response.data.current_observation;
+    let city = data.display_location.full;
 
-    // cityResponse =
     console.log(data)
-      let temp = Math.floor(response.temp * 9 / 5 - 459.67);
+      let temp = Math.floor(data.temp_f);
       that.setState({
         temp,
         city
@@ -64,7 +64,7 @@ export default class RunHelper extends Component {
   render(){
     return (
       <div className="container">
-        <WeatherCard temp={this.state.temp} city={this.state.city}/>
+        <WeatherCard temp={this.state.temp} city={this.state.city} lat={this.state.lat} lon={this.state.lon}/>
       </div>
     )
   }

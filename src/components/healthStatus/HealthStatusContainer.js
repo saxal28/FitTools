@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import Paper from "material-ui/Paper";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import LinearProgress from 'material-ui/LinearProgress';
-import GoogleMap from "../common/GoogleMap"
 
 import {Doughnut} from 'react-chartjs-2';
 import { Bar } from 'react-chartjs-2';
