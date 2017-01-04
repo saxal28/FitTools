@@ -103,7 +103,7 @@ class IndividualMealComponent extends Component {
   }
 
   componentDidMount() {
-    
+
   }
 
   render() {
@@ -114,7 +114,7 @@ class IndividualMealComponent extends Component {
           <div className="col-xs-2">
             <h6
               className="meal-color-label"
-              onClick={()=> this.saveMeal()}
+              style={{background:colors[this.props.index]}}
               >{this.state.saved ? "✔" : this.props.index}</h6>
           </div>
 
@@ -176,6 +176,15 @@ class IndividualMealComponent extends Component {
       </div>
     )
   }
+}
+
+const colors = {
+  1: 'rgba(215,245,250,0.5)',
+  2: "rgba(152,198,240,0.5)",
+  3: "rgba(121,162,234,0.5)",
+  4: "rgba(85,118,234,0.5)",
+  5: "rgba(60,49,180,0.5)",
+  6: "rgba(41,23,101,0.5)"
 }
 
 function mapStateToProps(state) {

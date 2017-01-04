@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import MealChart from "../common/MealChart";
 import { connect } from "react-redux";
+import Paper from "material-ui/Paper";
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 
 class MealStatsContainer extends Component {
   constructor(props) {
@@ -39,91 +41,72 @@ class MealStatsContainer extends Component {
 
   render() {
     return (
-      <div>
+      <MuiThemeProvider>
 
         <div className="container text-center">
           <div className="row">
-            <div className="col-sm-6 col-xs-12">
+            <div className="col-sm-6">
+              <Paper zDepth={3}>
               <div className="well-form-auto">
                 <div className="row">
-                  <div className="col-xs-5">
-                    <span className="input-row-label">Meals</span>
-                  </div>
-
-                  <div className="col-xs-7">
-                    <select className="input-select" onChange={() => this.updateMeal(document.body.querySelector("select").value)}>
+                  <h2>Meals</h2>
+                  {this.props.caloriesArr[this.state.index] < 1 ?  <h2><small>No Meal Set</small></h2> : ""}
+                    <select
+                      className="input-select"
+                      style={{width:"90%"}}
+                      onChange={() => this.updateMeal(document.body.querySelector("select").value)}>
                       <option value="1">Meal 1</option>
                       <option value="2">Meal 2</option>
                       <option value="3">Meal 3</option>
                       <option value="4">Meal 4</option>
                       <option value="5">Meal 5</option>
                       <option value="6">Meal 6</option>
-
                     </select>
+
+                </div>
+
+                <div className="row">
+                    <h2><small>{Math.floor(this.props.caloriesArr[this.state.index] / this.props.TDEE * 100 )}% of Total TDEE</small></h2>
+                  <div className="col-xs-7 text-right">
+                    <h3><span>Calories</span></h3>
+                  </div>
+
+                  <div className="col-xs-5 text-left">
+                    <h3>{this.props.caloriesArr[this.state.index]}kCal</h3>
                   </div>
                 </div>
 
                 <div className="row">
-                  <div className="col-xs-5">
-                    <span className="input-row-label">Calories</span>
+                  <div className="col-xs-7 text-right">
+                    <h3><span style={{background:"rgba(215,245,250,0.5)", padding:"5px", border:'1px solid #333'}}>Carb</span></h3>
                   </div>
 
-                  <div className="col-xs-7">
-                    <input
-                      type="text"
-                      className="input-home"
-                      placeholder={this.props.caloriesArr[this.state.index]}
-                      disabled/><br />
+                  <div className="col-xs-5 text-left">
+                    <h3>{this.props.carbArr[this.state.index]}g</h3>
+                  </div>
+                </div>
+                {/*fat input row*/}
+                <div className="row">
+                  <div className="col-xs-7 text-right">
+                    <h3><span style={{background:'rgba(121,162,234,0.5)', padding:"5px", border:'1px solid #333'}}>Fat</span></h3>
+                  </div>
+
+                  <div className="col-xs-5 text-left">
+                    <h3>{this.props.fatArr[this.state.index]}g</h3>
+                  </div>
+                </div>
+                {/*protein input row*/}
+                <div className="row">
+                  <div className="col-xs-7 text-right">
+                    <h3><span style={{background:'rgba(60,49,180,0.5)', padding:"5px", border:'1px solid #333'}}>Protein</span></h3>
+                  </div>
+
+                  <div className="col-xs-5 text-left">
+                    <h3>{this.props.proArr[this.state.index]}g</h3>
                   </div>
                 </div>
 
                 <div className="row">
-                  <div className="col-xs-5">
-                    <span className="input-row-label">Carbs</span>
-                  </div>
-
-                  <div className="col-xs-7">
-                    <input
-                      type="text"
-                      className="input-home"
-                      placeholder={this.props.carbArr[this.state.index]}
-                      disabled
-                      /><br />
-
-                  </div>
-                </div>
-
-                <div className="row">
-                  <div className="col-xs-5">
-                    <span className="input-row-label">Fats</span>
-                  </div>
-
-                  <div className="col-xs-7">
-                    <input
-                      type="text"
-                      className="input-home"
-                      placeholder={this.props.fatArr[this.state.index]}
-                      disabled
-                      /><br />
-                  </div>
-                </div>
-
-                <div className="row">
-                  <div className="col-xs-5">
-                    <span className="input-row-label">Protein</span>
-                  </div>
-
-                  <div className="col-xs-7">
-                    <input
-                      type="text"
-                      className="input-home"
-                      placeholder={this.props.proArr[this.state.index]}
-                      disabled
-                      /><br />
-                  </div>
-                </div>
-
-                <div className="row ">
                   <button
                     className="btn custom-button pull-right"
                     onClick={() => this.nextMeal()}
@@ -132,9 +115,11 @@ class MealStatsContainer extends Component {
                 </div>
 
               </div>
+              </Paper>
             </div>
 
             <div className="col-sm-6 col-xs-12">
+              <Paper zDepth={3}>
               <div className="well-form-auto">
                 <MealChart
                   mealValue1={Number(this.props.carbArr[this.state.index])}
@@ -144,16 +129,14 @@ class MealStatsContainer extends Component {
                   mealValue5={Number(this.props.proArr[this.state.index])}
                   mealValue6={0} />
               </div>
+              </Paper>
             </div>
 
           </div>
 
-
-
         </div>
 
-
-    </div>
+      </MuiThemeProvider>
     )
   }
 }

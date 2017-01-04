@@ -91,12 +91,12 @@ class HealthStatusContainer extends Component {
     var BMIdata = {
       labels: ["You", 'Underweight', 'Healthy', 'Overweight', 'Obese'],
       datasets: [{
-        label: 'My First dataset',
-        backgroundColor: 'rgba(255,99,132,0.2)',
-        borderColor: 'rgba(255,99,132,1)',
+        label: 'BMI',
+        backgroundColor: 'rgba(85,118,234,0.5)',
+        borderColor: 'rgba(60,49,180,0.5)',
         borderWidth: 1,
-        hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-        hoverBorderColor: 'rgba(255,99,132,1)',
+        hoverBackgroundColor: 'rgba(41,23,101,0.5)',
+        hoverBorderColor: 'rgba(60,49,180,0.5)',
         data: [this.state.BMI,18.4, 24.5, 30, 45]
       }]
     };
@@ -115,7 +115,7 @@ class HealthStatusContainer extends Component {
           <Paper zDepth={2} style={paperStyles}>
             <div className="row">
                 <h2>BMI:  {this.state.BMI}</h2>
-                <p>{this.state.BMI_STATUS}</p>
+                <h4>{this.state.BMI_STATUS}</h4>
                 <Bar data={BMIdata} />
 
             </div>
@@ -139,8 +139,8 @@ class HealthStatusContainer extends Component {
               <LinearProgress
                 mode="determinate"
                 value={Number(this.props.WEIGHT)}
-                min={0}
-                max={390}
+                min={50}
+                max={139.4}
                 color={this.props.HEIGHT > 69.7 ? 'green' : "red"}
                 style={{width:"50%", margin: "30px auto"}}
                  />
@@ -149,9 +149,9 @@ class HealthStatusContainer extends Component {
           {/*TDEE section*/}
           <Paper zDepth={2} style={paperStyles}>
             <h2>TDEE: {this.props.TDEE}</h2>
-            <h3>To Maintain Weight, We suggest that you eat <span className="type-green">{this.props.TDEE}</span> calories</h3>
-            <h3>To Lose Weight, We suggest that you eat <span className="type-green">{Math.floor(this.props.TDEE * .80)}</span> calories</h3>
-            <h3>To Gain Weight, We suggest that you eat <span className="type-green">{Math.floor(this.props.TDEE * 1.20)}</span> calories</h3>
+            <h4>To Maintain Weight, We suggest that you eat <span className="type-green">{this.props.TDEE}</span> calories</h4>
+            <h4>To Lose Weight, We suggest that you eat <span className="type-green">{Math.floor(this.props.TDEE * .80)}</span> calories</h4>
+            <h4>To Gain Weight, We suggest that you eat <span className="type-green">{Math.floor(this.props.TDEE * 1.20)}</span> calories</h4>
           </Paper>
 
         </div>

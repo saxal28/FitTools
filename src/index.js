@@ -10,6 +10,8 @@ import routes from "./routes";
 //  stylesheets
 import 'bootstrap/dist/css/bootstrap.css';
 import './styles/index.css';
+// for animations down the line
+import "./styles/animate.css";
 
 
 const createStoreWithMiddleWare = applyMiddleware()(createStore);

@@ -10,7 +10,7 @@ export default function MenuPage() {
     <MuiThemeProvider>
       <div className="container">
         <div className="tools-title">
-          <Paper zDepth={1} style={{padding:"20px", marginTop:"30px"}}>
+          <Paper zDepth={3} style={{padding:"20px", marginTop:"30px"}}>
             <h1>To Get Started...</h1>
             <h3>Select a Tool Below!</h3>
           </Paper>
@@ -24,7 +24,7 @@ export default function MenuPage() {
             <div className="row">
                 <div className="col-sm-4">
                   <Link to="/tools/health-status">
-                    <Card>
+                    <Card zDepth={2}>
                       <CardMedia>
                         <img src="http://www.downgraf.com/wp-content/uploads/2014/09/01-progress.gif" role="presentation"/>
                       </CardMedia>
@@ -38,7 +38,7 @@ export default function MenuPage() {
 
                 <div className="col-sm-4">
                   <Link to="/tools/meal-planner">
-                  <Card>
+                  <Card zDepth={2}>
                     <CardMedia>
                       <img src="http://www.downgraf.com/wp-content/uploads/2014/09/01-progress.gif" role="presentation"/>
                     </CardMedia>
@@ -52,7 +52,7 @@ export default function MenuPage() {
 
                 <div className="col-sm-4">
                   <Link to="/tools/meal-stats">
-                  <Card>
+                  <Card zDepth={2}>
                     <CardMedia>
                       <img src="http://www.downgraf.com/wp-content/uploads/2014/09/01-progress.gif" role="presentation"/>
                     </CardMedia>
@@ -68,7 +68,7 @@ export default function MenuPage() {
               <div className="row padded">
                 <div className="col-sm-4">
                   <Link to="/tools/meal-stats">
-                  <Card>
+                  <Card zDepth={2}>
                     <CardMedia>
                       <img src="http://www.downgraf.com/wp-content/uploads/2014/09/01-progress.gif" role="presentation"/>
                     </CardMedia>
@@ -89,7 +89,7 @@ export default function MenuPage() {
 
                       <div className="col-sm-4">
                         <Link to="/tools/run-helper">
-                        <Card>
+                        <Card zDepth={2}>
                           <CardMedia>
                             <img src="http://www.downgraf.com/wp-content/uploads/2014/09/01-progress.gif" role="presentation"/>
                           </CardMedia>
@@ -110,9 +110,31 @@ export default function MenuPage() {
                       <i className="fa fa-graduation-cap" aria-hidden="true"></i> <span className="input-row-label type-red">Fitness Primers</span>
                     </div>
 
+                    <div className="row padded">
+                      <div className="col-sm-4">
+                        <a
+                          href="https://www.reddit.com/r/Fitness/wiki/getting_started"
+                          target="_blank">
+
+                          <Card zDepth={2}>
+                            <CardMedia>
+                              <img src="https://www.workinghomeguide.com/wp-content/uploads/2012/01/reddit-logo.jpg" role="presentation"/>
+                            </CardMedia>
+                            <CardHeader
+                              title="Reddit Fitness Wiki"
+                              subtitle="A very basic fitness primer to get you started."
+                            />
+                          </Card>
+                        </a>
+
+                      </div>
+                    </div>
+
           </div>
 
         </div>
     </MuiThemeProvider>
   )
 }
+
+// https://image.slidesharecdn.com/anabolicdietbymaurodipasquale-140318084625-phpapp01/95/anabolic-diet-by-mauro-di-pasquale-1-638.jpg?cb=1395132521
