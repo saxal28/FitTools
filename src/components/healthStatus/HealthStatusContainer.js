@@ -107,7 +107,8 @@ class HealthStatusContainer extends Component {
           {/*title section */}
           <Paper zDepth={2} style={paperStyles}>
             <div className="row">
-                <h1>This will be the Health Stats Page</h1>
+                <h1>Health Status</h1>
+                <h3>See a brief summary of your health!</h3>
             </div>
           </Paper>
           {/*BMI section*/}
@@ -125,18 +126,32 @@ class HealthStatusContainer extends Component {
             <LinearProgress
               mode="determinate"
               value={Number(this.props.WEIGHT)}
-              min={100}
-              max={400}
+              min={0}
+              max={390}
+              color={this.props.WEIGHT > 195.5 ? 'red' : "green"}
               style={{width:"50%", margin: "30px auto"}}
                />
+             <h4>You are {this.props.WEIGHT >= 195.5 ? "heavier" : "lighter"} than the average weight of 195.5</h4>
           </Paper>
           {/*HEIGHT section*/}
           <Paper zDepth={2} style={paperStyles}>
             <h2>HEIGHT: {this.props.HEIGHT}</h2>
+              <LinearProgress
+                mode="determinate"
+                value={Number(this.props.WEIGHT)}
+                min={0}
+                max={390}
+                color={this.props.HEIGHT > 69.7 ? 'green' : "red"}
+                style={{width:"50%", margin: "30px auto"}}
+                 />
+               <h4>You are {this.props.HEIGHT >= 69.7 ? "taller": "shorter"} than the average height of 69.7 inches (5'10'')</h4>
           </Paper>
           {/*TDEE section*/}
           <Paper zDepth={2} style={paperStyles}>
             <h2>TDEE: {this.props.TDEE}</h2>
+            <h3>To Maintain Weight, We suggest that you eat <span className="type-green">{this.props.TDEE}</span> calories</h3>
+            <h3>To Lose Weight, We suggest that you eat <span className="type-green">{Math.floor(this.props.TDEE * .80)}</span> calories</h3>
+            <h3>To Gain Weight, We suggest that you eat <span className="type-green">{Math.floor(this.props.TDEE * 1.20)}</span> calories</h3>
           </Paper>
 
         </div>

@@ -80,13 +80,13 @@ function temperatureClothingChecker(temp) {
     return (
       <div className="row">
         <div className="col-sm-4">
-          <img src="http://images.linnlive.com/547b3d68c93e199cbd048cb886b17ccc/0d47194f-74e0-4364-b6a7-c2808038f170.jpg" className="img-responsive" role="presentation"/>
+          <img src="https://www.solidrop.net/photo-2/men-windbreaker-brand-clothing-male-mens-coat-sports-running-varsity-jacket-causal-hooded-outdoor-man-waterproof-jacket-men.jpg" className="img-responsive" role="presentation"/>
         </div>
         <div className="col-sm-4">
-          <img src="http://www.dickssportinggoods.com/graphics/product_images/pDSP1-24977043v750.jpg" className="img-responsive" role="presentation"/>
+          <img src="https://www.dickssportinggoods.com/graphics/product_images/pDSP1-24977043v750.jpg" className="img-responsive" role="presentation"/>
         </div>
         <div className="col-sm-4">
-          <img src="http://hunt4freebies.com/hotdeals/wp-content/uploads/2010/01/Cabelas-Polartec-200-Fleece-Hat-and-Glove-Gift-Set.jpg" className="img-responsive" role="presentation"/>
+          <img src="https://i.ebayimg.com/images/i/400928242132-0-1/s-l1000.jpg" className="img-responsive" role="presentation"/>
         </div>
       </div>
     )
@@ -98,10 +98,10 @@ function temperatureClothingChecker(temp) {
           <img src="http://www.brooksrunning.com/dw/image/v2/aaev_prd/on/demandware.static/-/Sites-BrooksCatalog/default/dw106ff76f/images/ProductImages/210910/210910_404_mf_ZM.jpg?sw=1200" className="img-responsive" role="presentation"/>
         </div>
         <div className="col-sm-4">
-          <img src="http://www.dickssportinggoods.com/graphics/product_images/pDSP1-24977043v750.jpg" className="img-responsive" role="presentation"/>
+          <img src="https://www.dickssportinggoods.com/graphics/product_images/pDSP1-24977043v750.jpg" className="img-responsive" role="presentation"/>
         </div>
         <div className="col-sm-4">
-          <img src="http://hunt4freebies.com/hotdeals/wp-content/uploads/2010/01/Cabelas-Polartec-200-Fleece-Hat-and-Glove-Gift-Set.jpg" className="img-responsive" role="presentation"/>
+          <img src="https://i.ebayimg.com/images/i/400928242132-0-1/s-l1000.jpg" className="img-responsive" role="presentation"/>
         </div>
       </div>
     )
@@ -113,7 +113,7 @@ function temperatureClothingChecker(temp) {
           <img src="http://www.brooksrunning.com/dw/image/v2/aaev_prd/on/demandware.static/-/Sites-BrooksCatalog/default/dw106ff76f/images/ProductImages/210910/210910_404_mf_ZM.jpg?sw=1200" className="img-responsive" role="presentation"/>
         </div>
         <div className="col-sm-6">
-          <img src="http://www.dickssportinggoods.com/graphics/product_images/pDSP1-24036896v750.jpg" className="img-responsive" role="presentation"/>
+          <img src="https://www.dickssportinggoods.com/graphics/product_images/pDSP1-24036896v750.jpg" className="img-responsive" role="presentation"/>
         </div>
       </div>
     )
@@ -125,9 +125,10 @@ function temperatureClothingChecker(temp) {
           <img src="http://www.texspoclothing.com/images/16.jpg" className="img-responsive" role="presentation"/>
         </div>
         <div className="col-sm-4">
-          <img src="http://www.dickssportinggoods.com/graphics/product_images/pDSP1-24036896v750.jpg" className="img-responsive" role="presentation"/>
+          <img src="https://www.dickssportinggoods.com/graphics/product_images/pDSP1-24036896v750.jpg" className="img-responsive" role="presentation"/>
         </div>
         <div className="col-sm-4">
+          {/*sunscreen*/}
           <img src="https://images-na.ssl-images-amazon.com/images/I/31c6rcGQ1oL._AC_UL320_SR248,320_.jpg" className="img-responsive" role="presentation"/>
         </div>
       </div>
