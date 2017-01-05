@@ -51,7 +51,7 @@ export default class DrawerNavbar extends React.Component {
         <div className="text-center">
           <AppBar onLeftIconButtonTouchTap={this.handleToggle.bind(this)} />
           <Drawer
-            width={150}
+            width={200}
             docked={this.state.notMobile}
             overlayStyle={{"background":"transparent"}}
             open={this.state.open}
@@ -79,3 +79,8 @@ export default class DrawerNavbar extends React.Component {
     );
   }
 }
+
+// function drawerWidth() {
+//   const screenWidth = $(document).width();
+//   if (screenWidth)
+// }

@@ -72,51 +72,21 @@ class MealStatsContainer extends Component {
 
                 <div className="row">
                     <h2><small>{Math.floor(this.props.caloriesArr[this.state.index] / this.props.TDEE * 100 )}% of Total TDEE</small></h2>
-                  <div className="col-xs-7 text-right">
-                    <h3><span>Calories</span></h3>
-                  </div>
-
-                  <div className="col-xs-5 text-left">
-                    <h3>{this.props.caloriesArr[this.state.index]}kCal</h3>
-                  </div>
                 </div>
 
                 <div className="row">
                   <div className="col-xs-7 text-right">
+                    <h3><span style={{background:"rgba(255,255,255,0.5)", padding:"5px", border:'1px solid #333'}}>Cal</span></h3>
                     <h3><span style={{background:"rgba(215,245,250,0.5)", padding:"5px", border:'1px solid #333'}}>Carb</span></h3>
-                  </div>
-
-                  <div className="col-xs-5 text-left">
-                    <h3>{this.props.carbArr[this.state.index]}g</h3>
-                  </div>
-                </div>
-                {/*fat input row*/}
-                <div className="row">
-                  <div className="col-xs-7 text-right">
                     <h3><span style={{background:'rgba(121,162,234,0.5)', padding:"5px", border:'1px solid #333'}}>Fat</span></h3>
-                  </div>
-
-                  <div className="col-xs-5 text-left">
-                    <h3>{this.props.fatArr[this.state.index]}g</h3>
-                  </div>
-                </div>
-                {/*protein input row*/}
-                <div className="row">
-                  <div className="col-xs-7 text-right">
                     <h3><span style={{background:'rgba(60,49,180,0.5)', padding:"5px", border:'1px solid #333'}}>Protein</span></h3>
                   </div>
-
                   <div className="col-xs-5 text-left">
+                    <h3>{this.props.caloriesArr[this.state.index]}kCal</h3>
+                    <h3>{this.props.carbArr[this.state.index]}g</h3>
+                    <h3>{this.props.fatArr[this.state.index]}g</h3>
                     <h3>{this.props.proArr[this.state.index]}g</h3>
                   </div>
-                </div>
-
-                <div className="row">
-                  <button
-                    className="btn custom-button pull-right"
-                    onClick={() => this.nextMeal()}
-                    >Next Meal
-                  </button>
                 </div>
 
               </div>
@@ -157,3 +127,18 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps)(MealStatsContainer)
+
+
+// <div className="row">
+//   <div className="col-xs-7 text-right">
+//     <h3><span style={{background:"rgba(215,245,250,0.5)", padding:"5px", border:'1px solid #333'}}>Carb</span></h3>
+//     <h3><span style={{background:'rgba(121,162,234,0.5)', padding:"5px", border:'1px solid #333'}}>Fat</span></h3>
+//     <h3><span style={{background:'rgba(60,49,180,0.5)', padding:"5px", border:'1px solid #333'}}>Protein</span></h3>
+//   </div>
+//   <div className="col-xs-5 text-left">
+//     <h3>{this.props.caloriesArr[this.state.index]}kCal</h3>
+//     <h3>{this.props.carbArr[this.state.index]}g</h3>
+//     <h3>{this.props.fatArr[this.state.index]}g</h3>
+//     <h3>{this.props.proArr[this.state.index]}g</h3>
+//   </div>
+// </div>

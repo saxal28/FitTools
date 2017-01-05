@@ -76,6 +76,9 @@ export default function MenuPage() {
 
                     <div className="row padded">
                       <i className="fa fa-graduation-cap" aria-hidden="true"></i> <span className="input-row-label type-red">Fitness Primers</span>
+                      <div className="row">
+
+                      </div>
                     </div>
 
                     <div className="row padded">

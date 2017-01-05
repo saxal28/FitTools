@@ -115,19 +115,13 @@ class IndividualMealComponent extends Component {
       5: "rgba(60,49,180,0.5)",
       6: "rgba(41,23,101,0.5)"
     }
-    
+
     return (
-      <div className="well-clear meal number-center">
+      <div className="well-clear meal number-center" style={{background:colors[this.props.index]}}>
 
         <div className="row">
-          <div className="col-xs-2">
-            <h6
-              className="meal-color-label"
-              style={{background:colors[this.props.index]}}
-              >{this.state.saved ? "✔" : this.props.index}</h6>
-          </div>
 
-          <div className="col-xs-10">
+          <div className="col-xs-12">
 
             <div className="row">
 

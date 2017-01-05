@@ -19,7 +19,9 @@ nav {
 }
 
 .container {
-  padding-left:10%;
+  padding-left:15%;
+  padding-right:15%;
+  padding-top:4%;
 }
 
 
@@ -41,15 +43,16 @@ nav {
 
 .macros-input {
   width: 100%;
-  height: 50px;
+  /*height: 50px;*/
   text-align:center;
   margin-right:7px;
   margin-left:3px;
   margin-top:3px;
-  border:2px solid lightgray;
-  border-left:2px solid gray;
-  border-top: 2px solid gray;
-  box-shadow: 3px 3px 3px #333;
+  /*border:2px solid lightgray;*/
+  /*border-left:2px solid gray;*/
+  /*border-top: 2px solid gray;*/
+  /*box-shadow: 3px 3px 3px #333;*/
+  border:none;
   background:transparent;
   color:#333;
   font-size:17px;
@@ -156,8 +159,7 @@ a:hover {
 }
 
 .input-home {
-  margin: 10px auto;
-  margin-bottom: 20px;
+  margin: 0px auto;
   height:50px;
   width: 150px;
   font-size:25px;
@@ -170,8 +172,8 @@ a:hover {
 }
 
 .input-home-row {
-  margin-top: 20px;
-  margin-botton: 10px;
+  /*margin-top: 20px;
+  margin-botton: 10px;*/
 }
 
 .smaller {
@@ -218,13 +220,20 @@ a:hover {
 }
 
 .home-title h1 {
-  font-size: 3em;
+  font-size: 2.5em;
   font-family: "Cabin";
   font-weight: bold;
 }
 
+
 h3 {
   color:#333;
+  font-size:18px;
+}
+
+.input-row-label.type-red {
+  text-transform: uppercase;
+  font-size:30px;
 }
 
 .tools-box {
@@ -252,6 +261,7 @@ h3 {
 .padded {
   margin-top:10px;
   margin-bottom:10px;
+  text-align: center;
 }
 
 .weather-box {
@@ -357,9 +367,8 @@ and (orientation : portrait) {
   }
 
   .input-home {
-    margin: 10px auto;
-    margin-bottom: 20px;
-    height:50px;
+    margin: 0px auto;
+    height:40px;
     font-size:20px;
     width:105px;
     color:#333;
