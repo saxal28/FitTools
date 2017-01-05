@@ -107,8 +107,17 @@ class IndividualMealComponent extends Component {
   }
 
   render() {
+    const colors = {
+      1: 'rgba(215,245,250,0.5)',
+      2: "rgba(152,198,240,0.5)",
+      3: "rgba(121,162,234,0.5)",
+      4: "rgba(85,118,234,0.5)",
+      5: "rgba(60,49,180,0.5)",
+      6: "rgba(41,23,101,0.5)"
+    }
+    
     return (
-      <div className="well-clear meal text-center">
+      <div className="well-clear meal number-center">
 
         <div className="row">
           <div className="col-xs-2">
@@ -125,7 +134,7 @@ class IndividualMealComponent extends Component {
               <div className="col-xs-3">
 
                 <input
-                  type="text"
+                  type="number"
                   className="macros-input cal"
                   defaultValue={this.props.caloriesArr[this.props.index - 1]}
                   onChange={this.handleChange.bind(this)}>
@@ -136,7 +145,7 @@ class IndividualMealComponent extends Component {
               <div className="col-xs-3">
 
                 <input
-                  type="text"
+                  type="number"
                   className="macros-input carb"
                   onChange={this.handleChange.bind(this)}
                   defaultValue={this.props.carbArr[this.props.index - 1]}>
@@ -148,7 +157,7 @@ class IndividualMealComponent extends Component {
               <div className="col-xs-3">
 
                 <input
-                  type="text"
+                  type="number"
                   className="macros-input fat"
                   onChange={this.handleChange.bind(this)}
                   defaultValue={this.props.fatArr[this.props.index - 1]}>
@@ -159,7 +168,7 @@ class IndividualMealComponent extends Component {
               <div className="col-xs-3">
 
                 <input
-                  type="text"
+                  type="number"
                   className="macros-input pro"
                   onChange={this.handleChange.bind(this)}
                   defaultValue={this.props.proArr[this.props.index - 1]}>
@@ -176,15 +185,6 @@ class IndividualMealComponent extends Component {
       </div>
     )
   }
-}
-
-const colors = {
-  1: 'rgba(215,245,250,0.5)',
-  2: "rgba(152,198,240,0.5)",
-  3: "rgba(121,162,234,0.5)",
-  4: "rgba(85,118,234,0.5)",
-  5: "rgba(60,49,180,0.5)",
-  6: "rgba(41,23,101,0.5)"
 }
 
 function mapStateToProps(state) {

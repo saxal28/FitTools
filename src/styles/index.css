@@ -3,7 +3,9 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  /*background:rgb(0, 188, 212);*/
   /*background:url("http://media02.hongkiat.com/minimalist-wallpapers/Wooden_Noir_Wallpaper_Pack_by_Shod4n.jpg");*/
+  /*background:url("http://i.imgur.com/SvnuN4M.png");*/
   /*background:url("https://www.walldevil.com/wallpapers/a60/minimalistic-wallpapers-clouds-wallpaper-minimalist-desktop.jpg");*/
   background-size: cover;
   background-attachment: fixed;
@@ -25,7 +27,7 @@ nav {
   color:#333;
   font-size:20px;
   font-weight:bold;
-  text-shadow: 2px 2px #333;
+  /*text-shadow: 2px 2px #333;*/
   background:rgba(152,198,240,0.5);
   width: 60px;
   height: 46px;
@@ -221,7 +223,9 @@ a:hover {
   font-weight: bold;
 }
 
-
+h3 {
+  color:#333;
+}
 
 .tools-box {
   height: 200px;
@@ -265,12 +269,13 @@ a:hover {
 svg {
   width:100%;
   margin: 0 auto;
+  transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
 }
 
 .fa {
   font-size:2em;
   margin-left:9px;
-  color:white;
+  color:#333;
 }
 
 .fa-plus, .fa-child, .fa-user-md, .fa-graduation-cap {
@@ -326,7 +331,7 @@ input[type=checkbox] {
 
 @keyframes buttons {
     from {background-color: white; }
-    to { background-color: rgb(56,91,159); color:white;}
+    to { background-color: rgb(56,91,159); color:#333;}
 }
 
 
@@ -370,7 +375,7 @@ and (orientation : portrait) {
   .meal-color-label {
     width: 25px;
     border:none;
-    /*color:white;*/
+    /*color:#333;*/
     background:white;
     color:black;
     text-shadow: 1px 1px #333;
@@ -378,9 +383,6 @@ and (orientation : portrait) {
 
   }
 
-  h3 {
-    font-size:12px;
-  }
   .container {
     padding:0px;
   }
@@ -392,6 +394,10 @@ and (orientation : portrait) {
   .row {
     /*margin-left:0px;*/
     margin-right:0px;
+  }
+
+  .clear {
+    background:transparent;
   }
 
   .col-xs-2 {

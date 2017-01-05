@@ -12,6 +12,9 @@ import MealChart from "../common/MealChart";
 import MealAdjusterComponent from "./MealAdjusterComponent";
 import IndividualMealComponent from "./IndividualMealComponent";
 
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Paper from "material-ui/Paper";
+
 
 class MealPageContainer extends Component {
   constructor(props) {
@@ -27,13 +30,17 @@ class MealPageContainer extends Component {
   }
 
   render() {
-
+    const style = {
+      marginTop:"4%",
+      // background:"rgba(0,0,0,0.4)",
+      // color: "white",
+      // border:"1px solid white"
+    }
     return (
-      <div>
-
-
-
+    <MuiThemeProvider>
       <div className="container app ">
+
+          <Paper zDepth={0} style={style}>
 
         <div className="row">
 
@@ -97,9 +104,10 @@ class MealPageContainer extends Component {
           </div>
 
         </div>
+        </Paper>
       </div>
 
-    </div>
+    </MuiThemeProvider>
     );
   }
 }

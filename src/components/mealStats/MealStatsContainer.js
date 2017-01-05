@@ -40,6 +40,11 @@ class MealStatsContainer extends Component {
   }
 
   render() {
+    const style = {
+      // background:"rgba(0,0,0,0.4)",
+      // color: "white",
+      // border:'1px solid white'
+    }
     return (
       <MuiThemeProvider>
 
@@ -47,7 +52,7 @@ class MealStatsContainer extends Component {
           <div className="row">
             <div className="col-sm-6">
               <Paper zDepth={3}>
-              <div className="well-form-auto">
+              <div className="well-form-auto" style={style}>
                 <div className="row">
                   <h2>Meals</h2>
                   {this.props.caloriesArr[this.state.index] < 1 ?  <h2><small>No Meal Set</small></h2> : ""}
