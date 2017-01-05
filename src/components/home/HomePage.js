@@ -91,8 +91,8 @@ class HomePage extends Component {
         <div className="well-form text-center">
 
           <div className="home-title">
-            <h1>{this.isValid() ? "Here Are Your Details!":"Welcome To FitTools"}</h1>
-            <h3>{this.isValid() ? "You Will Be Able To Reset You Details Here In App....(button)": "Enter Your Details to Get Started"}</h3>
+            <h1 className="sub-heading">{this.isValid() ? "Here Are Your Details!":"Welcome To FitTools"}</h1>
+            <h3 className="sub-heading blue-1">{this.isValid() ? "You Will Be Able To Reset You Details Here In App....(button)": "Enter Your Details to Get Started"}</h3>
           </div>
 
 

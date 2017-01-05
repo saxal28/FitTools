@@ -31,21 +31,21 @@ class WeatherCard extends React.Component {
               showExpandableButton={true}
             >
               <div className="weather-box">
-                <h3>Current Temperature for</h3>
-                <h3>{this.props.city}</h3>
+                <h4 className="sub-heading blue-1">Current Temp for</h4>
+                <h4 className="sub-heading">{this.props.city}</h4>
                 <h1 className="weather-text type-green">{this.props.temp ? this.props.temp : "..."}</h1>
-                {temperatureStatus(this.props.temp)}
-                <h4>See Recommended Clothing!</h4>
+                <h4>{temperatureStatus(this.props.temp)}</h4>
+                <h4 className="sub-heading">See More....</h4>
               </div>
 
             </CardHeader>
             <CardText expandable={true}>
-              <h3>Here's a map of the area!</h3>
-              <h4>See if there are any parks around!</h4>
+              <h3 className="sub-heading">Here's a map of the area!</h3>
+              <h4 className="sub-heading blue-1">See if there are any parks around!</h4>
               {/*renders google map with delay*/}
               {this.setMapDelay()}
-              <div className="row text-center padded">
-                <h3>Based on the current temperature of <strong>{this.props.temp}</strong>, we recommend this clothing:</h3>
+              <div className="row padded">
+                <h4 className="sub-heading blue-1" style={{width:"96%", margin:"0 auto"}}>Based on the current temperature of <strong>{this.props.temp}</strong>, we recommend this clothing:</h4>
               </div>
               {/*renders recommended clothing based on weather*/}
               {temperatureClothingChecker(this.props.temp)}
@@ -59,19 +59,19 @@ class WeatherCard extends React.Component {
 };
 
 function temperatureStatus(temp){
-  if(temp < 40) {
-    return <h3>It's cold outside!</h3>
-  } else if(temp < 50) {
-    return <h3>It's chilly outside!</h3>
-  } else if(temp < 60) {
-    return <h3>It's nice out!side</h3>
-  } else if (temp < 70) {
-    return <h3>It's pretty nice outside!</h3>
-  } else if (temp < 80) {
-    return <h3>It's perfect outside!</h3>
-  } else if (temp >= 80) {
-    return <h3>It's pretty warm outside!</h3>
-  }
+    if(temp < 40) {
+      return <h3>It's cold outside!</h3>
+    } else if(temp < 50) {
+      return <h3>It's chilly outside!</h3>
+    } else if(temp < 60) {
+      return <h3>It's nice out!side</h3>
+    } else if (temp < 70) {
+      return <h3>It's pretty nice outside!</h3>
+    } else if (temp < 80) {
+      return <h3>It's perfect outside!</h3>
+    } else if (temp >= 80) {
+      return <h3>It's pretty warm outside!</h3>
+    }
 }
 
 function temperatureClothingChecker(temp) {

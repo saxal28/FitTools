@@ -1,7 +1,8 @@
 import React from "react";
 import ToolsCard from "../common/ToolsCard";
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Paper from "material-ui/Paper"
+// import Paper from "material-ui/Paper";
+import Card from "material-ui/Card";
 
 export default function MenuPage() {
   return (
@@ -9,15 +10,15 @@ export default function MenuPage() {
       <div className="container">
 
         <div className="tools-title">
-          <Paper zDepth={0} style={{padding:"20px", marginTop:"4%"}}>
-            <h1>To Get Started...</h1>
-            <h3>Select a Tool Below!</h3>
-          </Paper>
+          <Card zDepth={0} style={{padding:"20px", marginTop:"4%"}}>
+            <h1 className="sub-heading">To Get Started...</h1>
+            <h3 className="sub-heading">Select a Tool Below!</h3>
+          </Card>
         </div>
 
-            <Paper zDepth={0} style={{padding:"20px"}}>
-            <div className="row padded">
-              <i className="fa fa-plus" aria-hidden="true"></i> <span className="input-row-label type-red">Health</span>
+            <Card zDepth={0} style={{padding:"20px"}}>
+            <div className="row padded sub-heading gray">
+              <i className="fa fa-plus" aria-hidden="true"></i> <span className="input-row-label type-white">Health</span>
             </div>
 
             <div className="row">
@@ -53,29 +54,29 @@ export default function MenuPage() {
                 </div>
               </div>
 
-              </Paper>
+              </Card>
 
-              <div className="row padded">
-                <i className="fa fa-child" aria-hidden="true"></i> <span className="input-row-label type-red">Active</span>
+              <div className="row padded sub-heading gray">
+                <i className="fa fa-child" aria-hidden="true"></i> <span className="input-row-label type-white">Active</span>
               </div>
 
               <div className="row padded">
-                <Paper style={{padding:"20px"}} zDepth={0}>
+                <Card style={{padding:"20px"}} zDepth={0}>
                   <div className="col-sm-4">
                       <ToolsCard
                         title="Run Helper"
                         subtitle="Check the Current Conditions and other useful info before your run"
                         link="/tools/run-helper"/>
                   </div>
-                </Paper>
+                </Card>
               </div>
 
-              <div className="row padded">
-                  <i className="fa fa-user-md" aria-hidden="true"></i> <span className="input-row-label type-red">Community</span>
+              <div className="row padded sub-heading gray">
+                  <i className="fa fa-user-md" aria-hidden="true"></i> <span className="input-row-label type-white">Community</span>
                     </div>
 
-                    <div className="row padded">
-                      <i className="fa fa-graduation-cap" aria-hidden="true"></i> <span className="input-row-label type-red">Fitness Primers</span>
+                    <div className="row padded sub-heading gray">
+                      <i className="fa fa-graduation-cap" aria-hidden="true"></i> <span className="input-row-label type-white">Fitness Primers</span>
                       <div className="row">
 
                       </div>

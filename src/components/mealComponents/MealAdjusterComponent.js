@@ -13,13 +13,9 @@ export default class MealAdjusterComponent extends React.Component {
   render() {
     return (
       <div>
-          <div className="row">
-            <div className="col-xs-6 text-right">
+          <div className="row text-center">
               <span className="input-row-label float-left">TDEE: {this.props.TDEE ? this.props.TDEE : 2000}</span>
-            </div>
-            <div className="col-xs-6 text-left">
-              <span className="input-row-label float-right"> Calories Spent: </span> {this.isGreaterThanTDEE() ? <span className="input-row-label type-red"> {this.props.totalCal}</span> : <span className="input-row-label type-green">{this.props.totalCal}</span> } <br/>
-            </div>
+              <span className="input-row-label float-right"> Calories Spent: </span> {this.isGreaterThanTDEE() ? <span className="input-row-label type-red"> {this.props.totalCal}</span> : <span className="input-row-label type-green">{this.props.totalCal}</span> }
         </div>
       </div>
     )

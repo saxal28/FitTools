@@ -85,7 +85,7 @@ class MacroPlannerContainer extends Component {
               <Paper
                 zDepth={3}>
                 <div className="well-form-auto text-center">
-                  <h2>Select Macro Ratio</h2>
+                  <h2 className="sub-heading">Select Macro</h2>
                   <h2><small>TDEE : {this.props.TDEE}</small></h2>
                   <select className="input-select" style={{width:"90%"}} onChange={this.handleSelectChange.bind(this)}>
                     <option>Balanced</option>
@@ -94,7 +94,6 @@ class MacroPlannerContainer extends Component {
                     <option>Anabolic Diet (Weekday)</option>
                     <option>Anabolic Diet (Weekend)</option>
                   </select>
-                  <h2><small>This will be a description</small></h2>
                   <div className="row">
                     <div className="col-xs-7 text-right">
                       <h3><span style={{background:"rgba(215,245,250,0.5)", padding:"5px", border:'1px solid #333'}}>Carb({this.state.ratiosFormatted[0]})</span></h3>
@@ -121,6 +120,7 @@ class MacroPlannerContainer extends Component {
                     mealValue4={0}
                     mealValue5={this.state.pro ? this.state.pro : 0}
                     mealValue6={0} />
+                    <h2><small>This will be a description</small></h2>
                 </div>
               </Paper>
             </div>

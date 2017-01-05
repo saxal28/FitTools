@@ -2,7 +2,7 @@ import React from "react";
 
 export default function LabelRow(props) {
   return (
-    <div className="well-clear text-center" style={{background:"rgb(0, 188, 212)", color:"white"}}>
+    <div className="well-clear text-center" style={{background:"rgb(0, 188, 212)"}}>
 
       <div className="row">
         <div className="row text-center">
