@@ -24,7 +24,7 @@ class WeatherCard extends React.Component {
   render() {
     return (
       <MuiThemeProvider>
-          <Card zDepth={3} style={{marginTop:"4%"}}>
+          <Card zDepth={3} style={{marginTop:"4%", padding:"none"}}>
             <CardHeader
               subtitle="Run Helper"
               actAsExpander={true}
@@ -39,7 +39,7 @@ class WeatherCard extends React.Component {
               </div>
 
             </CardHeader>
-            <CardText expandable={true}>
+            <CardText expandable={true} style={{padding:"0px"}}>
               <h3 className="sub-heading">Here's a map of the area!</h3>
               <h4 className="sub-heading blue-1">See if there are any parks around!</h4>
               {/*renders google map with delay*/}

@@ -10,13 +10,13 @@ export default function MenuPage() {
       <div className="container">
 
         <div className="tools-title">
-          <Card zDepth={0} style={{padding:"20px", marginTop:"4%"}}>
+          <Card zDepth={1} style={{marginTop:"4%"}}>
             <h1 className="sub-heading">To Get Started...</h1>
             <h3 className="sub-heading">Select a Tool Below!</h3>
           </Card>
         </div>
 
-            <Card zDepth={0} style={{padding:"20px"}}>
+            <Card zDepth={2}>
             <div className="row padded sub-heading gray">
               <i className="fa fa-plus" aria-hidden="true"></i> <span className="input-row-label type-white">Health</span>
             </div>
@@ -60,15 +60,15 @@ export default function MenuPage() {
                 <i className="fa fa-child" aria-hidden="true"></i> <span className="input-row-label type-white">Active</span>
               </div>
 
-              <div className="row padded">
+              <div className="row">
+                <div className="col-sm-4">
                 <Card style={{padding:"20px"}} zDepth={0}>
-                  <div className="col-sm-4">
                       <ToolsCard
                         title="Run Helper"
                         subtitle="Check the Current Conditions and other useful info before your run"
                         link="/tools/run-helper"/>
-                  </div>
                 </Card>
+                </div>
               </div>
 
               <div className="row padded sub-heading gray">

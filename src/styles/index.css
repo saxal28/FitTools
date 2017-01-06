@@ -2,11 +2,12 @@ body {
   color:#333;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: Cabin;
   /*background:rgb(0, 188, 212);*/
   /*background:url("http://media02.hongkiat.com/minimalist-wallpapers/Wooden_Noir_Wallpaper_Pack_by_Shod4n.jpg");*/
   /*background:url("http://i.imgur.com/SvnuN4M.png");*/
   /*background:url("https://www.walldevil.com/wallpapers/a60/minimalistic-wallpapers-clouds-wallpaper-minimalist-desktop.jpg");*/
+  /*background:lightblue;*/
   background-size: cover;
   background-attachment: fixed;
   background-position: bottom;
@@ -222,6 +223,7 @@ a:hover {
   font-size: 2.5em;
   font-family: "Cabin";
   font-weight: bold;
+
 }
 
 

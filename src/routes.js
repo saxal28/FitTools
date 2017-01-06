@@ -11,6 +11,7 @@ import TestPage from "./components/tools/TestPage";
 import TdeeCalculator from "./components/calculators/TdeeCalculator";
 import RunHelper from "./components/runHelper/RunHelper";
 import MacroPlannerContainer from "./components/macroPlanner/MacroPlannerContainer";
+import WeightTracker from "./components/weightTracker/WeightTrackerContainer";
 
 export default (
   <Route path="/" component={App}>
@@ -21,6 +22,7 @@ export default (
     <Route path="tools/meal-stats" component={MealStatsContainer} />
     <Route path="tools/macro-planner" component={MacroPlannerContainer} />
     <Route path="tools/tdee-calculator" component={TdeeCalculator} />
+    <Route path="tools/weight-tracker" component={WeightTracker} />
     <Route path="tools/run-helper" component={RunHelper} />
     <Route path="tools/test-page" component={TestPage} />
   </Route>

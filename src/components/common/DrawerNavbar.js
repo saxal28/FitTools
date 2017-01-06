@@ -65,6 +65,7 @@ export default class DrawerNavbar extends React.Component {
             <Link to="/tools/meal-planner"activeClassName="active"><MenuItem>Meal Planner</MenuItem></Link>
             <Link to="/tools/meal-stats" activeClassName="active"><MenuItem>Meal Stats</MenuItem></Link>
             <Link to="/tools/macro-planner"activeClassName="active"><MenuItem>Macro Planner</MenuItem></Link>
+            <Link to="/tools/weight-tracker" activeClassName="active"><MenuItem>Weight Tracker</MenuItem></Link>
             <Link to="/tools/run-helper" activeClassName="active"><MenuItem>Run Helper</MenuItem></Link>
 
             <RaisedButton
