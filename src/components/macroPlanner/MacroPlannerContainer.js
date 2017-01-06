@@ -111,7 +111,8 @@ class MacroPlannerContainer extends Component {
             </div>
             <div className="col-sm-6">
               <Paper
-                zDepth={3}>
+                style={{paddingTop:"20px"}}
+                zDepth={0}>
                 <div className="well-form-auto">
                   <MealChart
                     mealValue1={this.state.carb ? this.state.carb : 0}
@@ -120,7 +121,7 @@ class MacroPlannerContainer extends Component {
                     mealValue4={0}
                     mealValue5={this.state.pro ? this.state.pro : 0}
                     mealValue6={0} />
-                    <h2><small>This will be a description</small></h2>
+                  <h2 className="text-center"><small>This will be a description</small></h2>
                 </div>
               </Paper>
             </div>

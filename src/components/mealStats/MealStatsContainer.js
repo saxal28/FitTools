@@ -53,8 +53,8 @@ class MealStatsContainer extends Component {
             <div className="col-sm-6">
               <Paper zDepth={3}>
               <div className="well-form-auto" style={style}>
-                <div className="row">
-                  <h2 className="sub-heading">Meals</h2>
+                <h2 className="sub-heading">Meals</h2>
+
                   {this.props.caloriesArr[this.state.index] < 1 ?  <h2><small>No Meal Set</small></h2> : ""}
                     <select
                       className="input-select"
@@ -67,8 +67,6 @@ class MealStatsContainer extends Component {
                       <option value="5">Meal 5</option>
                       <option value="6">Meal 6</option>
                     </select>
-
-                </div>
 
                 <div className="row">
                     <h2><small>{Math.floor(this.props.caloriesArr[this.state.index] / this.props.TDEE * 100 )}% of Total TDEE</small></h2>
@@ -94,7 +92,9 @@ class MealStatsContainer extends Component {
             </div>
 
             <div className="col-sm-6 col-xs-12">
-              <Paper zDepth={3}>
+              <Paper
+                style={{paddingTop:"20%"}}
+                zDepth={0}>
               <div className="well-form-auto">
                 <MealChart
                   mealValue1={Number(this.props.carbArr[this.state.index])}

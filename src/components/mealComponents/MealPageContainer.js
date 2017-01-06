@@ -25,22 +25,16 @@ class MealPageContainer extends Component {
     }
   }
 
-  addMealChartAttributes() {
-
-  }
 
   render() {
     const style = {
       marginTop:"4%",
-      // background:"rgba(0,0,0,0.4)",
-      // color: "white",
-      // border:"1px solid white"
     }
     return (
     <MuiThemeProvider>
       <div className="container app ">
 
-          <Paper zDepth={0} style={style}>
+          <Paper zDepth={3} style={style}>
 
         <div className="row">
 
@@ -51,7 +45,7 @@ class MealPageContainer extends Component {
 
           <div className="col-sm-12">
               <MealAdjusterComponent info={this.props.calories.calories} TDEE={this.props.TDEE} totalCal={this.props.totalCal}/>
-            <div className="row">
+            <div className="row" style={{padding: "0px 15px 8px 15px"}}>
               <div className="col-sm-3 col-xs-6">
                 <MealChart
                   mealValue1={Number(this.props.caloriesArr[0])}

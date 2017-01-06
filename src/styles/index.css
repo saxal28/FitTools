@@ -99,9 +99,9 @@ nav {
 }
 
 .well-form-auto {
-  padding: 30px 10%;
+  padding-bottom: 20px;
   max-width:1000px;
-  margin: 8% auto;
+  margin: 0 auto;
   vertical-align: middle;
 }
 
@@ -323,20 +323,23 @@ svg {
 }
 
 .sub-heading {
-  padding:10px;
+  padding:30px;
   color:white;
   background:rgb(0, 188, 212);
   text-align:center;
   /*max-width:96%;*/
-  margin:3px auto;
+  margin:0px auto;
+  box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
 }
 
 .blue-1 {
-  background:rgb(85, 118, 234)
+  background:rgb(85, 118, 234);
+  padding:10px;
 }
 
 .blue-2 {
-  background:rgb(60, 49, 180);
+  background:rgb(37,142,206);
+  padding:10px;
 }
 
 .black {
@@ -345,10 +348,12 @@ svg {
 
 .gray {
   background:gray;
+  padding:10px;
 }
 
 .col-xs-3, .col-xs-1 {
   padding:5px
+
 }
 
 .col-xs-2 {
