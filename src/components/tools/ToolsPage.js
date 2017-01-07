@@ -12,7 +12,7 @@ export default function MenuPage() {
         <div className="tools-title">
           <Card zDepth={1}>
             <h1 className="sub-heading">To Get Started...</h1>
-            <h3 className="sub-heading blue-2">Select a Tool Below!</h3>
+            <h3 className="sub-heading no-background" style={{padding:"20px"}}>Select a Tool Below!</h3>
           </Card>
         </div>
 
@@ -61,7 +61,7 @@ export default function MenuPage() {
               </div>
 
               <div className="row">
-              
+
               </div>
 
               <div className="row padded sub-heading blue-2">

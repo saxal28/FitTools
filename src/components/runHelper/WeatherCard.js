@@ -32,7 +32,7 @@ class WeatherCard extends React.Component {
             >
               <div className="weather-box">
                 <h4 className="sub-heading blue-2">Current Temp for</h4>
-                <h4 className="sub-heading blue-2">{this.props.city}</h4>
+                <h4 className="sub-heading no-background">{this.props.city}</h4>
                 <h1 className="weather-text type-green">{this.props.temp ? this.props.temp : "..."}</h1>
                 <h4>{temperatureStatus(this.props.temp)}</h4>
                 <h4 className="sub-heading blue-2">See More....</h4>

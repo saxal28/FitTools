@@ -14,13 +14,51 @@ class WeightTracker extends Component {
     this.state = {
       days: ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'],
       lastWeekWeight: null,
-      weightArr: [0,0,12,0,0,0,0]
+      weightArr: [0,0,12,0,0,0,0],
+      average: null
     }
+  }
+
+  handleInputChange() {
+
+    this.getInputValues();
+    const that = this;
+    setTimeout(function() {
+      that.findAverage();
+    })
+  }
+
+  getInputValues() {
+    var inputs = document.body.querySelectorAll("input");
+    const inputValues = [];
+    var lastWeekWeight;
+    inputs.forEach(function(input) {
+      if(input.id < 7) {
+        inputValues.push(input.value)
+      }
+      if(input.id == 7) {
+        lastWeekWeight = input.value;
+      }
+    })
+    this.setState({
+      lastWeekWeight,
+      weightArr: inputValues
+    })
+  }
+
+  findAverage() {
+    const weights = this.state.weightArr;
+      let average = null;
+      weights.forEach(function(i) {
+        average += Number(i);
+      })
+      average = Math.round((average / weights.length)*100)/100;
+      this.setState({ average })
   }
 
   render() {
     var data = {
-      labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'],
+      labels: this.state.days,
       datasets: [{
         label: '',
         fill: false,
@@ -48,16 +86,23 @@ class WeightTracker extends Component {
         <MuiThemeProvider>
           <Paper zDepth={3} style={{marginTop:"4%"}}>
             <div className="well-form-auto" style={{margin: "0 auto"}}>
-              <h1>Input Weight Here</h1>
+              <h2 className="sub-heading" style={{marginBottom: '20px'}}>Input Weight Here</h2>
               <div className="row">
-                <div className="col-sm-6 text-right">
-                  {this.state.days.map((day, index) => <WeightInput title={day} index={index} key={day} />)}
+                <div className="col-xs-6 text-right">
+                  {this.state.days.map((day, index) => <WeightInput title={day} index={index} key={day}  onChange={this.handleInputChange.bind(this)}/>)}
                 </div>
-                <div className="col-sm-6">
-                  <WeightInput title="Previous Weight" />
-                  <h4>Weight Average  : #</h4>
-                  <h4>Net (Gain/Loss) : #</h4>
-                  <h4>(Gain/Loss) from Last Week</h4>
+                <div className="col-xs-6">
+                  <WeightInput title="Last Weight" index={7} onChange={this.handleInputChange.bind(this)}/>
+                  <h4
+                    style={{marginTop:"50px"}}
+                    className="sub-heading no-background no-shadow">
+                    Weight Average: {this.state.average ? this.state.average : '...'}
+                  </h4>
+                  <h4 className="sub-heading no-background no-shadow">
+                    {/**/}
+                    {this.state.average < this.state.lastWeekWeight ? "Loss ": "Gain " } from Last Week:
+                    {this.state.average ? Math.round((this.state.average - this.state.lastWeekWeight)*100)/100 : " ..."}
+                  </h4>
                 </div>
               </div>
             </div>

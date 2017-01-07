@@ -351,6 +351,19 @@ svg {
   padding:10px;
 }
 
+.no-background {
+  background:transparent;
+  padding:10px;
+  color:black
+}
+
+.no-shadow {
+  box-shadow:none;
+  text-align:left
+}
+
+
+
 .col-xs-3, .col-xs-1 {
   padding:5px
 
