@@ -86,7 +86,7 @@ class TdeeCalculator extends Component {
     return (
       <div>
         <div className="container">
-          <div className="well-form text-center">
+          <div className="text-center">
 
             <div className="row">
               <div className="col-sm-6 text-center">
