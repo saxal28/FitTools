@@ -28,7 +28,7 @@ class MealPageContainer extends Component {
 
   render() {
     const style = {
-      marginTop:"4%",
+      background:"transparent"
     }
     return (
     <MuiThemeProvider>

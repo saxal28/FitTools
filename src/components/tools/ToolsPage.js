@@ -17,7 +17,7 @@ export default function MenuPage() {
         </div>
 
             <Card zDepth={2}>
-            <div className="row padded sub-heading blue-2">
+            <div className="row padded sub-heading ">
               <i className="fa fa-plus" aria-hidden="true"></i> <span className="input-row-label type-white">Health</span>
             </div>
 
@@ -56,7 +56,7 @@ export default function MenuPage() {
 
               </Card>
 
-              <div className="row padded sub-heading blue-2">
+              <div className="row padded sub-heading ">
                 <i className="fa fa-child" aria-hidden="true"></i> <span className="input-row-label type-white">Active</span>
               </div>
 
@@ -64,11 +64,11 @@ export default function MenuPage() {
 
               </div>
 
-              <div className="row padded sub-heading blue-2">
+              <div className="row padded sub-heading ">
                   <i className="fa fa-user-md" aria-hidden="true"></i> <span className="input-row-label type-white">Community</span>
                     </div>
 
-                    <div className="row padded sub-heading blue-2">
+                    <div className="row padded sub-heading ">
                       <i className="fa fa-graduation-cap" aria-hidden="true"></i> <span className="input-row-label type-white">Fitness Primers</span>
                       <div className="row">
 

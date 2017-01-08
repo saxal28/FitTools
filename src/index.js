@@ -10,8 +10,14 @@ import routes from "./routes";
 //  stylesheets
 import 'bootstrap/dist/css/bootstrap.css';
 import './styles/index.css';
-// for animations down the line
+// for animations
 import "./styles/animate.css";
+//=============================
+//jquery plugins
+//=============================
+import "./jQueryPlugins/main.js"
+//fittext
+import "./jQueryPlugins/jquery.fittext.js"
 
 
 const createStoreWithMiddleWare = applyMiddleware()(createStore);

@@ -1,23 +1,20 @@
 import React from "react";
 
 const style = {
-  border:"1px solid black",
   maxWidth:"60px",
   height:"40px"
 }
 
 const spanStyle = {
-  background: "rgb(0, 188, 212)",
   padding:"9px",
   fontSize: "18px",
   color: "white",
-  border:'1px solid #333',
   marginLeft:'10px'
 }
 
 function WeightInput(props) {
   return (
-    <div className="">
+    <div style={{background:'rgb(0, 188, 212)', marginBottom:"5px"}}>
           <span style={spanStyle}>{props.title}</span>
           <input
             type="text"

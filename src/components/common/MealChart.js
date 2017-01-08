@@ -6,31 +6,31 @@ export default class MealChart extends Component {
   render() {
     return (
       <div className="text-center">
-        <h3>{this.props.mealValue1 ? this.props.title: ""}</h3>
+        <h3 style={{color:"white", fontWeight:'bold'}}>{this.props.title}</h3>
         <PieChart
             slices={[
               {
-                color: 'rgba(215,245,250,0.5)',
+                color: 'rgb(215,245,250)',
                 value: this.props.mealValue1,
               },
               {
-                color: 'rgba(152,198,240,0.5)',
+                color: 'rgb(152,198,240)',
                 value: this.props.mealValue2,
               },
               {
-                color: 'rgba(121,162,234,0.5)',
+                color: 'rgb(121,162,234)',
                 value: this.props.mealValue3,
               },
               {
-                color: 'rgba(85,118,234,0.5)',
+                color: 'rgb(85,118,234)',
                 value: this.props.mealValue4,
               },
               {
-                color: 'rgba(60,49,180,0.5)',
+                color: 'rgb(60,49,180)',
                 value: this.props.mealValue5,
               },
               {
-                color: 'rgba(41,23,101,0.5)',
+                color: 'rgb(41,23,101)',
                 value: this.props.mealValue6,
               },
             ]}

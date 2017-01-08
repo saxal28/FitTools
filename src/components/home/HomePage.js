@@ -84,21 +84,23 @@ class HomePage extends Component {
   }
 
   render() {
-
+    const style= {
+      maxWidth:"100px"
+    }
     return (
       <div className="container">
         <MuiThemeProvider>
         <div className="well-form text-center">
 
           <div className="home-title">
-            <h1 className="">{this.isValid() ? "Here Are Your Details!":"Welcome To FitTools"}</h1>
-            <h3 className="">{this.isValid() ? "You Will Be Able To Reset You Details Here In App....(button)": "Enter Your Details to Get Started"}</h3>
+            <h1 id="fit-text-1">{this.isValid() ? "Your Stats":"FitTools"}</h1>
+            <h2 className="">{this.isValid() ? "Reset Stats (..button..)": "Enter Your Details to Get Started"}</h2>
           </div>
 
 
-          <div className="row input-home-row">
+          <div className="row sub-heading no-background no-shadow no-padding">
             <div className="col-xs-5 text-right">
-              <span className="input-row-label">TDEE</span>
+              <h3 className="home-label">TDEE</h3>
             </div>
             <div className="col-xs-7 text-left">
               <input
@@ -111,15 +113,15 @@ class HomePage extends Component {
                  />
 
                {this.state.TDEE || this.props.TDEE ?
-                <i className="fa fa-check-circle-o" aria-hidden="true"></i> :
-                  <i className="fa fa-times-circle-o" aria-hidden="true"></i>
+                <i className="fa fa-check" aria-hidden="true"></i> :
+                  <i className="fa fa-times" aria-hidden="true"></i>
               }
             </div>
           </div>
 
-          <div className="row">
+          <div className="row sub-heading no-background no-shadow no-padding">
             <div className="col-xs-5 text-right">
-              <span className="input-row-label">WEIGHT</span>
+              <h3 className="home-label">WEIGHT</h3>
             </div>
             <div className="col-xs-7 text-left">
               <input
@@ -130,15 +132,15 @@ class HomePage extends Component {
                 placeholder={this.props.WEIGHT ? this.props.WEIGHT : "" }
                 onChange={this.setWeight.bind(this)} />
               {this.state.WEIGHT || this.props.WEIGHT ?
-                <i className="fa fa-check-circle-o"  aria-hidden="true"></i> :
-                  <i className="fa fa-times-circle-o" aria-hidden="true"></i>
+                <i className="fa fa-check"  aria-hidden="true"></i> :
+                  <i className="fa fa-times" aria-hidden="true"></i>
               }
             </div>
           </div>
 
-          <div className="row">
+          <div className="row sub-heading no-background no-shadow no-padding">
             <div className="col-xs-5 text-right">
-              <span className="input-row-label">AGE</span>
+              <h3 className="home-label">AGE</h3>
             </div>
             <div className="col-xs-7 text-left">
               <input type="text"
@@ -148,13 +150,13 @@ class HomePage extends Component {
                 placeholder={this.props.AGE ? this.props.AGE : "" }
                 onChange={this.setAge.bind(this)}/>
 
-              {this.state.AGE || this.props.AGE ? <i className="fa fa-check-circle-o" aria-hidden="true"></i>:   <i className="fa fa-times-circle-o" aria-hidden="true"></i>}
+              {this.state.AGE || this.props.AGE ? <i className="fa fa-check" aria-hidden="true"></i>:   <i className="fa fa-times" aria-hidden="true"></i>}
             </div>
           </div>
 
-          <div className="row">
+          <div className="row sub-heading no-background no-shadow no-padding" style={{marginBottom:"20px"}}>
             <div className="col-xs-5 text-right">
-              <span className="input-row-label">HEIGHT(in)</span>
+              <h3 className="home-label">HEIGHT</h3>
             </div>
             <div className="col-xs-7 text-left">
               <input type="text"
@@ -164,7 +166,7 @@ class HomePage extends Component {
                 placeholder={this.props.HEIGHT ? this.props.HEIGHT : "" }
                 onChange={this.setHeight.bind(this)}/>
 
-              {this.state.HEIGHT || this.props.HEIGHT ? <i className="fa fa-check-circle-o" aria-hidden="true"></i>:   <i className="fa fa-times-circle-o" aria-hidden="true"></i>}
+              {this.state.HEIGHT || this.props.HEIGHT ? <i className="fa fa-check" aria-hidden="true"></i>:   <i className="fa fa-times" aria-hidden="true"></i>}
             </div>
           </div>
 

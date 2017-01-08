@@ -84,9 +84,9 @@ class WeightTracker extends Component {
     return (
       <div className="container">
         <MuiThemeProvider>
-          <Paper zDepth={3} style={{marginTop:"4%"}}>
+          <Paper zDepth={3}>
             <div className="well-form-auto" style={{margin: "0 auto"}}>
-              <h2 className="sub-heading" style={{marginBottom: '20px'}}>Input Weight Here</h2>
+              <h2 className="sub-heading" style={{marginBottom: '20px'}}>Weight Tracker</h2>
               <div className="row">
                 <div className="col-xs-6 text-right">
                   {this.state.days.map((day, index) => <WeightInput title={day} index={index} key={day}  onChange={this.handleInputChange.bind(this)}/>)}
@@ -94,14 +94,13 @@ class WeightTracker extends Component {
                 <div className="col-xs-6">
                   <WeightInput title="Last Weight" index={7} onChange={this.handleInputChange.bind(this)}/>
                   <h4
-                    style={{marginTop:"50px"}}
+                    style={{marginTop:"50px", marginBottom:"5px", background:"rgb(0, 188, 212)", color:"white"}}
                     className="sub-heading no-background no-shadow">
                     Weight Average: {this.state.average ? this.state.average : '...'}
                   </h4>
                   <h4 className="sub-heading no-background no-shadow">
                     {/**/}
-                    {this.state.average < this.state.lastWeekWeight ? "Loss ": "Gain " } from Last Week:
-                    {this.state.average ? Math.round((this.state.average - this.state.lastWeekWeight)*100)/100 : " ..."}
+                    {this.state.average < this.state.lastWeekWeight ? "Loss ": "Gain " } from Last Week: {this.state.average ? Math.round((this.state.average - this.state.lastWeekWeight)*100)/100 : " ..."}
                   </h4>
                 </div>
               </div>

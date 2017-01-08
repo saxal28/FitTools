@@ -30,7 +30,7 @@ export default class DrawerNavbar extends React.Component {
     //if mobile size, it hides the drawer menu
     //else, it keeps the drawer locked
     const width = $(document).width(); // returns width of HTML document
-    if (width > 800) {
+    if (width > 1024) {
       this.setState({
         notMobile : !this.state.notMobile,
         open : !this.state.open

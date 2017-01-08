@@ -93,7 +93,7 @@ class MealStatsContainer extends Component {
 
             <div className="col-sm-6 col-xs-12">
               <Paper
-                style={{paddingTop:"20%"}}
+                style={{paddingTop:"20%", background:"transparent"}}
                 zDepth={0}>
               <div className="well-form-auto">
                 <MealChart
