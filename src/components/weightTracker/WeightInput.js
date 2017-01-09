@@ -14,7 +14,7 @@ const spanStyle = {
 
 function WeightInput(props) {
   return (
-    <div style={{background:'rgb(0, 188, 212)', marginBottom:"5px"}}>
+    <div style={{background:'rgb(0, 188, 212)', marginBottom:"5px", color:"white"}}>
           <span style={spanStyle}>{props.title}</span>
           <input
             type="text"

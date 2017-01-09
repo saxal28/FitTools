@@ -11,7 +11,7 @@ export default function MenuPage() {
 
         <div className="tools-title">
           <Card zDepth={1}>
-            <h1 className="sub-heading">To Get Started...</h1>
+            <h1 className="sub-heading" style={{textShadow: "3px 4px black"}}>To Get Started...</h1>
             <h3 className="sub-heading no-background" style={{padding:"20px"}}>Select a Tool Below!</h3>
           </Card>
         </div>

@@ -53,7 +53,7 @@ class MealStatsContainer extends Component {
             <div className="col-sm-6">
               <Paper zDepth={3}>
               <div className="well-form-auto" style={style}>
-                <h2 className="sub-heading">Meals</h2>
+                <h2 className="sub-heading"style={{textShadow: "3px 4px black"}}>Meals</h2>
 
                   {this.props.caloriesArr[this.state.index] < 1 ?  <h2><small>No Meal Set</small></h2> : ""}
                     <select

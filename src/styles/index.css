@@ -5,10 +5,10 @@ body {
   font-family: Cabin;
   /*background:rgb(0, 188, 212);*/
   /*background:url("http://media02.hongkiat.com/minimalist-wallpapers/Wooden_Noir_Wallpaper_Pack_by_Shod4n.jpg");*/
-  /*background:url("http://i.imgur.com/SvnuN4M.png");*/
+  background:url("http://i.imgur.com/SvnuN4M.png");
   /*background:url("https://www.walldevil.com/wallpapers/a60/minimalistic-wallpapers-clouds-wallpaper-minimalist-desktop.jpg");*/
   /*background:lightblue;*/
-  background: rgb(19,117,160);
+  /*background: rgb(19,117,160);*/
   background-size: cover;
   background-attachment: fixed;
   background-position: bottom;
@@ -23,7 +23,8 @@ nav {
 .container {
   padding-left:15%;
   padding-right:15%;
-  padding-top:4%;
+  padding-top:8%;
+  padding: 8% 15%;
 }
 
 .meal-color-label {
@@ -148,7 +149,7 @@ a:hover {
   height:50px;
   width: 150px;
   font-size:20px;
-  background:transparent;
+  background:white;
   color:#333;
   border:2px solid lightgray;
   border-left:2px solid gray;
@@ -162,10 +163,12 @@ a:hover {
   width: 90px;
   font-size:2em;
   color:white;
+  text-shadow: 3px 4px black;
+  font-weight:bold;
   text-align:center;
   background:transparent;
   border:none;
-  /*border-bottom:2px solid #333;*/
+  /*border-bottom:1px solid #333;*/
 }
 
 .home-label {
@@ -173,8 +176,9 @@ a:hover {
   font-weight: bold;
   line-height: 12px;
   /*color:rgb(0, 188, 212);*/
-  text-shadow:2px 2px #333;
+  /*text-shadow:2px 2px #333;*/
   color:white;
+  text-shadow: 3px 4px black;
   /*font-family: "Bungee Inline";*/
   font-weight: bold;
 }
@@ -193,10 +197,13 @@ a:hover {
   border-right: 2px solid rgb(114,189,43);
   border-bottom: 2px solid rgb(114,189,43);
 }
+
 .input-row-label {
-    font-size:25px;
+    font-size:29px;
     line-height:65px;
     font-weight: bold;
+    /*text-transform: uppercase;*/
+    text-shadow: 2px 3px black;
     color:white;
 }
 
@@ -230,7 +237,7 @@ a:hover {
 }
 
 .home-title {
-  margin-bottom:60px;
+  margin-bottom:30px;
 }
 
 .home-title h1 {
@@ -315,11 +322,18 @@ svg {
 .fa-times {
   color:red;
     text-shadow:2px 6px #333;
+    text-shadow:1px 5px 1px #333;
 }
 
 .fa-check {
   color:green;
-  text-shadow:2px 6px #333;
+  text-shadow:1px 5px 1px #333;
+}
+
+.fa-hand-o-right {
+  color:white;
+  font-size:20px;
+  font-weight: bold;
 }
 
 .shadow-hover:hover {
@@ -348,6 +362,8 @@ svg {
   text-align:center;
   /*max-width:96%;*/
   margin:0px auto;
+
+  font-weight:bold;
   box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
 }
 
@@ -361,6 +377,10 @@ svg {
   padding:10px;
 }
 
+.primary-color {
+  background: rgb(0, 188, 212)
+}
+
 .black {
   background:#333;
 }
@@ -368,6 +388,10 @@ svg {
 .gray {
   background:gray;
   padding:10px;
+}
+
+.shadow {
+  box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
 }
 
 .no-background {
@@ -447,10 +471,11 @@ and (orientation : portrait) {
 
   .input-home {
     margin: 0px auto;
+    margin-left:8px;
     height:40px;
     /*font-size:20px;*/
-    width:105px;
-    color:#333;
+    width:80px;
+    color:white;
     text-align:center
   }
 

@@ -84,9 +84,6 @@ class HomePage extends Component {
   }
 
   render() {
-    const style= {
-      maxWidth:"100px"
-    }
     return (
       <div className="container">
         <MuiThemeProvider>
@@ -94,11 +91,12 @@ class HomePage extends Component {
 
           <div className="home-title">
             <h1 id="fit-text-1">{this.isValid() ? "Your Stats":"FitTools"}</h1>
-            <h2 className="">{this.isValid() ? "Reset Stats (..button..)": "Enter Your Details to Get Started"}</h2>
+            <h2 className="sub-heading" style={{maxWidth:'450px', boxShadow:"5px 5px 5px #333", padding:"10px", textShadow: "3px 4px black", marginTop:"30px", fontWeight:"bold"}}>
+              {this.isValid() ? "Reset Stats (..button..)": "Enter Your Details to Get Started"}</h2>
           </div>
 
-
-          <div className="row sub-heading no-background no-shadow no-padding">
+          <div className="" style={{margin:"0 auto", maxWidth:"450px", padding: "10px 0px"}}>
+          <div className="row sub-heading no-padding no-background no-shadow">
             <div className="col-xs-5 text-right">
               <h3 className="home-label">TDEE</h3>
             </div>
@@ -119,7 +117,7 @@ class HomePage extends Component {
             </div>
           </div>
 
-          <div className="row sub-heading no-background no-shadow no-padding">
+          <div className="row sub-heading no-padding no-background no-shadow">
             <div className="col-xs-5 text-right">
               <h3 className="home-label">WEIGHT</h3>
             </div>
@@ -138,7 +136,7 @@ class HomePage extends Component {
             </div>
           </div>
 
-          <div className="row sub-heading no-background no-shadow no-padding">
+          <div className="row sub-heading no-padding no-background no-shadow">
             <div className="col-xs-5 text-right">
               <h3 className="home-label">AGE</h3>
             </div>
@@ -154,7 +152,7 @@ class HomePage extends Component {
             </div>
           </div>
 
-          <div className="row sub-heading no-background no-shadow no-padding" style={{marginBottom:"20px"}}>
+          <div className="row sub-heading no-padding no-background no-shadow" style={{marginBottom:"20px"}}>
             <div className="col-xs-5 text-right">
               <h3 className="home-label">HEIGHT</h3>
             </div>
@@ -169,12 +167,14 @@ class HomePage extends Component {
               {this.state.HEIGHT || this.props.HEIGHT ? <i className="fa fa-check" aria-hidden="true"></i>:   <i className="fa fa-times" aria-hidden="true"></i>}
             </div>
           </div>
-
+        </div>
 
             <div className="row paded">
                 {this.renderButton()}
                 {this.state.TDEE || this.props.TDEE ? "" : <Link to="/tools/tdee-calculator" className="btn custom-button">What is TDEE?</Link> }
             </div>
+
+
 
             {this.isValid() ? "" :
               <div className="alert alert-danger text-center">

@@ -85,7 +85,7 @@ class MacroPlannerContainer extends Component {
               <Paper
                 zDepth={3}>
                 <div className="well-form-auto text-center">
-                  <h2 className="sub-heading">Select Macro</h2>
+                  <h2 className="sub-heading" style={{textShadow: "3px 4px black"}}>Select Macro</h2>
                   <h2><small>TDEE : {this.props.TDEE}</small></h2>
                   <select className="input-select" style={{width:"90%"}} onChange={this.handleSelectChange.bind(this)}>
                     <option>Balanced</option>

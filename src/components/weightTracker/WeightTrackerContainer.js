@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 
 import Paper from "material-ui/Paper";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
@@ -14,7 +14,7 @@ class WeightTracker extends Component {
     this.state = {
       days: ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'],
       lastWeekWeight: null,
-      weightArr: [0,0,12,0,0,0,0],
+      weightArr: [0,0,0,0,0,0,0],
       average: null
     }
   }
@@ -36,7 +36,7 @@ class WeightTracker extends Component {
       if(input.id < 7) {
         inputValues.push(input.value)
       }
-      if(input.id == 7) {
+      if(input.id === '7') {
         lastWeekWeight = input.value;
       }
     })
@@ -86,19 +86,19 @@ class WeightTracker extends Component {
         <MuiThemeProvider>
           <Paper zDepth={3}>
             <div className="well-form-auto" style={{margin: "0 auto"}}>
-              <h2 className="sub-heading" style={{marginBottom: '20px'}}>Weight Tracker</h2>
+              <h2 className="sub-heading" style={{marginBottom: '20px', textShadow: "3px 4px black"}}>Weight Tracker</h2>
               <div className="row">
                 <div className="col-xs-6 text-right">
                   {this.state.days.map((day, index) => <WeightInput title={day} index={index} key={day}  onChange={this.handleInputChange.bind(this)}/>)}
                 </div>
                 <div className="col-xs-6">
-                  <WeightInput title="Last Weight" index={7} onChange={this.handleInputChange.bind(this)}/>
+                  <WeightInput title="Last Week" index={7} onChange={this.handleInputChange.bind(this)}/>
                   <h4
                     style={{marginTop:"50px", marginBottom:"5px", background:"rgb(0, 188, 212)", color:"white"}}
                     className="sub-heading no-background no-shadow">
                     Weight Average: {this.state.average ? this.state.average : '...'}
                   </h4>
-                  <h4 className="sub-heading no-background no-shadow">
+                  <h4 className="sub-heading no-background no-shadow" style={{background:"rgb(0, 188, 212)", color:"white"}}>
                     {/**/}
                     {this.state.average < this.state.lastWeekWeight ? "Loss ": "Gain " } from Last Week: {this.state.average ? Math.round((this.state.average - this.state.lastWeekWeight)*100)/100 : " ..."}
                   </h4>
