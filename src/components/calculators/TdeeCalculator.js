@@ -85,6 +85,12 @@ class TdeeCalculator extends Component {
   render() {
     return (
       <div>
+        <div className="home-banner" style={{marginBottom: '30px'}}>
+          <div className="home-title" style={{padding:'40px'}}>
+            <h1>Let's Find Your TDEE</h1>
+            <h2 style={{color:"white", maxWidth:'600px', margin:"0px auto", paddingTop:'30px'}}>Your TDEE, Total Daily Energy Expendature, is the amount of calories your body burns each day, accounting for your activity level</h2>
+          </div>
+        </div>
         <div className="container">
           <div className="text-center">
 

@@ -85,17 +85,22 @@ class HomePage extends Component {
 
   render() {
     return (
-      <div className="container">
-        <MuiThemeProvider>
-        <div className="well-form text-center">
+      <MuiThemeProvider>
+      <section>
 
+        <div className="home-banner">
           <div className="home-title">
             <h1 id="fit-text-1">{this.isValid() ? "Your Stats":"FitTools"}</h1>
-            <h2 className="sub-heading" style={{maxWidth:'450px', boxShadow:"5px 5px 5px #333", padding:"10px", textShadow: "3px 4px black", marginTop:"30px", fontWeight:"bold"}}>
+            <h2 className="" style={{color:"white"}}>
               {this.isValid() ? "Reset Stats (..button..)": "Enter Your Details to Get Started"}</h2>
           </div>
+        </div>
 
-          <div className="" style={{margin:"0 auto", maxWidth:"450px", padding: "10px 0px"}}>
+      <div className="">
+
+        <div className="well-form text-center">
+
+          <div className="" style={{margin:"0 auto", maxWidth:"450px", padding: "30px 0px"}}>
           <div className="row sub-heading no-padding no-background no-shadow">
             <div className="col-xs-5 text-right">
               <h3 className="home-label">TDEE</h3>
@@ -167,26 +172,26 @@ class HomePage extends Component {
               {this.state.HEIGHT || this.props.HEIGHT ? <i className="fa fa-check" aria-hidden="true"></i>:   <i className="fa fa-times" aria-hidden="true"></i>}
             </div>
           </div>
-        </div>
+          <div className="row paded text-center">
+              {this.renderButton()}
+              {this.state.TDEE || this.props.TDEE ? "" : <Link to="/tools/tdee-calculator" className="btn custom-button">What is TDEE?</Link> }
+          </div>
 
-            <div className="row paded">
-                {this.renderButton()}
-                {this.state.TDEE || this.props.TDEE ? "" : <Link to="/tools/tdee-calculator" className="btn custom-button">What is TDEE?</Link> }
+
+
+          {this.isValid() ? "" :
+            <div className="alert alert-danger text-center">
+             <strong>Site Currently Under Development!</strong>
+               Explore and Play Around with the App! More Features to Come! Heres a <a href="https://goo.gl/1B4gij" target="_blank"><strong>LINK</strong></a> to my github repo if you want to check out the code <i className="fa fa-smile-o" aria-hidden="true"></i>
             </div>
 
-
-
-            {this.isValid() ? "" :
-              <div className="alert alert-danger text-center">
-               <strong>Site Currently Under Development!</strong>
-                 Explore and Play Around with the App! More Features to Come! Heres a <a href="https://goo.gl/1B4gij" target="_blank"><strong>LINK</strong></a> to my github repo if you want to check out the code <i className="fa fa-smile-o" aria-hidden="true"></i>
-              </div>
-
-          }
+        }
+        </div>
 
         </div>
-      </MuiThemeProvider>
       </div>
+      </section>
+    </MuiThemeProvider>
     )
   }
 }

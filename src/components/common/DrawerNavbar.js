@@ -43,6 +43,7 @@ export default class DrawerNavbar extends React.Component {
     setTimeout(function() {
         that.handleMobileDevice();
     }, 400)
+    console.log(this.state.open)
   }
 
   render() {
@@ -52,7 +53,6 @@ export default class DrawerNavbar extends React.Component {
           <AppBar onLeftIconButtonTouchTap={this.handleToggle.bind(this)} />
           <Drawer
             width={200}
-            docked={this.state.notMobile}
             overlayStyle={{"background":"transparent"}}
             open={this.state.open}
             onRequestChange={(open) => this.setState({open})}

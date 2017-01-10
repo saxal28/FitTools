@@ -86,7 +86,7 @@ class WeightTracker extends Component {
         <MuiThemeProvider>
           <Paper zDepth={3}>
             <div className="well-form-auto" style={{margin: "0 auto"}}>
-              <h2 className="sub-heading" style={{marginBottom: '20px', textShadow: "3px 4px black"}}>Weight Tracker</h2>
+              <h2 className="sub-heading" style={{marginBottom: '20px'}}>Weight Tracker</h2>
               <div className="row">
                 <div className="col-xs-6 text-right">
                   {this.state.days.map((day, index) => <WeightInput title={day} index={index} key={day}  onChange={this.handleInputChange.bind(this)}/>)}

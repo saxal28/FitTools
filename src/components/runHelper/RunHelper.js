@@ -63,9 +63,19 @@ export default class RunHelper extends Component {
 
   render(){
     return (
-      <div className="container">
-        <WeatherCard temp={this.state.temp} city={this.state.city} lat={this.state.lat} lon={this.state.lon}/>
-      </div>
+      <section>
+
+        <div className="home-banner">
+          <div className="home-title" style={{padding:'40px'}}>
+            <h1>Run Helper</h1>
+            <h2 style={{color:"white"}}>Get the Current Weather, A Map of Your Location, and a Clothing Guide!</h2>
+          </div>
+        </div>
+
+        <div className="container">
+          <WeatherCard temp={this.state.temp} city={this.state.city} lat={this.state.lat} lon={this.state.lon}/>
+        </div>
+      </section>
     )
   }
 }
