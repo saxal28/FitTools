@@ -34,6 +34,7 @@ export default function MenuPage() {
                   <Link to="tools/meal-planner"><h5 style={{maxWidth:"150px", margin:"3px auto"}} className="sub-heading blue-2">Meal Planner</h5></Link>
                   <Link to="tools/meal-stats"><h5 style={{maxWidth:"150px", margin:"3px auto"}} className="sub-heading blue-2">Meal Stats</h5></Link>
                   <Link to="tools/macro-planner"><h5 style={{maxWidth:"150px", margin:"3px auto"}} className="sub-heading blue-2">Macro Planner</h5></Link>
+                  <Link to="tools/weight-tracker"><h5 style={{maxWidth:"150px", margin:"3px auto"}} className="sub-heading blue-2">Weight Tracker</h5></Link>
                 </div>
               </CardText>
             </Card>
