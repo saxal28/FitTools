@@ -67,8 +67,8 @@ export default class RunHelper extends Component {
   render(){
     return (
       <section>
-        <div className="home-banner">
-          <div className="home-title" style={{padding:'40px'}}>
+        <div className="home-banner" style={{padding:"40px 0px"}}>
+          <div className="home-title">
             <h1>Run Helper</h1>
             <h2 style={{color:"white"}}>Get the Current Condtions, A Map of Your Location, and a Clothing Guide!</h2>
             <Link to="/tools" className="btn button-outline">To Tools</Link>

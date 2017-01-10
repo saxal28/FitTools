@@ -262,6 +262,16 @@ a:hover {
   color:rgb(0, 188, 212);
 }
 
+.section {
+  padding: 10% 15%;
+  background:#333;
+  height:100%;
+  width:100;
+  box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
+  background:url("https://www.planwallpaper.com/static/images/6968796-desktop-wallpaper-backgrounds-1080p.jpg");
+  background-size:cover;
+  background-attachment: fixed;
+}
 
 h3 {
   color:#333;
@@ -471,6 +481,10 @@ and (orientation : portrait) {
     width:105px;
     background:transparent;
     color:#333;
+  }
+
+  .section  {
+    background:#333;
   }
 
   .input-home {

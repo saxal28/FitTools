@@ -3,6 +3,7 @@ import { Route, IndexRoute } from 'react-router';
 import App from "./components/App";
 
 import HomePage from "./components/home/HomePage";
+import AboutPage from "./components/about/About";
 import MealPageContainer from "./components/mealComponents/MealPageContainer";
 import MealStatsContainer from "./components/mealStats/MealStatsContainer";
 import ToolsPage from "./components/tools/ToolsPage";
@@ -16,6 +17,7 @@ import WeightTracker from "./components/weightTracker/WeightTrackerContainer";
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={HomePage} />
+    <Route path="about" component={AboutPage} />
     <Route path="tools" component={ToolsPage} />
     <Route path="tools/health-status" component={HealthStatusContainer} />
     <Route path="tools/meal-planner" component={MealPageContainer} />

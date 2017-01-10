@@ -34,7 +34,7 @@ class MealPageContainer extends Component {
     <MuiThemeProvider>
       <section>
 
-        <div className="home-banner">
+        <div className="home-banner" style={{padding:"40px 0px"}}>
           <div className="home-title">
             <h1>Meal Planner</h1>
             <h2 style={{color:"white"}}>Plan or Track Your Meals for the Day</h2>
