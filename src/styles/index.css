@@ -155,7 +155,7 @@ a:hover {
   margin: 3px auto;
   margin-right:5px;
   height:50px;
-  width: 90px;
+  width: 110px;
   font-size:20px;
   color:#333;
   font-weight:bold;
@@ -183,7 +183,7 @@ a:hover {
   height:40%;
   background:#333;
   text-align:center;
-  padding:30px;
+  padding:40px;
   box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
   /*padding-top:20px;*/
 }
@@ -228,6 +228,23 @@ a:hover {
   font-weight:bold;
 }
 
+.button-outline {
+  background:transparent;
+  color:white;
+  margin-top:20px;
+  height: 50px;
+  line-height: 34px;
+  color:white;
+  border: 2px solid white;
+  box-shadow: 3px 3px 3px #333;
+  font-size: 20px;
+  font-weight:bold;
+}
+
+.button-outline:hover {
+  color:white;
+}
+
 .custom-button:hover {
   color:white;
 }
@@ -256,26 +273,20 @@ h3 {
   /*font-size:30px;*/
 }
 
-.tools-box {
-  height: 200px;
-  width: 100%;
-  background: rgba(0,0,230,0.5);
-  background:url("http://i.imgur.com/PHSKRtI.png");
-  background-size:100% 115%;
-  margin-bottom: 10px;
-  border: 3px solid white;
+.tools {
+  max-width:290px;
+  margin:0 auto;
 }
 
-.tools-container {
-  width:80%;
-  max-width: 900px;
-  min-width: 330px;
-  margin: 20px auto;
+.tools-card {
+  max-width:500;
+  margin: 0 auto;
 }
 
-.tools-title {
-  text-align: center;
-  margin-bottom: 50px;
+.tools-icon {
+  width: 50px;
+  height: 50px;
+  margin:5px;
 }
 
 .padded {
@@ -339,7 +350,7 @@ svg {
 
 .type-red {
   color:red;
-  text-shadow:2px 2px 1px black;
+  /*text-shadow:2px 2px 1px black;*/
 }
 
 .type-green {

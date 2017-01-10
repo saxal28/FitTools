@@ -2,7 +2,8 @@ import React from "react";
 
 const style = {
   maxWidth:"60px",
-  height:"40px"
+  height:"40px",
+  color:"white"
 }
 
 const spanStyle = {

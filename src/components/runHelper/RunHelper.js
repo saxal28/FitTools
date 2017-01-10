@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import WeatherCard from "./WeatherCard";
+import { Link } from "react-router";
 
 export default class RunHelper extends Component {
   constructor(props) {
@@ -11,7 +12,8 @@ export default class RunHelper extends Component {
       lon: "",
       zipcode: "",
       temp: "",
-      city: ""
+      city: "",
+      weather: ""
     }
   }
   componentWillMount() {
@@ -47,13 +49,14 @@ export default class RunHelper extends Component {
     axios.get(url)
     .then(function(response) {
     let data = response.data.current_observation;
+    let weather = data.weather;
     let city = data.display_location.full;
+    let temp = Math.floor(data.temp_f);
 
-    console.log(data)
-      let temp = Math.floor(data.temp_f);
       that.setState({
         temp,
-        city
+        city,
+        weather
       })
     })
     .catch(function(err) {
@@ -64,16 +67,16 @@ export default class RunHelper extends Component {
   render(){
     return (
       <section>
-
         <div className="home-banner">
           <div className="home-title" style={{padding:'40px'}}>
             <h1>Run Helper</h1>
-            <h2 style={{color:"white"}}>Get the Current Weather, A Map of Your Location, and a Clothing Guide!</h2>
+            <h2 style={{color:"white"}}>Get the Current Condtions, A Map of Your Location, and a Clothing Guide!</h2>
+            <Link to="/tools" className="btn button-outline">To Tools</Link>
           </div>
         </div>
 
         <div className="container">
-          <WeatherCard temp={this.state.temp} city={this.state.city} lat={this.state.lat} lon={this.state.lon}/>
+          <WeatherCard temp={this.state.temp} city={this.state.city} lat={this.state.lat} lon={this.state.lon} weather={this.state.weather}/>
         </div>
       </section>
     )

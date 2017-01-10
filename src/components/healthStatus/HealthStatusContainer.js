@@ -7,6 +7,7 @@ import LinearProgress from 'material-ui/LinearProgress';
 
 // import {Doughnut} from 'react-chartjs-2';
 import { Bar } from 'react-chartjs-2';
+import { Link } from 'react-router';
 
 class HealthStatusContainer extends Component {
   constructor(props) {
@@ -105,6 +106,16 @@ class HealthStatusContainer extends Component {
 
     return (
       <MuiThemeProvider>
+        <section>
+
+          <div className="home-banner" style={{padding:"40px 0px"}}>
+            <div className="home-title" style={{padding:'40px'}}>
+              <h1>Health Status</h1>
+              <h2 style={{color:"white"}}>See Your Calculated BMI, Recommended Calories, and More!</h2>
+              <Link to="/tools" className="btn button-outline">To Tools</Link>
+            </div>
+          </div>
+
         <div className="container text-center">
           {/*title section */}
           <Paper zDepth={2} style={paperStyles}>
@@ -157,6 +168,7 @@ class HealthStatusContainer extends Component {
           </Paper>
 
         </div>
+        </section>
       </MuiThemeProvider>
     )
   }

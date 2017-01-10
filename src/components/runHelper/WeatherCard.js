@@ -34,6 +34,7 @@ class WeatherCard extends React.Component {
                 <h4 className="sub-heading blue-2">Current Temp for</h4>
                 <h4 className="sub-heading no-background">{this.props.city}</h4>
                 <h1 className="weather-text type-green">{this.props.temp ? this.props.temp : "..."}</h1>
+                <h4>{this.props.weather ? this.props.weather : "..."}</h4>
                 <h4>{temperatureStatus(this.props.temp)}</h4>
                 <h4 className="sub-heading blue-2">See More....</h4>
               </div>
@@ -95,7 +96,7 @@ function temperatureClothingChecker(temp) {
     return (
       <div className="row">
         <div className="col-sm-4">
-          <img src="http://www.brooksrunning.com/dw/image/v2/aaev_prd/on/demandware.static/-/Sites-BrooksCatalog/default/dw106ff76f/images/ProductImages/210910/210910_404_mf_ZM.jpg?sw=1200" className="img-responsive" role="presentation"/>
+          <img src="https://d3d71ba2asa5oz.cloudfront.net/12001379/images/2013%2002%2022%20079.jpg" className="img-responsive" role="presentation"/>
         </div>
         <div className="col-sm-4">
           <img src="https://www.dickssportinggoods.com/graphics/product_images/pDSP1-24977043v750.jpg" className="img-responsive" role="presentation"/>
@@ -110,7 +111,7 @@ function temperatureClothingChecker(temp) {
     return (
       <div className="row">
         <div className="col-sm-6">
-          <img src="http://www.brooksrunning.com/dw/image/v2/aaev_prd/on/demandware.static/-/Sites-BrooksCatalog/default/dw106ff76f/images/ProductImages/210910/210910_404_mf_ZM.jpg?sw=1200" className="img-responsive" role="presentation"/>
+          <img src="https://d3d71ba2asa5oz.cloudfront.net/12001379/images/2013%2002%2022%20079.jpg" className="img-responsive" role="presentation"/>
         </div>
         <div className="col-sm-6">
           <img src="https://www.dickssportinggoods.com/graphics/product_images/pDSP1-24036896v750.jpg" className="img-responsive" role="presentation"/>

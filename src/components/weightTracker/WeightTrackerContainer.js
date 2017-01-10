@@ -5,7 +5,7 @@ import Paper from "material-ui/Paper";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import WeightInput from "./WeightInput";
 import { Line } from 'react-chartjs-2';
-
+import { Link } from "react-router";
 
 class WeightTracker extends Component {
   constructor(props) {
@@ -82,8 +82,18 @@ class WeightTracker extends Component {
       }]
     };
     return (
+    <MuiThemeProvider>
+      <section>
+
+      <div className="home-banner" style={{padding: "40px 0px"}}>
+        <div className="home-title" style={{padding:'40px'}}>
+          <h1>Weight Tracker</h1>
+          <h2 style={{color:"white"}}>Track Your Weight for the Week and Compare it to Last Week's Weight</h2>
+          <Link to="/tools" className="btn button-outline">To Tools</Link>
+        </div>
+      </div>
+
       <div className="container">
-        <MuiThemeProvider>
           <Paper zDepth={3}>
             <div className="well-form-auto" style={{margin: "0 auto"}}>
               <h2 className="sub-heading" style={{marginBottom: '20px'}}>Weight Tracker</h2>
@@ -109,8 +119,9 @@ class WeightTracker extends Component {
               <Line data={data} />
             </div>
           </Paper>
-        </MuiThemeProvider>
       </div>
+    </section>
+    </MuiThemeProvider>
     )
   }
 }

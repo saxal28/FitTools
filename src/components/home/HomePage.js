@@ -90,7 +90,7 @@ class HomePage extends Component {
 
         <div className="home-banner">
           <div className="home-title">
-            <h1 id="fit-text-1">{this.isValid() ? "Your Stats":"FitTools"}</h1>
+            <h1 id="fit-text-1">{this.isValid() ? "Your Stats":"Fit Tools"}</h1>
             <h2 className="" style={{color:"white"}}>
               {this.isValid() ? "Reset Stats (..button..)": "Enter Your Details to Get Started"}</h2>
           </div>

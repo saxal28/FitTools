@@ -3,6 +3,7 @@ import MealChart from "../common/MealChart";
 import { connect } from "react-redux";
 import Paper from "material-ui/Paper";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import { Link } from 'react-router';
 
 class MealStatsContainer extends Component {
   constructor(props) {
@@ -53,6 +54,7 @@ class MealStatsContainer extends Component {
             <div className="home-title">
               <h1>Meal Stats</h1>
               <h2 style={{color:"white"}}>See the Macro Ratio for Each of Your Meals</h2>
+              <Link to="/tools" className="btn button-outline">To Tools</Link>
             </div>
           </div>
 

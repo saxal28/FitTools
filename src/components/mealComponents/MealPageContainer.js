@@ -5,7 +5,6 @@
 import React, { Component } from 'react';
 //redux
 import { connect } from "react-redux";
-
 // child components
 import LabelRow from "../common/LabelRow";
 import MealChart from "../common/MealChart";
@@ -13,6 +12,7 @@ import MealAdjusterComponent from "./MealAdjusterComponent";
 import IndividualMealComponent from "./IndividualMealComponent";
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { Link } from "react-router";
 import Paper from "material-ui/Paper";
 
 
@@ -32,6 +32,17 @@ class MealPageContainer extends Component {
     }
     return (
     <MuiThemeProvider>
+      <section>
+
+        <div className="home-banner">
+          <div className="home-title">
+            <h1>Meal Planner</h1>
+            <h2 style={{color:"white"}}>Plan or Track Your Meals for the Day</h2>
+            <h2 style={{color:"white"}}> Which Meal Provides the Most Calories? </h2>
+            <Link to="/tools" className="btn button-outline">To Tools</Link>
+          </div>
+        </div>
+
       <div className="container app ">
 
           <Paper zDepth={3} style={style}>
@@ -101,6 +112,7 @@ class MealPageContainer extends Component {
         </Paper>
       </div>
 
+      </section>
     </MuiThemeProvider>
     );
   }

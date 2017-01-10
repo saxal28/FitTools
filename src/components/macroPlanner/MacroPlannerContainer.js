@@ -3,6 +3,7 @@ import Paper from "material-ui/Paper";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import MealChart from "../common/MealChart";
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 
 class MacroPlannerContainer extends Component {
   constructor(props) {
@@ -79,6 +80,16 @@ class MacroPlannerContainer extends Component {
   render() {
     return (
       <MuiThemeProvider>
+        <section>
+
+          <div className="home-banner" style={{padding:"40px 0px"}}>
+            <div className="home-title">
+              <h1>Macro Planner</h1>
+              <h2 style={{color:"white"}}>Determine Your Macro Nutrients Based Upon Your TDEE and Your Goals</h2>
+              <Link to="/tools" className="btn button-outline">To Tools</Link>
+            </div>
+          </div>
+
         <div className="container">
           <div className="row">
             <div className="col-sm-6">
@@ -121,12 +132,12 @@ class MacroPlannerContainer extends Component {
                     mealValue4={0}
                     mealValue5={this.state.pro ? this.state.pro : 0}
                     mealValue6={0} />
-                  <h2 className="text-center"><small>This will be a description</small></h2>
                 </div>
               </Paper>
             </div>
           </div>
         </div>
+      </section>
       </MuiThemeProvider>
     )
   }
