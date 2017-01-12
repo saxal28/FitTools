@@ -59,10 +59,8 @@ export default class DrawerNavbar extends React.Component {
             ref="navbar"
           >
             <Link to="/"><MenuItem>My Stats</MenuItem></Link>
-            <Link to="/about"activeClassName="active"><MenuItem>About</MenuItem></Link>
             <Link to="/tools"activeClassName="active"><MenuItem>Tools</MenuItem></Link>
             <Link to="/tools/health-status" activeClassName="active"><MenuItem>Health Status</MenuItem></Link>
-            <Link to="/tools/test-page"activeClassName="active"><MenuItem>Test Page</MenuItem></Link>
             <Link to="/tools/meal-planner"activeClassName="active"><MenuItem>Meal Planner</MenuItem></Link>
             <Link to="/tools/meal-stats" activeClassName="active"><MenuItem>Meal Stats</MenuItem></Link>
             <Link to="/tools/macro-planner"activeClassName="active"><MenuItem>Macro Planner</MenuItem></Link>
