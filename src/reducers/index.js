@@ -1,6 +1,6 @@
 import { combineReducers }  from 'redux';
 
-import  calories  from "./TestReducer";
+import calories from "./TestReducer";
 
 import TDEE from "./setMacros/setCaloriesReducer";
 import WEIGHT from "./setMacros/setWeightReducer";
