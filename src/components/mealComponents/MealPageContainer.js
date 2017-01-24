@@ -38,7 +38,6 @@ class MealPageContainer extends Component {
           <div className="home-title">
             <h1>Meal Planner</h1>
             <h2 style={{color:"white"}}>Plan or Track Your Meals for the Day</h2>
-            <h2 style={{color:"white"}}> Which Meal Provides the Most Calories? </h2>
             <Link to="/tools" className="btn button-outline">To Tools</Link>
           </div>
         </div>
