@@ -84,7 +84,7 @@ function temperatureClothingChecker(temp) {
           <img src="https://www.solidrop.net/photo-2/men-windbreaker-brand-clothing-male-mens-coat-sports-running-varsity-jacket-causal-hooded-outdoor-man-waterproof-jacket-men.jpg" className="img-responsive" role="presentation"/>
         </div>
         <div className="col-sm-4">
-          <img src="https://www.dickssportinggoods.com/graphics/product_images/pDSP1-24977043v750.jpg" className="img-responsive" role="presentation"/>
+          <img src="https://images.nike.com/is/image/DotCom/PDP_HERO/620067_010_A_PREM/otc65-track-mens-running-pants.jpg" className="img-responsive" role="presentation"/>
         </div>
         <div className="col-sm-4">
           <img src="https://i.ebayimg.com/images/i/400928242132-0-1/s-l1000.jpg" className="img-responsive" role="presentation"/>
@@ -99,7 +99,7 @@ function temperatureClothingChecker(temp) {
           <img src="https://d3d71ba2asa5oz.cloudfront.net/12001379/images/2013%2002%2022%20079.jpg" className="img-responsive" role="presentation"/>
         </div>
         <div className="col-sm-4">
-          <img src="https://www.dickssportinggoods.com/graphics/product_images/pDSP1-24977043v750.jpg" className="img-responsive" role="presentation"/>
+          <img src="https://images.nike.com/is/image/DotCom/PDP_HERO/620067_010_A_PREM/otc65-track-mens-running-pants.jpg" className="img-responsive" role="presentation"/>
         </div>
         <div className="col-sm-4">
           <img src="https://i.ebayimg.com/images/i/400928242132-0-1/s-l1000.jpg" className="img-responsive" role="presentation"/>

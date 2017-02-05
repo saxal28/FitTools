@@ -50,7 +50,7 @@ export default class DrawerNavbar extends React.Component {
     return (
       <MuiThemeProvider>
         <div className="text-center">
-          <AppBar onLeftIconButtonTouchTap={this.handleToggle.bind(this)} />
+          <AppBar onLeftIconButtonTouchTap={this.handleToggle.bind(this)} style={{background:"url(https://tatica.fedorapeople.org/Themes/F12/wallpaper-mosaico6.svg)", backgroundSize:"cover"}}/>
           <Drawer
             width={200}
             overlayStyle={{"background":"transparent"}}

@@ -121,7 +121,7 @@ class HealthStatusContainer extends Component {
           <Paper zDepth={2} style={paperStyles}>
             <div>
                 <h2 className="sub-heading">Health Status</h2>
-                <h3 style={{paddingTop:"10px"}}>See a brief summary of your health!</h3>
+                <h3 style={{paddingTop:"10px", color:"black"}}>See a brief summary of your health!</h3>
             </div>
           </Paper>
           {/*BMI section*/}
@@ -162,9 +162,9 @@ class HealthStatusContainer extends Component {
           {/*TDEE section*/}
           <Paper zDepth={2} style={paperStyles}>
             <h2 className="sub-heading">TDEE: {this.props.TDEE}</h2>
-            <h4 style={{paddingTop:"20px"}}>To Maintain Weight, eat <span className="type-green">{this.props.TDEE} calories</span></h4>
-            <h4>To Lose Weight, eat <span className="type-green">{Math.floor(this.props.TDEE * .80)} calories</span> </h4>
-            <h4>To Gain Weight, eat <span className="type-green">{Math.floor(this.props.TDEE * 1.20)}</span> calories</h4>
+            <h4 style={{paddingTop:"20px"}}><span className="type-green">{this.props.TDEE}</span> calories to maintain weight</h4>
+            <h4><span className="type-green" style={{minWidth: "50px"}}>{Math.floor(this.props.TDEE * .80)}</span> calories to lose weight. </h4>
+            <h4><span className="type-green" style={{minWidth: "50px"}}>{Math.floor(this.props.TDEE * 1.20)}</span> calories to gain weight.</h4>
           </Paper>
 
         </div>
